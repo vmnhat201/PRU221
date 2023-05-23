@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,13 +35,14 @@ public class ButtonControl : Singleton<ButtonControl>
         question.SetActive(true);
     }
 
+
     public void Reset()
     {
         SceneManager.LoadScene("SampleSence");
     }
     private void Update()
     {
-        if(isGamePause || isShowIntro)
+        if (isGamePause || isShowIntro)
         {
             Time.timeScale = 0;
         }
@@ -49,7 +52,7 @@ public class ButtonControl : Singleton<ButtonControl>
             GameManager.instance.player.Shoot();
         }
         GameSave.instance.isIntro = toggle.GetComponent<Toggle>().isOn;
-        
+
     }
 
     public void StartGame()
@@ -62,7 +65,7 @@ public class ButtonControl : Singleton<ButtonControl>
         countBar.SetActive(true);
         SoundController.instance.PlayGameStart();
         isGameStart = true;
-        yield return new  WaitForSecondsRealtime(SoundController.instance.GameStart.length);
+        yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
         countBar.SetActive(false);
         pauseButton.SetActive(true);
         isGamePause = false;
@@ -70,7 +73,7 @@ public class ButtonControl : Singleton<ButtonControl>
 
     }
 
-   
+
     public void RePlay()
     {
         StartCoroutine(ReadyToReplayGame());
@@ -86,7 +89,8 @@ public class ButtonControl : Singleton<ButtonControl>
         pauseButton.SetActive(true);
         isGamePause = false;
     }
-    public void PauseGame() {
+    public void PauseGame()
+    {
         isGamePause = true;
         pauseMenuScreen.SetActive(true);
     }
