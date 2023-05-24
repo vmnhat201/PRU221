@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 439274957, guid: 35d9c68d24e426f40acffc25d6f8352c, type: 3}
   m_Color: {r: 0.3443396, g: 1, b: 0.41419786, a: 1}
   m_FlipX: 0
@@ -139,4 +139,3 @@ MonoBehaviour:
   explosivePrefabs: {fileID: 0}
   style: 0
   bulletLifeTime: 3
-  damage: 30
