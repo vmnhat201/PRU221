@@ -4293,12 +4293,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapPrefabs:
-  - {fileID: 4451687396839163901, guid: a6844e466793a274c84ac6f3f8b40902, type: 3}
-  - {fileID: 4451687396839163901, guid: 23b5e9993f4cf1c46a18080aef02d1f2, type: 3}
-  - {fileID: 4451687396839163901, guid: fe3f4650b70215143b79515d5bc73138, type: 3}
+  - {fileID: 4451687396839163901, guid: 34aa7451746ad0b48ae71ced752e2c22, type: 3}
+  - {fileID: 4451687396839163901, guid: 73666974f80f1864d9efe9e835d6a1d9, type: 3}
+  - {fileID: 4451687396839163901, guid: baf67b4b022582b458adb109ae48eb3d, type: 3}
+  - {fileID: 4451687396839163901, guid: 596b0fa024c75cb4698251a71bb1d099, type: 3}
+  - {fileID: 4451687396839163901, guid: 705d637ef80177d4cbb57266924a9457, type: 3}
+  - {fileID: 4451687396839163901, guid: 960f4af4d17157e46ad7dd4084930005, type: 3}
   cameraObject: {fileID: 0}
-  mapWidth: 0
-  mapHeight: 0
+  mapWidth: 20
+  mapHeight: 35
 --- !u!4 &1913392986
 Transform:
   m_ObjectHideFlags: 0
