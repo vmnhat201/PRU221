@@ -255,10 +255,10 @@ public class Enemies : MonoBehaviour
             }
             else
             {
-                Vector2 dir = endPoint - transform.position;
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                transform.rotation = rotation;
+                //Vector2 dir = endPoint - transform.position;
+                //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                //transform.rotation = rotation;
 
                 transform.position = Vector3.MoveTowards(transform.position, endPoint, 10 * Time.deltaTime);
                 if (Vector3.Distance(transform.position, endPoint) < 0.001f)
@@ -273,10 +273,10 @@ public class Enemies : MonoBehaviour
             if (Vector3.Distance(po, GameManager.instance.player.transform.position) < 10f && GameManager.instance.player.isVisible == false)
             {
                 transform.position = po;
-                Vector2 dir = endPoint - transform.position;
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                transform.rotation = rotation;
+                //Vector2 dir = endPoint - transform.position;
+                //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                //transform.rotation = rotation;
                 if (timer.Finished)
                 {
                     AttackPlayer();
@@ -287,10 +287,10 @@ public class Enemies : MonoBehaviour
             }
             else
             {
-                Vector2 dir = endPoint - transform.position;
-                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                transform.rotation = rotation;
+                //Vector2 dir = endPoint - transform.position;
+                //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                //transform.rotation = rotation;
 
                 transform.position = Vector3.MoveTowards(transform.position, endPoint, 10 * Time.deltaTime);
                 if (Vector3.Distance(transform.position, endPoint) < 0.001f)
