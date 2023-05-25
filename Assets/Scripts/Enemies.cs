@@ -16,6 +16,7 @@ public enum EnemyType
 }
 public class Enemies : MonoBehaviour
 {
+//New Commit
     public Sprite intro;
     //New Commit
     //Attribute and Property
