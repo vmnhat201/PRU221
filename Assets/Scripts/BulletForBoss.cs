@@ -68,7 +68,7 @@ public class BulletForBoss : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             gameObject.SetActive(false);
-            GameManager.instance.player.TakeDamge(15);
+            GameManager.instance.player.TakeDamge(damage);
         }
     }
 }
