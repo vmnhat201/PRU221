@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public Weapon firstWeapon;
     public Buff firtBuff;
     public BuffSkill firtBuffSkill;
-   
+
     public bool isVisible;
     public bool isUndead;
     //abc
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private Camera mainCamera;
     [SerializeField] public Weapon curWeapon;
     [SerializeField] private BuffSkill curBuffSkill;
-  
+
 
 
     private Vector2 movementInput;
@@ -35,10 +35,10 @@ public class Player : MonoBehaviour
     private float unDeahHeath;
     public delegate void WeaponChangedHandler();
     public static event WeaponChangedHandler OnWeaponChanged;
-    
+
     public delegate void BuffSkillChangedHandler();
     public static event BuffSkillChangedHandler OnBuffSkillChanged;
-   
+
     private void Awake()
     {
         isVisible = false;
@@ -51,10 +51,43 @@ public class Player : MonoBehaviour
         curWeapon = Instantiate(firstWeapon, gunSpawnPos.position, gunSpawnPos.rotation);
         curWeapon.transform.SetParent(this.transform);
     }
+    public void FindClosestEnemy()
+    {
+        float distance = Mathf.Infinity;
+        Enemies closestEnemy = null;
+        Enemies[] allEnemies = GameObject.FindObjectsOfType<Enemies>();
+        
+        foreach (Enemies currentEnemy in allEnemies)
+        {
+            float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+            if (distanceToEnemy < distance)
+            {
+                distance = distanceToEnemy;
+                closestEnemy = currentEnemy;
+            }
+        }
+        if (closestEnemy != null)
+        {
+            Vector2 direction = closestEnemy.transform.position - this.transform.position;
+            direction.Normalize();
+
+            curWeapon.Shoot(direction);
+            
+        }
+        else
+        {
+            curWeapon.Shoot(transform.up);
+        }
+
+    }
+    public void Shoot()
+    {
+        curWeapon.Shoot(transform.up);
+    }
 
     private void Update()
-    {
-        healthBar.value = curHealth/maxHealth;
+    {        
+        healthBar.value = curHealth / maxHealth;
 
         if (curWeapon.quantity <= 0)
         {
@@ -63,10 +96,10 @@ public class Player : MonoBehaviour
 
         if (isUndead)
         {
-            if (curHealth <= unDeahHeath)curHealth = unDeahHeath;
+            if (curHealth <= unDeahHeath) curHealth = unDeahHeath;
         }
 
-        if(curHealth > maxHealth)curHealth = maxHealth;
+        if (curHealth > maxHealth) curHealth = maxHealth;
     }
 
     private void LateUpdate()
@@ -89,7 +122,7 @@ public class Player : MonoBehaviour
     {
         return movementInputSmooth;
     }
-    
+
     public BuffSkill GetCurBuffSkill()
     {
         return curBuffSkill;
@@ -139,10 +172,10 @@ public class Player : MonoBehaviour
 
     }
 
-    public void Shoot()
-    {
-        curWeapon.Shoot(transform.up);
-    }
+    //public void Shoot()
+    //{
+    //    curWeapon.Shoot(transform.up);
+    //}
 
     public void UltiShoot()
     {
@@ -165,10 +198,10 @@ public class Player : MonoBehaviour
                     Undead();
                     break;
             }
-                curBuffSkill.buffReady = false;
-                StartCoroutine(CountDownBuff(curBuffSkill.cdBuff));
+            curBuffSkill.buffReady = false;
+            StartCoroutine(CountDownBuff(curBuffSkill.cdBuff));
         }
-       
+
     }
 
     IEnumerator CountDownBuff(float time)
@@ -179,22 +212,22 @@ public class Player : MonoBehaviour
     public void BuffUpdate(Buff b)
     {
 
-            switch (b.style)
-            {
-                case BuffStyle.health:
-                    curHealth += b.quantity;
-                    break;
-                case BuffStyle.speed:
-                    speed += b.quantity;
-                    break;
-                case BuffStyle.strong:
-                   maxHealth += b.quantity;
-                   curHealth += b.quantity;
-                     break;
-            }
-       
+        switch (b.style)
+        {
+            case BuffStyle.health:
+                curHealth += b.quantity;
+                break;
+            case BuffStyle.speed:
+                speed += b.quantity;
+                break;
+            case BuffStyle.strong:
+                maxHealth += b.quantity;
+                curHealth += b.quantity;
+                break;
+        }
+
     }
-    
+
     private IEnumerator IEInvisible(float timeDuration)
     {
 
@@ -210,7 +243,7 @@ public class Player : MonoBehaviour
     {
         StartCoroutine(IEInvisible(curBuffSkill.timeEffect));
     }
-    
+
     private void Dash()
     {
         Vector2 force = 10000 * transform.up;
@@ -230,19 +263,19 @@ public class Player : MonoBehaviour
 
     public void ChangeBuffSkill(BuffSkill newBuff)
     {
-            foreach (BuffSkill buff in GameManager.instance.BuffSkill)
+        foreach (BuffSkill buff in GameManager.instance.BuffSkill)
+        {
+            if (buff.buffskill == newBuff.buffskill)
             {
-                if (buff.buffskill == newBuff.buffskill)
-                {
-                    curBuffSkill = buff;
-                    break;
-                }
+                curBuffSkill = buff;
+                break;
             }
+        }
         OnBuffSkillChanged?.Invoke();
-        
+
     }
 
-   
+
 
     public void TakeDamge(float damage)
     {
