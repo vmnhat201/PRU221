@@ -56,29 +56,32 @@ public class Player : MonoBehaviour
         float distance = Mathf.Infinity;
         Enemies closestEnemy = null;
         Enemies[] allEnemies = GameObject.FindObjectsOfType<Enemies>();
-        
+
+        // Duyệt qua tất cả các enemy trong cảnh
         foreach (Enemies currentEnemy in allEnemies)
         {
+            // Tính toán khoảng cách từ người chơi đến enemy hiện tại
             float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+
+            // So sánh khoảng cách hiện tại với khoảng cách gần nhất đã tìm thấy trước đó
             if (distanceToEnemy < distance)
             {
+                // Nếu khoảng cách mới nhỏ hơn khoảng cách gần nhất, cập nhật khoảng cách và lưu trữ enemy gần nhất
                 distance = distanceToEnemy;
                 closestEnemy = currentEnemy;
             }
         }
+
+        // Kiểm tra xem có enemy gần nhất không
         if (closestEnemy != null)
         {
+            // Tính toán hướng bắn từ người chơi đến enemy gần nhất
             Vector2 direction = closestEnemy.transform.position - this.transform.position;
             direction.Normalize();
 
+            // Gọi hàm Shoot() của weapon hiện tại để bắn theo hướng đã tính toán
             curWeapon.Shoot(direction);
-            
         }
-        else
-        {
-            curWeapon.Shoot(transform.up);
-        }
-
     }
     public void Shoot()
     {

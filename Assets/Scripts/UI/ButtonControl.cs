@@ -49,8 +49,8 @@ public class ButtonControl : Singleton<ButtonControl>
         else
         {
             Time.timeScale = 1;
-            //GameManager.instance.player.Shoot();
-            GameManager.instance.player.FindClosestEnemy();
+            GameManager.instance.player.Shoot();
+            //GameManager.instance.player.FindClosestEnemy();
         }
         GameSave.instance.isIntro = toggle.GetComponent<Toggle>().isOn;
 
