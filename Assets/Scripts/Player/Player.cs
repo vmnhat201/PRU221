@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] public float speed = 10.0f;
-    [SerializeField] private float rotationSpeed = 600.0f;
+    [SerializeField] public float rotationSpeed = 600.0f;
     [SerializeField] public float maxHealth = 200;
-    [SerializeField] private float curHealth;
-    [SerializeField] private Transform gunSpawnPos;
-    [SerializeField] private FixedJoystick joystick;
+    [SerializeField] public float curHealth;
+    [SerializeField] public Transform gunSpawnPos;
+    [SerializeField] public FixedJoystick joystick;
     [SerializeField] public float bonusdame = 0;
     [SerializeField] public Slider healthBar;
 
@@ -22,17 +22,16 @@ public class Player : MonoBehaviour
     public bool isVisible;
     public bool isUndead;
     //abc
-    private Rigidbody2D rb2d;
-    private Camera mainCamera;
+    public Rigidbody2D rb2d;
+    public Camera mainCamera;
     [SerializeField] public Weapon curWeapon;
-    [SerializeField] private BuffSkill curBuffSkill;
-
+    [SerializeField] public BuffSkill curBuffSkill;
 
 
     private Vector2 movementInput;
     private Vector2 movementInputSmooth;
     private Vector2 velocityInputSmooth;
-    private float unDeahHeath;
+    public float unDeahHeath;
     public delegate void WeaponChangedHandler();
     public static event WeaponChangedHandler OnWeaponChanged;
 

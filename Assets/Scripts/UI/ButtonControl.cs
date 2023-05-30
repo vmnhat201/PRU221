@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -105,5 +105,23 @@ public class ButtonControl : Singleton<ButtonControl>
     {
         isGamePause = true;
         gameOverScreen.SetActive(true);
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Save Player Date when quit application");
+        Application.Quit();
+        GameObject playerObject = GameObject.Find("Player");
+        if (playerObject != null)
+        {
+            // Lấy tham chiếu đến script Player từ game object
+            Player player = playerObject.GetComponent<Player>();
+
+            if (player != null)
+            {
+                FileManager.SavePlayerData(player);
+
+            }
+        }
     }
 }
