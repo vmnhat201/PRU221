@@ -218,9 +218,5 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private void OnApplicationQuit()
-    {
-        // Save player data
-        FileManager.SavePlayerData("Player.csv",player); 
-    }
+   
 }
