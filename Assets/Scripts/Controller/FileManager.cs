@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.UI;
 public class FileManager
 {
     public static void WriteToFile(string fileName, string data)
@@ -138,42 +140,33 @@ public class FileManager
         try
         {
             PlayerData playerData = new PlayerData();
-            playerData.position = player.transform.position;
-            playerData.rotation = player.transform.rotation;
+            playerData.position = new SerializableVector3(player.transform.position);
+            playerData.rotation = new SerializableQuaternion(player.transform.rotation);
 
             playerData.speed = player.speed;
             playerData.rotationSpeed = player.rotationSpeed;
             playerData.maxHealth = player.maxHealth;
             playerData.curHealth = player.curHealth;
-            if(player.gunSpawnPos != null)
-            {
-                Debug.Log("có gunSpawnPos");
-                playerData.gunSpawnPos = player.gunSpawnPos;
-                playerData.gunSpawnPos.position = player.gunSpawnPos.position;
-                playerData.gunSpawnPos.rotation = player.gunSpawnPos.rotation;
-
-            }
-            if(player.joystick != null)
-            {
-                Debug.Log("có joystick");
-                playerData.joystick = player.joystick;
-            }
+            playerData.gunSpawnPos = new TransformData(player.gunSpawnPos);
+            playerData.joystickData = new FixedJoystickData(player.joystick);
             playerData.bonusdame = player.bonusdame;
+            playerData.healthBar = new SliderData(player.healthBar);
 
-            //playerData.healthBar.value = player.healthBar.value;
-            //playerData.healthBar.name = player.healthBar.name;
 
-            //playerData.firstWeapon = player.firstWeapon;
-            //playerData.firtBuff = player.firtBuff;
-            //playerData.firtBuffSkill = player.firtBuffSkill;
-            //playerData.isVisible = player.isVisible;
-            //playerData.isUndead = player.isUndead;
+            //playerData.firstWeapon = new WeaponData(player.firstWeapon);
+            playerData.firstBuff = new BuffData(player.firstBuff);
+            playerData.firtBuffSkill = new BuffSkillData(player.firtBuffSkill);
+            playerData.isVisible = player.isVisible;
+            playerData.isUndead = player.isUndead;
             //playerData.rb2d = player.rb2d;
             //playerData.mainCamera = player.mainCamera;
-            ////playerData.setCurWeapon(player.curWeapon);
-            //playerData.curBuffSkill = player.curBuffSkill;
-
-            string json = JsonUtility.ToJson(playerData, true);
+            //playerData.curWeapon = new WeaponData(player.curWeapon);
+            playerData.curBuffSkill = new BuffSkillData(player.curBuffSkill);
+            playerData.movementInput = new SerializableVector2(player.movementInput);
+            playerData.movementInputSmooth = new SerializableVector2(player.movementInputSmooth);
+            playerData.velocityInputSmooth = new SerializableVector2(player.velocityInputSmooth);
+            playerData.unDeahHeath = player.unDeahHeath;
+            string json = JsonConvert.SerializeObject(playerData, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(filePath, json);
 
             Debug.Log("Dữ liệu người chơi đã được lưu thành công.");
@@ -197,9 +190,7 @@ public class FileManager
             {
                 // Đọc nội dung từ tệp tin
                 string json = File.ReadAllText(filePath);
-
-                // Chuyển đổi chuỗi JSON thành đối tượng Player
-                playerData = JsonUtility.FromJson<PlayerData>(json);
+                playerData = JsonConvert.DeserializeObject<PlayerData>(json);
             }
             else
             {

@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     [SerializeField] public Slider healthBar;
 
     public Weapon firstWeapon;
-    public Buff firtBuff;
+    public Buff firstBuff;
     public BuffSkill firtBuffSkill;
 
     public bool isVisible;
@@ -28,9 +28,9 @@ public class Player : MonoBehaviour
     [SerializeField] public BuffSkill curBuffSkill;
 
 
-    private Vector2 movementInput;
-    private Vector2 movementInputSmooth;
-    private Vector2 velocityInputSmooth;
+    public Vector2 movementInput;
+    public Vector2 movementInputSmooth;
+    public Vector2 velocityInputSmooth;
     public float unDeahHeath;
     public delegate void WeaponChangedHandler();
     public static event WeaponChangedHandler OnWeaponChanged;
