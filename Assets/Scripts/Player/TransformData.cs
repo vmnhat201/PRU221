@@ -14,13 +14,18 @@ public class TransformData
     public TransformData(Transform transform)
     {
         if (transform == null)
-        {
-            Debug.Log("Transform null");
             return;
-        }
         position = new SerializableVector3(transform.position);
         rotation = new SerializableQuaternion(transform.rotation);
         tag = transform.tag;
         name = transform.name;
+    }
+
+    internal void Transform(Transform transform)
+    {
+        transform.position = this.position.Vector3();
+        transform.rotation = this.rotation.Quaternion();
+        transform.tag = tag;
+        transform.name = name;
     }
 }

@@ -12,16 +12,23 @@ public class BuffData
     public string name;
     public string tag;
     public BuffData(Buff buff)
-    {   
+    {
         if (buff == null)
-        {
-            Debug.Log("Buff is null");
             return;
-        }
         style = buff.style;
         quantity = buff.quantity;
         introName = buff.intro.name;
         name = buff.name;
         tag = buff.tag;
+    }
+    public void Buff(Buff buff)
+    {
+        if (buff == null || (buff.style == 0 && buff.quantity == 0 && string.IsNullOrEmpty(buff.name) && string.IsNullOrEmpty(buff.tag)))
+            return;
+        buff.style = this.style;
+        buff.quantity = this.quantity;
+        buff.intro = Resources.Load<Sprite>("Sprites/Buff/" + this.introName);
+        buff.name = this.name;
+        buff.tag = this.tag;
     }
 }

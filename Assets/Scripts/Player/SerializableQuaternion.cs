@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+
 [Serializable]
 public class SerializableQuaternion
 {
@@ -19,17 +20,14 @@ public class SerializableQuaternion
     public SerializableQuaternion(Quaternion quaternion)
     {
         if (quaternion == null)
-        {
-            Debug.Log("Quaternion is null");
             return;
-        }
         x = quaternion.x;
         y = quaternion.y;
         z = quaternion.z;
         w = quaternion.w;
     }
 
-    public Quaternion ToQuaternion()
+    public Quaternion Quaternion()
     {
         return new Quaternion(x, y, z, w);
     }

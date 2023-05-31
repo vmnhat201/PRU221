@@ -5,19 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
+
 public class FixedJoystickData
 {
     public SerializableVector2 joystickPosition;
-    public SerializableVector2 joystickInput;
+    public SerializableQuaternion joystickRotation;
+    public bool enabled;
+    public string name;
 
     public FixedJoystickData(FixedJoystick joystick)
     {
-        if(joystick == null)
-        {
-            Debug.Log("Joystick is null");
+        if (joystick == null)
             return;
-        }
         joystickPosition = new SerializableVector2(joystick.transform.position);
-        joystickInput = new SerializableVector2(joystick.Direction);
+        joystickRotation = new SerializableQuaternion(joystick.transform.rotation);
+        enabled = joystick.enabled;
+        name = joystick.name;
+    }
+
+    internal void FixedJoystick(FixedJoystick joystick)
+    {
+        joystick.transform.position = this.joystickPosition.Vector2();
+        joystick.transform.rotation = this.joystickRotation.Quaternion();
+        joystick.name = name;
+        joystick.enabled = enabled;
+
     }
 }
