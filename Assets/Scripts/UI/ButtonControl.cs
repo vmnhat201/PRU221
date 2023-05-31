@@ -73,7 +73,11 @@ public class ButtonControl : Singleton<ButtonControl>
         SpawnManager.instance.StartSpawn();
 
     }
+    public void Resume()
+    {
+        StartCoroutine(ReadyToStartGame());
 
+    }
 
     public void RePlay()
     {

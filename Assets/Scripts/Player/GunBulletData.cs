@@ -8,11 +8,18 @@ public class GunBulletData
 {
     public BulletStyle style;
     public float bulletLifeTime;
-    public string explosivePrefabName;
     public GunBulletData(GunBullet bullet)
     {
+        if (bullet == null)
+            return;
         this.style = bullet.style;
         this.bulletLifeTime = bullet.bulletLifeTime;
-        this.explosivePrefabName = bullet.explosivePrefabs.name;
+    }
+
+    public void GunBullet(GunBullet gunBullet)
+    {
+        gunBullet.style = this.style;
+        gunBullet.bulletLifeTime = this.bulletLifeTime;
+
     }
 }

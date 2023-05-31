@@ -98,7 +98,7 @@ public class GameManager : Singleton<GameManager>
     {
         foreach (var b in BuffSkill)
         {
-            if (b.buffskill == type)
+            if (b.buffSkillStyle == type)
                 return b;
             break;
         }

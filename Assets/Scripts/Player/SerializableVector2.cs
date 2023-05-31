@@ -13,11 +13,13 @@ public class SerializableVector2
 
     public SerializableVector2(Vector2 vector)
     {
+        if (vector == null)
+            return;
         x = vector.x;
         y = vector.y;
     }
 
-    public Vector2 ToVector2()
+    public Vector2 Vector2()
     {
         return new Vector2(x, y);
     }

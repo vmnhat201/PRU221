@@ -11,16 +11,24 @@ public class SliderData
     public float minValue;
     public float maxValue;
     public string name;
+    public string tag;
     public SliderData(Slider slider)
     {
         if (slider == null)
-        {
-            Debug.Log("Slider is null");
             return;
-        }
         value = slider.value;
         minValue = slider.minValue;
         maxValue = slider.maxValue;
         name = slider.name;
+        tag = slider.tag;
+    }
+
+    internal void Slider(Slider slider)
+    {
+        slider.value = this.value;
+        slider.minValue = this.minValue;
+        slider.maxValue = this.maxValue;
+        slider.name = this.name;
+        slider.tag = this.tag;
     }
 }

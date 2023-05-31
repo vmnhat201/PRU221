@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     public Weapon firstWeapon;
     public Buff firstBuff;
-    public BuffSkill firtBuffSkill;
+    public BuffSkill firstBuffSkill;
 
     public bool isVisible;
     public bool isUndead;
@@ -188,7 +188,7 @@ public class Player : MonoBehaviour
     {
         if (curBuffSkill.buffReady)
         {
-            switch (curBuffSkill.buffskill)
+            switch (curBuffSkill.buffSkillStyle)
             {
                 case BuffSkillStyle.boomSkill:
                     Invisible();
@@ -267,7 +267,7 @@ public class Player : MonoBehaviour
     {
         foreach (BuffSkill buff in GameManager.instance.BuffSkill)
         {
-            if (buff.buffskill == newBuff.buffskill)
+            if (buff.buffSkillStyle == newBuff.buffSkillStyle)
             {
                 curBuffSkill = buff;
                 break;

@@ -139,33 +139,7 @@ public class FileManager
 
         try
         {
-            PlayerData playerData = new PlayerData();
-            playerData.position = new SerializableVector3(player.transform.position);
-            playerData.rotation = new SerializableQuaternion(player.transform.rotation);
-
-            playerData.speed = player.speed;
-            playerData.rotationSpeed = player.rotationSpeed;
-            playerData.maxHealth = player.maxHealth;
-            playerData.curHealth = player.curHealth;
-            playerData.gunSpawnPos = new TransformData(player.gunSpawnPos);
-            playerData.joystickData = new FixedJoystickData(player.joystick);
-            playerData.bonusdame = player.bonusdame;
-            playerData.healthBar = new SliderData(player.healthBar);
-
-
-            //playerData.firstWeapon = new WeaponData(player.firstWeapon);
-            playerData.firstBuff = new BuffData(player.firstBuff);
-            playerData.firtBuffSkill = new BuffSkillData(player.firtBuffSkill);
-            playerData.isVisible = player.isVisible;
-            playerData.isUndead = player.isUndead;
-            //playerData.rb2d = player.rb2d;
-            //playerData.mainCamera = player.mainCamera;
-            //playerData.curWeapon = new WeaponData(player.curWeapon);
-            playerData.curBuffSkill = new BuffSkillData(player.curBuffSkill);
-            playerData.movementInput = new SerializableVector2(player.movementInput);
-            playerData.movementInputSmooth = new SerializableVector2(player.movementInputSmooth);
-            playerData.velocityInputSmooth = new SerializableVector2(player.velocityInputSmooth);
-            playerData.unDeahHeath = player.unDeahHeath;
+            PlayerData playerData = new PlayerData(player);
             string json = JsonConvert.SerializeObject(playerData, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(filePath, json);
 

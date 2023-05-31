@@ -25,6 +25,8 @@ public class SerializableVector3
 
     public SerializableVector3(Vector3 v)
     {
+        if (v == null)
+            return;
         x = v.x;
         y = v.y;
         z = v.z;
@@ -58,4 +60,6 @@ public class SerializableVector3
         }
         return list;
     }
+
+
 }

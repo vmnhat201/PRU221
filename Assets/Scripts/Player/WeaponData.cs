@@ -20,35 +20,18 @@ public class WeaponData
     public float ultCd;
     public bool norReady;
     public bool ultReady;
-    public SerializableVector3 hitTransformPosition;
-    public string explosivePrefabName;
+    public TransformData hittf;
+    public PrefabData explosivePrefab;
     public float damage;
 
     public WeaponData(Weapon weapon)
     {
         if (weapon == null)
-        {
-            Debug.Log("Weapon is null");
             return;
-        }
         this.style = weapon.style;
         this.quantity = weapon.quantity;
-        if (weapon.normalBullet == null)
-        {
-            Debug.Log("Normal Bullet is null");
-        }
-        else
-        {
-            this.normalBulletData = new GunBulletData(weapon.normalBullet);
-        }
-        if (weapon.ultiBullet == null)
-        {
-            Debug.Log("Ulti Bullet is null");
-        }
-        else
-        {
-            this.ultiBulletData = new GunBulletData(weapon.ultiBullet);
-        }
+        this.normalBulletData = new GunBulletData(weapon.normalBullet);
+        this.ultiBulletData = new GunBulletData(weapon.ultiBullet);
         this.introSpriteName = weapon.intro.name;
         this.ultiSoundClipName = weapon.ultiSound.name;
         this.norSoundClipName = weapon.norSound.name;
@@ -58,23 +41,39 @@ public class WeaponData
         this.norReady = weapon.norReady;
         this.ultReady = weapon.ultReady;
         this.damage = weapon.damage;
-        if (weapon.hittf == null)
+        this.hittf = new TransformData(weapon.hittf);
+        this.explosivePrefab = new PrefabData(weapon.explosivePrefabs);
+    }
+
+    public void Weapon(Weapon weapon)
+    {
+        weapon.style = this.style;
+        weapon.quantity = this.quantity;
+        if (this.normalBulletData != null)
         {
-            Debug.Log("Hit Transform is null");
+            this.normalBulletData.GunBullet(weapon.normalBullet);
         }
-        else
+        if (this.ultiBulletData != null)
         {
-            this.hitTransformPosition = new SerializableVector3(weapon.hittf.position);
+            this.ultiBulletData.GunBullet(weapon.ultiBullet);
         }
-        if (weapon.explosivePrefabs == null)
+        weapon.intro = Resources.Load<Sprite>("Sprites/Weapon/" + this.introSpriteName);
+        weapon.ultiSound = Resources.Load<AudioClip>("Sounds/Weapon/" + this.ultiSoundClipName);
+        weapon.norSound = Resources.Load<AudioClip>("Sounds/Weapon/" + this.norSoundClipName);
+        weapon.bulletForce = this.bulletForce;
+        weapon.norCd = this.norCd;
+        weapon.ultCd = this.ultCd;
+        weapon.norReady = this.norReady;
+        weapon.ultReady = this.ultReady;
+        weapon.damage = this.damage;
+        if (this.hittf != null)
         {
-            Debug.Log("Explosive Prefab is null");
+            this.hittf.Transform(weapon.hittf);
         }
-        else
+        if (this.explosivePrefab != null)
         {
-            this.explosivePrefabName = weapon.explosivePrefabs.name;
+            weapon.explosivePrefabs = this.explosivePrefab.ToGameObject();
         }
+
     }
 }
-
-

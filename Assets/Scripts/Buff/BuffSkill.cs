@@ -10,7 +10,7 @@ public class BuffSkill : MonoBehaviour
 {
 
     public float cdBuff;
-    public BuffSkillStyle buffskill;
+    public BuffSkillStyle buffSkillStyle;
     public bool buffReady;
     public Sprite intro;
     public Sprite avatar;
@@ -36,18 +36,18 @@ public class BuffSkill : MonoBehaviour
         {
             if (GameSave.instance.isIntro)
             {
-            if (GameManager.instance.isDashInfo && buffskill == BuffSkillStyle.dashSkill)
+            if (GameManager.instance.isDashInfo && buffSkillStyle == BuffSkillStyle.dashSkill)
             {
                 GameManager.instance.introControl.SetIntro(intro);
                 GameManager.instance.isDashInfo = false;
             }
-            else if (GameManager.instance.isBoomInfo && buffskill == BuffSkillStyle.boomSkill)
+            else if (GameManager.instance.isBoomInfo && buffSkillStyle == BuffSkillStyle.boomSkill)
             {
                 GameManager.instance.introControl.SetIntro(intro);
 
                 GameManager.instance.isBoomInfo = false;
             }
-            else if (GameManager.instance.isImmortalInfo && buffskill == BuffSkillStyle.immortalSkill)
+            else if (GameManager.instance.isImmortalInfo && buffSkillStyle == BuffSkillStyle.immortalSkill)
             {
                 GameManager.instance.introControl.SetIntro(intro);
 

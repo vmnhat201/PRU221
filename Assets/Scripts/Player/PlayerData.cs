@@ -17,25 +17,80 @@ public class PlayerData
     public float maxHealth;
     public float curHealth;
     public TransformData gunSpawnPos;
-    public FixedJoystickData joystickData;
+    public FixedJoystickData joystick;
     public float bonusdame;
     public SliderData healthBar;
 
-    //public WeaponData firstWeapon;
+    public WeaponData firstWeapon;
     public BuffData firstBuff;
-    public BuffSkillData firtBuffSkill;
+    public BuffSkillData firstBuffSkill;
 
     public bool isVisible;
     public bool isUndead;
-    //public Rigidbody2D rb2d;
-    //public Camera mainCamera;
-    //public WeaponData curWeapon;
+    public Rigidbody2DData rb2d;
+    public CameraData mainCamera;
+    public WeaponData curWeapon;
     public BuffSkillData curBuffSkill;
 
     public SerializableVector2 movementInput;
     public SerializableVector2 movementInputSmooth;
     public SerializableVector2 velocityInputSmooth;
     public float unDeahHeath;
+
+    public PlayerData(Player player)
+    {
+        if (player == null)
+            return;
+        position = new SerializableVector3(player.transform.position);
+        rotation = new SerializableQuaternion(player.transform.rotation);
+        speed = player.speed;
+        rotationSpeed = player.rotationSpeed;
+        maxHealth = player.maxHealth;
+        curHealth = player.curHealth;
+        gunSpawnPos = new TransformData(player.gunSpawnPos);
+        joystick = new FixedJoystickData(player.joystick);
+        bonusdame = player.bonusdame;
+        healthBar = new SliderData(player.healthBar);
+        firstWeapon = new WeaponData(player.firstWeapon);
+        firstBuff = new BuffData(player.firstBuff);
+        firstBuffSkill = new BuffSkillData(player.firstBuffSkill);
+        isVisible = player.isVisible;
+        isUndead = player.isUndead;
+        rb2d = new Rigidbody2DData(player.rb2d);
+        mainCamera = new CameraData(player.mainCamera);
+        curWeapon = new WeaponData(player.curWeapon);
+        curBuffSkill = new BuffSkillData(player.curBuffSkill);
+        movementInput = new SerializableVector2(player.movementInput);
+        movementInputSmooth = new SerializableVector2(player.movementInputSmooth);
+        velocityInputSmooth = new SerializableVector2(player.velocityInputSmooth);
+        unDeahHeath = player.unDeahHeath;
+    }
+    public void Player(Player player)
+    {
+        player.transform.position = this.position.Vector3();
+        player.transform.rotation = this.rotation.Quaternion();
+        player.speed = this.speed;
+        player.rotationSpeed = this.rotationSpeed;
+        player.maxHealth = this.maxHealth;
+        player.curHealth = this.curHealth;
+        this.gunSpawnPos.Transform(player.gunSpawnPos);
+        this.joystick.FixedJoystick(player.joystick);
+        player.bonusdame = this.bonusdame;
+        this.healthBar.Slider(player.healthBar);
+        this.firstWeapon.Weapon(player.firstWeapon);
+        this.firstBuff.Buff(player.firstBuff);
+        this.firstBuffSkill.BuffSkill(player.firstBuffSkill);
+        player.isVisible = this.isVisible;
+        player.isUndead = this.isUndead;
+        //this.rb2d.Rigidbody2D(player);
+        player.mainCamera = this.mainCamera.Camera();
+        this.curWeapon.Weapon(player.curWeapon);
+        this.curBuffSkill.BuffSkill(player.curBuffSkill);
+        player.movementInput = this.movementInput.Vector2();
+        player.movementInputSmooth = this.movementInputSmooth.Vector2();
+        player.velocityInputSmooth = this.velocityInputSmooth.Vector2();
+        player.unDeahHeath = this.unDeahHeath;
+    }
 
 }
 
