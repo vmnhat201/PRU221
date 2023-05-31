@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 public enum BuffStyle
 {
-    health, strong, speed
+    health, strong, speed, circle
 }
 
 public class Buff : MonoBehaviour
@@ -33,6 +33,9 @@ public class Buff : MonoBehaviour
                 quantity = 20;
                 break;
             case BuffStyle.strong:
+                quantity = 10;
+                break;
+            case BuffStyle.circle:
                 quantity = 10;
                 break;
             case BuffStyle.speed:

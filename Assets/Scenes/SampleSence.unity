@@ -3379,6 +3379,7 @@ MonoBehaviour:
   - {fileID: 4616237553137073203, guid: 3f62cbf7f0ff9e8419405e23a9b1b3f2, type: 3}
   - {fileID: 4093389510451610994, guid: 720a8f653602bf04bbd60e98d3867db1, type: 3}
   - {fileID: 7662975080717929668, guid: 94164fec6ce9bcd46bbafafa4695f8bd, type: 3}
+  - {fileID: 7662975080717929668, guid: a6143665efda53b439fd67eba6d1799a, type: 3}
   BuffSkill:
   - {fileID: 1926202289551819553, guid: e85339403cf7b994bbb9f6041e85e3b1, type: 3}
   - {fileID: 4497544349142146614, guid: 94957040a6bcf544e9f84261b715af19, type: 3}

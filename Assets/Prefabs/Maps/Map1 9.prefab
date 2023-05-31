@@ -141,8 +141,8 @@ GameObject:
   - component: {fileID: 4166719610230681099}
   - component: {fileID: 3769877517801263337}
   - component: {fileID: 6340644966324049794}
-  - component: {fileID: 4971402316670152913}
-  - component: {fileID: 1243573907425912875}
+  - component: {fileID: 3149532253323569604}
+  - component: {fileID: 2747809534514593567}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -3006,8 +3006,8 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!68 &4971402316670152913
-EdgeCollider2D:
+--- !u!60 &3149532253323569604
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3020,27 +3020,35 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: 3.0256374, y: 6.9920673}
-  - {x: 4.994257, y: 6.987384}
-  - {x: 4.998436, y: 5.990711}
-  - {x: 5.9909167, y: 5.990055}
-  - {x: 5.989604, y: 4.9943047}
-  - {x: 7.040344, y: 4.980535}
-  - {x: 7.011631, y: 2.0363495}
-  - {x: 5.968195, y: 2.0110226}
-  - {x: 6.0227404, y: 0.98819447}
-  - {x: 4.0435953, y: 0.9982545}
-  - {x: 4.0366726, y: 2.0185921}
-  - {x: 2.9938867, y: 2.0187318}
-  - {x: 3.0190816, y: 6.9957404}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!68 &1243573907425912875
-EdgeCollider2D:
+    m_Paths:
+    - - {x: 22.01797, y: 4.973741}
+      - {x: 22.015717, y: 5.9650097}
+      - {x: 21.02277, y: 5.9862776}
+      - {x: 21.035233, y: 7.977064}
+      - {x: 16.979574, y: 8.011603}
+      - {x: 16.998632, y: 7.022437}
+      - {x: 15.033226, y: 7.0103045}
+      - {x: 15.001333, y: 4.002339}
+      - {x: 17.03113, y: 4.0069}
+      - {x: 16.983566, y: 2.9863753}
+      - {x: 18.024384, y: 2.9946122}
+      - {x: 17.989504, y: 2.0152016}
+      - {x: 22.006615, y: 2.015204}
+      - {x: 21.997347, y: 2.9820929}
+      - {x: 22.9877, y: 3.0258045}
+      - {x: 23.004562, y: 4.961689}
+--- !u!60 &2747809534514593567
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3053,26 +3061,26 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: 17.040987, y: 7.9926353}
-  - {x: 21.018856, y: 7.9870906}
-  - {x: 20.980904, y: 5.9886107}
-  - {x: 22.00971, y: 5.9954906}
-  - {x: 22.014946, y: 4.969128}
-  - {x: 22.993809, y: 4.9945626}
-  - {x: 22.994875, y: 2.9952598}
-  - {x: 22.01593, y: 2.9899874}
-  - {x: 21.979445, y: 1.9782778}
-  - {x: 18.01357, y: 1.9984493}
-  - {x: 18.058344, y: 3.0300488}
-  - {x: 17.00212, y: 3.0291102}
-  - {x: 17.014463, y: 4.028453}
-  - {x: 14.995513, y: 4.038211}
-  - {x: 15.018152, y: 6.949548}
-  - {x: 17.02104, y: 6.992313}
-  - {x: 17.040741, y: 8.018372}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: 4.990748, y: 6.0094266}
+      - {x: 4.9818196, y: 6.9861526}
+      - {x: 2.9845886, y: 6.9794497}
+      - {x: 3.005919, y: 1.9987748}
+      - {x: 3.9774158, y: 2.0204654}
+      - {x: 3.983776, y: 1.0006704}
+      - {x: 5.9819894, y: 1.0151105}
+      - {x: 6.0432196, y: 2.0129614}
+      - {x: 6.9831543, y: 1.9916687}
+      - {x: 7.0023346, y: 4.988549}
+      - {x: 6.003901, y: 5.0103693}
+      - {x: 5.987407, y: 6.006134}
