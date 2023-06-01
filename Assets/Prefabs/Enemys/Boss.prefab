@@ -191,7 +191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 4.7, y: 0}
+  m_AnchoredPosition: {x: 4.699993, y: 0}
   m_SizeDelta: {x: 19.4, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1820832602268336713
@@ -446,6 +446,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4181750772380232145
 GameObject:
   m_ObjectHideFlags: 0
