@@ -291,8 +291,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3067736728038901154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8209, y: 0.6173, z: 0}
-  m_LocalScale: {x: 4.314585, y: 3.6449986, z: 1}
+  m_LocalPosition: {x: 0.8404, y: 0.6173, z: 0}
+  m_LocalScale: {x: 4.4086432, y: 3.6449986, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1922845824}
@@ -457,6 +457,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7301183313518396742
 GameObject:
   m_ObjectHideFlags: 0
