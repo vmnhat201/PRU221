@@ -33,7 +33,7 @@ public class Spawncircle : MonoBehaviour
             timer = spawnInterval;
 
             // Spawn object at a random position
-            Vector3 randomPosition = new Vector3(Random.Range(0, screenWidth), Random.Range(0, screenHeight), +1);
+            Vector3 randomPosition = new Vector3(Random.Range(0, screenWidth), Random.Range(0, screenHeight), +34);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(randomPosition);
             Instantiate(objectPrefab, worldPosition, Quaternion.identity);
         }
