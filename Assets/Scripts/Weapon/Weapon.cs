@@ -28,9 +28,10 @@ public class Weapon : MonoBehaviour
     public bool ultReady;
 
     public Transform hittf;
-    public GameObject explosivePrefabs;
+    public GameObject explosivePrefabs;    
 
     public float damage;
+  
     private void Awake()
     {
         SetUp();
@@ -84,6 +85,7 @@ public class Weapon : MonoBehaviour
             bullet.Fire(direction, bulletForce);
             norReady = false;
             StartCoroutine(CountDownShoot(norCd));
+            
         }
     }
 

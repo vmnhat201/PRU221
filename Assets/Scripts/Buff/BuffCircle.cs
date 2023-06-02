@@ -5,13 +5,16 @@ using UnityEngine;
 public class BuffCircle : MonoBehaviour
 {
     public float duration = 45f;
-    public Vector3 startScale = new Vector3(5f, 5f, 1f);
+    public Vector3 startScale = new Vector3(1f, 1f, 1f);
+    public float speedMultiplier = 3f;
 
     private float scaleSpeed;
     private Vector3 initialScale;
     private bool isScaling = false;
+    private Spawncircle spawner;
     private void Start()
     {
+        spawner = FindObjectOfType<Spawncircle>();
         initialScale = startScale;
 
     }
@@ -20,6 +23,7 @@ public class BuffCircle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ButtonControl.instance.isBuffCircle = true;
+            spawner.isPlayerInCircle = true;
         }
         if (collision.CompareTag("Player") && !isScaling)
         {
@@ -32,12 +36,13 @@ public class BuffCircle : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            spawner.isPlayerInCircle = false;
             ButtonControl.instance.isBuffCircle = false;
         }
     }
     private void CountdownTime()
     {
-        scaleSpeed = startScale.x / duration;
+        scaleSpeed = startScale.x / duration * speedMultiplier;
         transform.localScale = initialScale;
 
         StartCoroutine(DecreaseSize());

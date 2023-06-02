@@ -892,6 +892,7 @@ MonoBehaviour:
   isGameStart: 0
   isGamePause: 0
   isShowIntro: 0
+  isBuffCircle: 0
   startMenu: {fileID: 30916003}
   pauseMenuScreen: {fileID: 1666547339}
   gameOverScreen: {fileID: 1158025330}
@@ -4818,7 +4819,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 3889209927659286650, guid: a6143665efda53b439fd67eba6d1799a, type: 3}
-  spawnInterval: 10
+  spawnInterval: 60
+  destroyDelay: 15
+  isPlayerInCircle: 0
 --- !u!1 &2142679568
 GameObject:
   m_ObjectHideFlags: 0

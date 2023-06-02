@@ -5,13 +5,13 @@ using UnityEngine;
 public class Spawncircle : MonoBehaviour
 {
     public GameObject objectPrefab;
-    public float spawnInterval = 30f;
-    public float destroyDelay = 15f;
+    public float spawnInterval = 60f;
+    public float destroyDelay = 10f;
 
     private float screenWidth;
     private float screenHeight;
     private float timer;
-
+    public bool isPlayerInCircle = false;
     private void Start()
     {
         // Get the screen dimensions
@@ -20,6 +20,7 @@ public class Spawncircle : MonoBehaviour
 
         // Start the timer
         timer = spawnInterval;
+
     }
 
     private void Update()
@@ -38,13 +39,20 @@ public class Spawncircle : MonoBehaviour
             GameObject spawnedObject = Instantiate(objectPrefab, worldPosition, Quaternion.identity);
 
             // Start the destroy coroutine
-            StartCoroutine(DestroyAfterDelay(spawnedObject));
+            if (!isPlayerInCircle)
+            {
+                StartCoroutine(DestroyAfterDelay(spawnedObject));
+            }
+            //StartCoroutine(DestroyAfterDelay(spawnedObject));
         }
     }
 
     private IEnumerator DestroyAfterDelay(GameObject obj)
     {
         yield return new WaitForSeconds(destroyDelay);
-        Destroy(obj);
+        if (obj != null)
+        {
+            Destroy(obj);
+        }
     }
 }
