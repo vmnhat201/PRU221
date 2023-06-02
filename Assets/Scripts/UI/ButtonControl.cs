@@ -12,6 +12,7 @@ public class ButtonControl : Singleton<ButtonControl>
     public bool isGameStart;
     public bool isGamePause;
     public bool isShowIntro;
+    public bool isBuffCircle;
 
     public GameObject startMenu;
     public GameObject pauseMenuScreen;
@@ -20,10 +21,12 @@ public class ButtonControl : Singleton<ButtonControl>
     public GameObject countBar;
     public GameObject question;
     public GameObject toggle;
+
     // Start is called before the first frame update
 
     private void Awake()
     {
+        isBuffCircle = false;
         isGameStart = false;
         isGamePause = true;
         isShowIntro = false;
@@ -49,7 +52,14 @@ public class ButtonControl : Singleton<ButtonControl>
         else
         {
             Time.timeScale = 1;
-            GameManager.instance.player.Shoot();
+            if (isBuffCircle)
+            {
+                GameManager.instance.player.FindClosestEnemy();
+            }
+            else
+            {
+                GameManager.instance.player.Shoot();
+            }            
             //GameManager.instance.player.FindClosestEnemy();
         }
         GameSave.instance.isIntro = toggle.GetComponent<Toggle>().isOn;

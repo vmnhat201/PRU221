@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Spawncircle : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject objectPrefab;
-    public float spawnInterval = 10f;
+    public float spawnInterval = 30f;
+    public float destroyDelay = 15f;
 
     private float screenWidth;
     private float screenHeight;
@@ -35,8 +35,16 @@ public class Spawncircle : MonoBehaviour
             // Spawn object at a random position
             Vector3 randomPosition = new Vector3(Random.Range(0, screenWidth), Random.Range(0, screenHeight), +34);
             Vector3 worldPosition = Camera.main.ScreenToWorldPoint(randomPosition);
-            Instantiate(objectPrefab, worldPosition, Quaternion.identity);
+            GameObject spawnedObject = Instantiate(objectPrefab, worldPosition, Quaternion.identity);
+
+            // Start the destroy coroutine
+            StartCoroutine(DestroyAfterDelay(spawnedObject));
         }
     }
 
+    private IEnumerator DestroyAfterDelay(GameObject obj)
+    {
+        yield return new WaitForSeconds(destroyDelay);
+        Destroy(obj);
+    }
 }
