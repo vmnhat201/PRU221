@@ -75,7 +75,9 @@ public class ButtonControl : Singleton<ButtonControl>
         countBar.SetActive(true);
         SoundController.instance.PlayGameStart();
         isGameStart = true;
-        yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
+        //yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
+        yield return new WaitForSecondsRealtime(1);
+
         countBar.SetActive(false);
         pauseButton.SetActive(true);
         isGamePause = false;
@@ -84,7 +86,22 @@ public class ButtonControl : Singleton<ButtonControl>
     }
     public void Resume()
     {
-        StartCoroutine(ReadyToStartGame());
+        PlayerData playerData = FileManager.ReadPlayerData();
+        List<Enemies> enemies = FileManager.ReadEnemiesData();
+        if (enemies != null)
+        {
+            foreach (var item in enemies)
+            {
+                GameManager.instance.CurEnemies.Add(item);
+            }
+            Debug.Log("Số lượng Enemies trong hiện thực :" + GameManager.instance.CurEnemies.Count);
+          
+        }
+        playerData.Player(GameManager.instance.player);
+        startMenu.SetActive(false);
+        isGameStart = true;
+        pauseButton.SetActive(true);
+        isGamePause = false;
 
     }
 
@@ -127,14 +144,11 @@ public class ButtonControl : Singleton<ButtonControl>
         GameObject playerObject = GameObject.Find("Player");
         if (playerObject != null)
         {
-            // Lấy tham chiếu đến script Player từ game object
-            Player player = playerObject.GetComponent<Player>();
 
-            if (player != null)
-            {
-                FileManager.SavePlayerData(player);
+                Debug.Log("Enemies :" + GameManager.instance.Enemies.Count);
+                FileManager.SaveEnemiesData();
+                FileManager.SavePlayerData();
 
-            }
         }
     }
 }

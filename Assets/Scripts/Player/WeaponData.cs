@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
+[System.Serializable]
 
 public class WeaponData
 {
@@ -32,9 +34,9 @@ public class WeaponData
         this.quantity = weapon.quantity;
         this.normalBulletData = new GunBulletData(weapon.normalBullet);
         this.ultiBulletData = new GunBulletData(weapon.ultiBullet);
-        this.introSpriteName = weapon.intro.name;
-        this.ultiSoundClipName = weapon.ultiSound.name;
-        this.norSoundClipName = weapon.norSound.name;
+        this.introSpriteName = AssetDatabase.GetAssetPath(weapon.intro);
+        this.ultiSoundClipName = AssetDatabase.GetAssetPath(weapon.ultiSound);
+        this.norSoundClipName = AssetDatabase.GetAssetPath(weapon.norSound);
         this.bulletForce = weapon.bulletForce;
         this.norCd = weapon.norCd;
         this.ultCd = weapon.ultCd;
@@ -57,9 +59,9 @@ public class WeaponData
         {
             this.ultiBulletData.GunBullet(weapon.ultiBullet);
         }
-        weapon.intro = Resources.Load<Sprite>("Sprites/Weapon/" + this.introSpriteName);
-        weapon.ultiSound = Resources.Load<AudioClip>("Sounds/Weapon/" + this.ultiSoundClipName);
-        weapon.norSound = Resources.Load<AudioClip>("Sounds/Weapon/" + this.norSoundClipName);
+        weapon.intro = AssetDatabase.LoadAssetAtPath<Sprite>(this.introSpriteName);
+        weapon.ultiSound = AssetDatabase.LoadAssetAtPath<AudioClip>(this.ultiSoundClipName);
+        weapon.norSound = AssetDatabase.LoadAssetAtPath<AudioClip>(this.norSoundClipName);
         weapon.bulletForce = this.bulletForce;
         weapon.norCd = this.norCd;
         weapon.ultCd = this.ultCd;

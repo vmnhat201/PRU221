@@ -15,7 +15,7 @@ public class BulletEnemies : MonoBehaviour
     public GameObject explosivePrefab;
     public BulletType typeBullet;
     public float damage;
-    private Rigidbody2D rb2D;
+    public Rigidbody2D rb2D;
 
     private void Awake()
     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using UnityEditorInternal.Profiling.Memory.Experimental.FileFormat;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -79,10 +80,12 @@ public class SpawnManager : Singleton<SpawnManager>
         {
             for (int i = 0; i < amount; i++)
             {
-                Instantiate(enemyType, Gennerate(), Quaternion.identity);
+                Enemies enemies = Instantiate(enemyType, Gennerate(), Quaternion.identity);
+                GameManager.instance.CurEnemies.Add(enemies);
             }
         }
     }
+  
 
     public void SpawnBoss()
     {

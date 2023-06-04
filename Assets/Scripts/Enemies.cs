@@ -1,9 +1,11 @@
 ﻿//using System;
+using Assets.Scripts.SaveData;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -16,7 +18,7 @@ public enum EnemyType
 }
 public class Enemies : MonoBehaviour
 {
-//New Commit
+    //New Commit
     public Sprite intro;
     //New Commit
     //Attribute and Property
@@ -30,7 +32,7 @@ public class Enemies : MonoBehaviour
     public float attackSpeed = 0;
     public bool isAlive;
     public bool isHunt;
-    Vector3 endPoint;
+    public Vector3 endPoint;
     public float popular;
 
     Timer timer;
@@ -53,7 +55,7 @@ public class Enemies : MonoBehaviour
 
     public void SetUp()
     {
-       
+
         switch (enemyType)
         {
             case EnemyType.Ant:
@@ -87,7 +89,8 @@ public class Enemies : MonoBehaviour
         if (GameSave.instance.isIntro)
         {
             damage = 1;
-        } else
+        }
+        else
         {
             SetUp();
         }
@@ -148,7 +151,8 @@ public class Enemies : MonoBehaviour
 
                 Instantiate<GameObject>(explosivePrefabs, transform.position, Quaternion.identity);
                 ScoreController.instance.Addpoint(4);
-                if (!GameManager.instance.isUpgrade) { 
+                if (!GameManager.instance.isUpgrade)
+                {
                     GameManager.instance.UpgradeAttribute();
                     GameManager.instance.isUpgrade = true;
                 }
@@ -213,7 +217,7 @@ public class Enemies : MonoBehaviour
                 }
             }
 
-        } 
+        }
     }
 
 
@@ -251,7 +255,7 @@ public class Enemies : MonoBehaviour
                     timer1.Duarion = 3;
                     timer1.Run();
 
-                }         
+                }
             }
             else
             {
@@ -266,8 +270,8 @@ public class Enemies : MonoBehaviour
                     endPoint = Gennerate();
                 }
             }
-        } 
-        
+        }
+
         if (enemyType == EnemyType.Ranged)
         {
             if (Vector3.Distance(po, GameManager.instance.player.transform.position) < 10f && GameManager.instance.player.isVisible == false)
@@ -298,7 +302,7 @@ public class Enemies : MonoBehaviour
                     endPoint = Gennerate();
                 }
             }
-        } 
+        }
 
     }
 
@@ -327,14 +331,14 @@ public class Enemies : MonoBehaviour
             if (enemyType == EnemyType.Bee)
             {
                 DestroyEnemies();
-                if(GameSave.instance.isIntro != true)
+                if (GameSave.instance.isIntro != true)
                 {
                     ScoreController.instance.Addpoint(3);
                 }
-                
+
                 GameManager.instance.isBeeAliveIntro = false;
                 AttackPlayer();
-               
+
             }
 
             if (enemyType == EnemyType.Ant)
@@ -350,6 +354,36 @@ public class Enemies : MonoBehaviour
         SoundController.instance.PlayEnemyDead();
         SpawnManager.instance.BuffSpawn(this.transform);
         SpawnManager.instance.SpawnWeapon(this.transform);
+        GameManager.instance.CurEnemies.Remove(this);
         Destroy(this.gameObject);
     }
+
+    public static Enemies ToEnemies(EnemyData enemyData)
+    {
+        if (enemyData.prefabName == null)
+            return null;
+        GameObject enemyPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(enemyData.prefabName);
+        GameObject enemyObject = Instantiate(enemyPrefab);
+        Enemies enemies = enemyObject.GetComponent<Enemies>();
+        enemies.transform.position = enemyData.position.Vector3();
+        enemies.transform.rotation = enemyData.rotation.Quaternion();
+        enemies.intro = AssetDatabase.LoadAssetAtPath<Sprite>(enemyData.introSpriteName);
+        if (enemyData.explosivePrefabs != null)
+            enemies.explosivePrefabs = AssetDatabase.LoadAssetAtPath<GameObject>(enemyData.explosivePrefabs);
+        if (enemyData.rangedBulletPrefabs != null)
+            enemies.rangedBulletPrefabs = enemyData.rangedBulletPrefabs.BulletEnemies();
+        enemies.enemyType = enemyData.enemyType;
+        enemies.currentHealth = enemyData.currentHealth;
+        enemies.maxHealth = enemyData.maxHealth;
+        enemies.damage = enemyData.damage;
+        enemies.movementSpeed = enemyData.movementSpeed;
+        enemies.attackSpeed = enemyData.attackSpeed;
+        enemies.isAlive = enemyData.isAlive;
+        enemies.isHunt = enemyData.isHunt;
+        enemies.endPoint = enemyData.endPoint.Vector3();
+        enemies.popular = enemyData.popular;
+        return enemies;
+    }
+
+
 }
