@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
+[System.Serializable]
 
 public class BuffSkillData
 {
@@ -20,16 +22,20 @@ public class BuffSkillData
         cdBuff = buffSkill.cdBuff;
         buffSkillStyle = buffSkill.buffSkillStyle;
         buffReady = buffSkill.buffReady;
-        introSpriteName = buffSkill.intro.name;
-        avatarSpriteName = buffSkill.intro.name;
+        introSpriteName = AssetDatabase.GetAssetPath(buffSkill.intro);
+        Debug.Log("Intro sprite name : " + introSpriteName);
+        avatarSpriteName = AssetDatabase.GetAssetPath(buffSkill.avatar);
     }
 
-    public void BuffSkill(BuffSkill buffSkill)
+    public BuffSkill BuffSkill()
     {
+        GameObject gameObject = new GameObject("BuffSkill");
+        BuffSkill buffSkill = gameObject.AddComponent<BuffSkill>();
         buffSkill.cdBuff = this.cdBuff;
         buffSkill.buffSkillStyle = this.buffSkillStyle;
         buffSkill.buffReady = this.buffReady;
-        buffSkill.intro = Resources.Load<Sprite>(@"UI\Intro\Intro Buff\" + this.introSpriteName);
-        buffSkill.avatar = Resources.Load<Sprite>(@"UI\Skill Button\" + this.avatarSpriteName);
+        buffSkill.intro = AssetDatabase.LoadAssetAtPath<Sprite>(this.introSpriteName);
+        buffSkill.avatar = AssetDatabase.LoadAssetAtPath<Sprite>(this.avatarSpriteName);
+        return buffSkill;
     }
 }

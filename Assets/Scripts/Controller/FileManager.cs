@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+using Assets.Scripts.SaveData;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
@@ -131,24 +132,54 @@ public class FileManager
             Debug.LogError("Error writing file: " + ex.Message);
         }
     }
-    public static void SavePlayerData(Player player)
+    public static void SavePlayerData()
     {
         string fileName = "PlayerData.json";
         string filePath = Path.Combine(Application.persistentDataPath, fileName);
         Debug.Log($"Lưu Player Data tại vị trí: {filePath}");
 
-        try
-        {
-            PlayerData playerData = new PlayerData(player);
-            string json = JsonConvert.SerializeObject(playerData, Newtonsoft.Json.Formatting.Indented);
-            File.WriteAllText(filePath, json);
+        PlayerData playerData = new PlayerData(GameManager.instance.player);
+        string json = JsonConvert.SerializeObject(playerData, Newtonsoft.Json.Formatting.Indented);
+        File.WriteAllText(filePath, json);
 
-            Debug.Log("Dữ liệu người chơi đã được lưu thành công.");
-        }
-        catch (Exception ex)
+        Debug.Log("Dữ liệu người chơi đã được lưu thành công.");
+
+    }
+
+    public static void SaveEnemiesData()
+    {
+        string fileName = "EnemyData.json";
+        string filePath = Path.Combine(Application.persistentDataPath, fileName);
+        Debug.Log($"Lưu Enemies Data tại vị trí: {filePath}");
+
+        List<EnemyData> enemyDatas = EnemyData.ListEnemiesData(GameManager.instance.CurEnemies);
+        Debug.Log($"Số lượng enemies: {enemyDatas.Count}");
+        string json = JsonConvert.SerializeObject(enemyDatas, Newtonsoft.Json.Formatting.Indented);
+        File.WriteAllText(filePath, json);
+
+        Debug.Log("Dữ liệu Enemies đã được lưu thành công.");
+    }
+    public static List<Enemies> ReadEnemiesData()
+    {
+        string fileName = "EnemyData.json";
+        string filePath = Path.Combine(Application.persistentDataPath, fileName);
+        List<Enemies> enemies= null;
+        Debug.Log($"Đọc Enemies Data tại vị trí : {filePath}");
+        // Kiểm tra xem tệp tin có tồn tại không
+        if (File.Exists(filePath))
         {
-            Debug.LogError("Lỗi khi lưu dữ liệu người chơi: " + ex.Message);
+            // Đọc nội dung từ tệp tin
+            string json = File.ReadAllText(filePath);
+            List<EnemyData> enemyDatas = JsonConvert.DeserializeObject<List<EnemyData>>(json);
+            enemies = EnemyData.ListEnemies(enemyDatas);
         }
+        else
+        {
+            Debug.Log("Tệp tin không tồn tại");
+        }
+       
+        return enemies;
+
     }
 
     public static PlayerData ReadPlayerData()
@@ -157,24 +188,18 @@ public class FileManager
         string filePath = Path.Combine(Application.persistentDataPath, fileName);
         PlayerData playerData = null;
         Debug.Log($"Đoc Player Data tại vị trí : {filePath}");
-        try
+        // Kiểm tra xem tệp tin có tồn tại không
+        if (File.Exists(filePath))
         {
-            // Kiểm tra xem tệp tin có tồn tại không
-            if (File.Exists(filePath))
-            {
-                // Đọc nội dung từ tệp tin
-                string json = File.ReadAllText(filePath);
-                playerData = JsonConvert.DeserializeObject<PlayerData>(json);
-            }
-            else
-            {
-                Debug.Log("Tệp tin không tồn tại");
-            }
+            // Đọc nội dung từ tệp tin
+            string json = File.ReadAllText(filePath);
+            playerData = JsonConvert.DeserializeObject<PlayerData>(json);
         }
-        catch (Exception ex)
+        else
         {
-            Debug.LogError("Lỗi khi đọc dữ liệu người chơi: " + ex.Message);
+            Debug.Log("Tệp tin không tồn tại");
         }
+
 
         return playerData;
     }

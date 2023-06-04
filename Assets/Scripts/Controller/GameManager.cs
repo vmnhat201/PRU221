@@ -11,6 +11,7 @@ public class GameManager : Singleton<GameManager>
     public List<BuffSkill> BuffSkill;
     public List<Weapon> Weapons;
     public List<Enemies> Enemies;
+    public List<Enemies> CurEnemies;
     public List<GunBullet> Bullet;
     public Player player;
     public SkillButton skillButton;
@@ -42,6 +43,7 @@ public class GameManager : Singleton<GameManager>
  
     private void Awake()
     {
+        CurEnemies = new List<Enemies>();
         ResetState();
     }
     public void ResetState()

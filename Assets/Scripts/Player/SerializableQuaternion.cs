@@ -31,5 +31,8 @@ public class SerializableQuaternion
     {
         return new Quaternion(x, y, z, w);
     }
-
+    public override string ToString()
+    {
+        return JsonConvert.SerializeObject(this);
+    }
 }

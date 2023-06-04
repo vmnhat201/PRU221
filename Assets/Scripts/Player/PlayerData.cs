@@ -79,13 +79,13 @@ public class PlayerData
         this.healthBar.Slider(player.healthBar);
         this.firstWeapon.Weapon(player.firstWeapon);
         this.firstBuff.Buff(player.firstBuff);
-        this.firstBuffSkill.BuffSkill(player.firstBuffSkill);
+        player.firstBuffSkill = this.firstBuffSkill.BuffSkill();
         player.isVisible = this.isVisible;
         player.isUndead = this.isUndead;
         //this.rb2d.Rigidbody2D(player);
         player.mainCamera = this.mainCamera.Camera();
         this.curWeapon.Weapon(player.curWeapon);
-        this.curBuffSkill.BuffSkill(player.curBuffSkill);
+        player.curBuffSkill = this.curBuffSkill.BuffSkill();
         player.movementInput = this.movementInput.Vector2();
         player.movementInputSmooth = this.movementInputSmooth.Vector2();
         player.velocityInputSmooth = this.velocityInputSmooth.Vector2();

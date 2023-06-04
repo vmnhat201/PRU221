@@ -61,5 +61,8 @@ public class SerializableVector3
         return list;
     }
 
-
+    public override string ToString()
+    {
+        return JsonConvert.SerializeObject(this);
+    }
 }

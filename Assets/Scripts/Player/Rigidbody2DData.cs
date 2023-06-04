@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+[System.Serializable]
 
 public class Rigidbody2DData
 {
@@ -21,5 +22,12 @@ public class Rigidbody2DData
     {
         player.rb2d.position = this.position.Vector2();
         player.rb2d.velocity = this.velocity.Vector2();
+    }
+    public Rigidbody2D Rigidbody2D()
+    {
+        Rigidbody2D rigidbody2D = new Rigidbody2D();
+        rigidbody2D.position = this.position.Vector2();
+        rigidbody2D.velocity = this.velocity.Vector2();
+        return rigidbody2D;
     }
 }

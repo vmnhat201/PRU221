@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
+[System.Serializable]
+
 public class SliderData
 {
     public float value;

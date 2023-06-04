@@ -276,6 +276,26 @@ GameObject:
   - component: {fileID: 8580815902667108611}
   - component: {fileID: 2781951397595883725}
   - component: {fileID: 3462642970955862969}
+  - component: {fileID: 5768774115335917427}
+  - component: {fileID: 193616354493851008}
+  - component: {fileID: -5885614620733562554}
+  - component: {fileID: -1438399374938716310}
+  - component: {fileID: 7339126830711774690}
+  - component: {fileID: 4616378941918828523}
+  - component: {fileID: 3731133951881684916}
+  - component: {fileID: 2556294011134686955}
+  - component: {fileID: 7630413334606599074}
+  - component: {fileID: -6848271408800013855}
+  - component: {fileID: -1974014394619573124}
+  - component: {fileID: -4862099816615701255}
+  - component: {fileID: -7756439009871788472}
+  - component: {fileID: 6804823194064569305}
+  - component: {fileID: -2625706926425678997}
+  - component: {fileID: -1086963672446735190}
+  - component: {fileID: 1576594219115939058}
+  - component: {fileID: 3014070576545943199}
+  - component: {fileID: 9160680491033178337}
+  - component: {fileID: -6801850578095170135}
   m_Layer: 8
   m_Name: Ant
   m_TagString: Ant
@@ -291,7 +311,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3067736728038901154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8404, y: 0.6173, z: 0}
+  m_LocalPosition: {x: -15.407717, y: 2.1525197, z: -1}
   m_LocalScale: {x: 4.4086432, y: 3.6449986, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -413,15 +433,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
   explosivePrefabs: {fileID: 0}
-  rangedBulletPrefabs: {fileID: 3620500638246969039, guid: c62f9428e19cc7b479a6e258585f5ef4, type: 3}
+  rangedBulletPrefabs: {fileID: 0}
   enemyType: 0
-  currentHealth: 0
-  maxHealth: 0
-  damage: 0
-  movementSpeed: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
   attackSpeed: 0
-  isAlive: 0
+  isAlive: 1
   isHunt: 0
+  endPoint: {x: 14.143547, y: -1.1113214, z: -1}
   popular: 0.7
 --- !u!114 &2781951397595883725
 MonoBehaviour:
@@ -458,6 +479,506 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5768774115335917427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 20
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -13.389779, y: 8.873524, z: -1}
+  popular: 0.7
+--- !u!114 &193616354493851008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: 2.4337025, y: -3.5368853, z: -1}
+  popular: 0.7
+--- !u!114 &-5885614620733562554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -10.0400715, y: 8.45669, z: -1}
+  popular: 0.7
+--- !u!114 &-1438399374938716310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -17.331863, y: 2.893048, z: -1}
+  popular: 0.7
+--- !u!114 &7339126830711774690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -10.966526, y: -0.8470297, z: -1}
+  popular: 0.7
+--- !u!114 &4616378941918828523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -20.148966, y: 2.602604, z: -1}
+  popular: 0.7
+--- !u!114 &3731133951881684916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: 7.5999026, y: -3.8926387, z: -1}
+  popular: 0.7
+--- !u!114 &2556294011134686955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: 18.41552, y: -2.4563286, z: -1}
+  popular: 0.7
+--- !u!114 &7630413334606599074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -7.56623, y: 1.8004792, z: -1}
+  popular: 0.7
+--- !u!114 &-6848271408800013855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: 14.143547, y: -1.1113214, z: -1}
+  popular: 0.7
+--- !u!114 &-1974014394619573124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 20
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -13.389779, y: 8.873524, z: -1}
+  popular: 0.7
+--- !u!114 &-4862099816615701255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: 2.4337025, y: -3.5368853, z: -1}
+  popular: 0.7
+--- !u!114 &-7756439009871788472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -10.0400715, y: 8.45669, z: -1}
+  popular: 0.7
+--- !u!114 &6804823194064569305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -17.331863, y: 2.893048, z: -1}
+  popular: 0.7
+--- !u!114 &-2625706926425678997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -10.966526, y: -0.8470297, z: -1}
+  popular: 0.7
+--- !u!114 &-1086963672446735190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -20.148966, y: 2.602604, z: -1}
+  popular: 0.7
+--- !u!114 &1576594219115939058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: 7.5999026, y: -3.8926387, z: -1}
+  popular: 0.7
+--- !u!114 &3014070576545943199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: 18.41552, y: -2.4563286, z: -1}
+  popular: 0.7
+--- !u!114 &9160680491033178337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: -7.56623, y: 1.8004792, z: -1}
+  popular: 0.7
+--- !u!114 &-6801850578095170135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 50
+  maxHealth: 50
+  damage: 2
+  movementSpeed: 1.3000001
+  attackSpeed: 0
+  isAlive: 1
+  isHunt: 0
+  endPoint: {x: 14.143547, y: -1.1113214, z: -1}
+  popular: 0.7
 --- !u!1 &7301183313518396742
 GameObject:
   m_ObjectHideFlags: 0

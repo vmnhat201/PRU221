@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
+[System.Serializable]
+
 public class BuffData
 {
     public BuffStyle style;
@@ -17,7 +20,8 @@ public class BuffData
             return;
         style = buff.style;
         quantity = buff.quantity;
-        introName = buff.intro.name;
+        introName = AssetDatabase.GetAssetPath(buff.intro);
+        Debug.Log("Intro Name :" + introName);
         name = buff.name;
         tag = buff.tag;
     }
@@ -27,7 +31,7 @@ public class BuffData
             return;
         buff.style = this.style;
         buff.quantity = this.quantity;
-        buff.intro = Resources.Load<Sprite>("Sprites/Buff/" + this.introName);
+        buff.intro = AssetDatabase.LoadAssetAtPath<Sprite>(this.introName);
         buff.name = this.name;
         buff.tag = this.tag;
     }
