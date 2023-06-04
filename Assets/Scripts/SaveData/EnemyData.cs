@@ -75,15 +75,9 @@ namespace Assets.Scripts.SaveData
             List<Enemies> enemies = new List<Enemies>();
             foreach (var item in enemiesData)
             {
-                //Debug.Log($"Trong ham ListEnemies(),vị trí của enemiesData trước:{enemiesData.IndexOf(item)}, {item.position.x}");
                 Enemies e = Enemies.ToEnemies(item);
                 Debug.Log("vi tri : " + e.transform.position.x);
                 enemies.Add(e);
-            }
-            Debug.Log("So luong enemies: " + enemies.Count);
-            foreach (var item in enemies)
-            {
-                Debug.Log($"Trong ham ListEnemies(),vị trí :{enemies.IndexOf(item)}, {item.transform.position.x}");
             }
             return enemies;
         }
