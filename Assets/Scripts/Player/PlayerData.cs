@@ -77,14 +77,15 @@ public class PlayerData
         this.joystick.FixedJoystick(player.joystick);
         player.bonusdame = this.bonusdame;
         this.healthBar.Slider(player.healthBar);
-        this.firstWeapon.Weapon(player.firstWeapon);
+        player.firstWeapon= Weapon.ToWeapon(this.firstWeapon);
         this.firstBuff.Buff(player.firstBuff);
         player.firstBuffSkill = this.firstBuffSkill.BuffSkill();
         player.isVisible = this.isVisible;
         player.isUndead = this.isUndead;
-        //this.rb2d.Rigidbody2D(player);
+        this.rb2d.Rigidbody2D(player);
         player.mainCamera = this.mainCamera.Camera();
-        this.curWeapon.Weapon(player.curWeapon);
+        player.curWeapon = Weapon.ToWeapon(this.curWeapon);
+        player.curWeapon.transform.SetParent(player.transform);
         player.curBuffSkill = this.curBuffSkill.BuffSkill();
         player.movementInput = this.movementInput.Vector2();
         player.movementInputSmooth = this.movementInputSmooth.Vector2();

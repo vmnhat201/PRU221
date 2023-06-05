@@ -21,7 +21,6 @@ public class BuffData
         style = buff.style;
         quantity = buff.quantity;
         introName = AssetDatabase.GetAssetPath(buff.intro);
-        Debug.Log("Intro Name :" + introName);
         name = buff.name;
         tag = buff.tag;
     }

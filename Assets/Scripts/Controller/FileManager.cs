@@ -27,6 +27,18 @@ public class FileManager
         }
     }
 
+    public static int ReadScoreFile()
+    {
+        string filePath = Path.Combine(Application.persistentDataPath, "Score.txt");
+        int score = -1;
+        using (StreamReader reader = new StreamReader(filePath))
+        {
+            string data = reader.ReadToEnd();
+            score = int.Parse(data);
+        }
+        return score;
+    }
+
     public static void SavePlayerData()
     {
         string fileName = "PlayerData.json";
