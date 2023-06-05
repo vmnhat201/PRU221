@@ -636,6 +636,7 @@ MonoBehaviour:
   attackSpeed: 0
   isAlive: 0
   isHunt: 0
+  endPoint: {x: 0, y: 0, z: 0}
   popular: 0.1
 --- !u!114 &5576389064146284266
 MonoBehaviour:
@@ -671,3 +672,4 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
