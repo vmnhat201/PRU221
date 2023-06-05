@@ -75,9 +75,7 @@ public class ButtonControl : Singleton<ButtonControl>
         countBar.SetActive(true);
         SoundController.instance.PlayGameStart();
         isGameStart = true;
-        //yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
-        yield return new WaitForSecondsRealtime(1);
-
+        yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
         countBar.SetActive(false);
         pauseButton.SetActive(true);
         isGamePause = false;
@@ -85,6 +83,13 @@ public class ButtonControl : Singleton<ButtonControl>
 
     }
     public void Resume()
+    {
+        StartCoroutine(ReadyToResumeGame());
+
+
+    }
+
+    public IEnumerator ReadyToResumeGame()
     {
         PlayerData playerData = FileManager.ReadPlayerData();
         List<Enemies> enemies = FileManager.ReadEnemiesData();
@@ -95,14 +100,18 @@ public class ButtonControl : Singleton<ButtonControl>
                 GameManager.instance.CurEnemies.Add(item);
             }
             Debug.Log("Số lượng Enemies trong hiện thực :" + GameManager.instance.CurEnemies.Count);
-          
+
         }
         playerData.Player(GameManager.instance.player);
+        Debug.Log("Player Data :" + playerData);    
+        ScoreController.instance.score = FileManager.ReadScoreFile();
+        ScoreController.instance.scoreText.text = ScoreController.ScorePreFix + ScoreController.instance.score.ToString();
         startMenu.SetActive(false);
         isGameStart = true;
         pauseButton.SetActive(true);
         isGamePause = false;
-
+        yield return new WaitForSecondsRealtime(5);
+        SpawnManager.instance.StartSpawn();
     }
 
     public void RePlay()
@@ -145,9 +154,9 @@ public class ButtonControl : Singleton<ButtonControl>
         if (playerObject != null)
         {
 
-                Debug.Log("Enemies :" + GameManager.instance.Enemies.Count);
-                FileManager.SaveEnemiesData();
-                FileManager.SavePlayerData();
+            Debug.Log("Enemies :" + GameManager.instance.Enemies.Count);
+            FileManager.SaveEnemiesData();
+            FileManager.SavePlayerData();
 
         }
     }

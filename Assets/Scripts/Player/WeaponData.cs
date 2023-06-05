@@ -9,6 +9,8 @@ using UnityEngine;
 
 public class WeaponData
 {
+    public string prefabName;
+
     public WeaponStyle style;
     public int quantity;
     public GunBulletData normalBulletData;
@@ -30,6 +32,11 @@ public class WeaponData
     {
         if (weapon == null)
             return;
+        if (weapon.name.Contains("(Clone)"))
+        {
+            weapon.name = weapon.name.Replace("(Clone)", "");
+        }
+        prefabName = @$"Assets/Prefabs/Weapons/{weapon.name}.prefab";
         this.style = weapon.style;
         this.quantity = weapon.quantity;
         this.normalBulletData = new GunBulletData(weapon.normalBullet);
@@ -45,37 +52,5 @@ public class WeaponData
         this.damage = weapon.damage;
         this.hittf = new TransformData(weapon.hittf);
         this.explosivePrefab = new PrefabData(weapon.explosivePrefabs);
-    }
-
-    public void Weapon(Weapon weapon)
-    {
-        weapon.style = this.style;
-        weapon.quantity = this.quantity;
-        if (this.normalBulletData != null)
-        {
-            this.normalBulletData.GunBullet(weapon.normalBullet);
-        }
-        if (this.ultiBulletData != null)
-        {
-            this.ultiBulletData.GunBullet(weapon.ultiBullet);
-        }
-        weapon.intro = AssetDatabase.LoadAssetAtPath<Sprite>(this.introSpriteName);
-        weapon.ultiSound = AssetDatabase.LoadAssetAtPath<AudioClip>(this.ultiSoundClipName);
-        weapon.norSound = AssetDatabase.LoadAssetAtPath<AudioClip>(this.norSoundClipName);
-        weapon.bulletForce = this.bulletForce;
-        weapon.norCd = this.norCd;
-        weapon.ultCd = this.ultCd;
-        weapon.norReady = this.norReady;
-        weapon.ultReady = this.ultReady;
-        weapon.damage = this.damage;
-        if (this.hittf != null)
-        {
-            this.hittf.Transform(weapon.hittf);
-        }
-        if (this.explosivePrefab != null)
-        {
-            weapon.explosivePrefabs = this.explosivePrefab.ToGameObject();
-        }
-
     }
 }

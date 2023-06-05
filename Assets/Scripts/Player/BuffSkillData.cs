@@ -23,7 +23,6 @@ public class BuffSkillData
         buffSkillStyle = buffSkill.buffSkillStyle;
         buffReady = buffSkill.buffReady;
         introSpriteName = AssetDatabase.GetAssetPath(buffSkill.intro);
-        Debug.Log("Intro sprite name : " + introSpriteName);
         avatarSpriteName = AssetDatabase.GetAssetPath(buffSkill.avatar);
     }
 

@@ -7,8 +7,8 @@ public class ScoreController : MonoBehaviour
 {
     public GameObject prefab;
     public static ScoreController instance;
-    private int score = 0;
-    const string ScorePreFix = "Score: ";
+    public int score = 0;
+    public const string ScorePreFix = "Score: ";
     public TextMeshProUGUI scoreText;
 
     private void Awake()
