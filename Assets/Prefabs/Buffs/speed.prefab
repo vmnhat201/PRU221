@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8972346261995074361}
   - component: {fileID: 4093389510451610994}
   - component: {fileID: -1071108744206927536}
+  - component: {fileID: -5115617899149614987}
+  - component: {fileID: 6895828326097870375}
   m_Layer: 0
   m_Name: speed
   m_TagString: Untagged
@@ -127,3 +129,54 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.12954192, y: 0.16409986}
   m_EdgeRadius: 0
+--- !u!114 &-5115617899149614987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276461276845746418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 7183056864341876250
+  localRefs:
+    _Keys:
+    - {fileID: 5276461276845746418}
+    - {fileID: 7292225565064847071}
+    - {fileID: 8972346261995074361}
+    - {fileID: 21300000, guid: 151074cac6b290e418b03b20c5e2c6e1, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 4093389510451610994}
+    - {fileID: 11500000, guid: e51ee7cd033086c428d6ed1c5e0159f3, type: 3}
+    - {fileID: 21300000, guid: d7bead043192cb24bba31bccfaad1151, type: 3}
+    - {fileID: 2800000, guid: d7bead043192cb24bba31bccfaad1151, type: 3}
+    - {fileID: -1071108744206927536}
+    - {fileID: -5115617899149614987}
+    _Values: 706cc9e1f8de8b2e737a94f54f173b7687c18b324a43607975e51b59ccfc4277869bebe7e6dbe057a7705ff3f4f1ef319afd9867cc7d182cf5af93ed3dcd9e6fbd0b7cea03235d531fcb74261b937b7bf6eabfce63daaa0982bfdb966ecd9475
+--- !u!114 &6895828326097870375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276461276845746418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 7292225565064847071}
+  - {fileID: 8972346261995074361}
+  - {fileID: 4093389510451610994}
+  - {fileID: -1071108744206927536}

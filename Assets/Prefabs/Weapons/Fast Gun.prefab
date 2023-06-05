@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6950048708173033641}
+  - component: {fileID: 114107066173481209}
   m_Layer: 0
   m_Name: hit
   m_TagString: Untagged
@@ -31,6 +32,26 @@ Transform:
   m_Father: {fileID: 2233897611939874630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114107066173481209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6574120018195193335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 6950048708173033641}
 --- !u!1 &8947410660241579015
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +64,8 @@ GameObject:
   - component: {fileID: 8681442510349490395}
   - component: {fileID: -4833847005105964476}
   - component: {fileID: 4075792847134869855}
+  - component: {fileID: -1543189038123150651}
+  - component: {fileID: -5798918917298573565}
   m_Layer: 0
   m_Name: Fast Gun
   m_TagString: Untagged
@@ -171,3 +194,60 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.881729, y: 6.428545}
   m_EdgeRadius: 0
+--- !u!114 &-1543189038123150651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947410660241579015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 6296759487765349027
+  localRefs:
+    _Keys:
+    - {fileID: 8947410660241579015}
+    - {fileID: 2233897611939874630}
+    - {fileID: 8681442510349490395}
+    - {fileID: 912556672, guid: 595520d7d54cb3443a7d28a5521fd632, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: -4833847005105964476}
+    - {fileID: 11500000, guid: bbba265e49a19954fa82656e428176f0, type: 3}
+    - {fileID: 3585432991636945113, guid: 54fb43722a4918d46a944d160f15bc18, type: 3}
+    - {fileID: 11500000, guid: e7072cf6617589d4b88f461a51238a0c, type: 3}
+    - {fileID: 21300000, guid: c6a8eec57c071db47bc22babfaed2c6f, type: 3}
+    - {fileID: 2800000, guid: c6a8eec57c071db47bc22babfaed2c6f, type: 3}
+    - {fileID: 8300000, guid: 5a1ea113a1d61684cb86393b70c245cd, type: 3}
+    - {fileID: 6950048708173033641}
+    - {fileID: 3409857125561947499, guid: 39d760669e2d4e54d87a3722e17a1510, type: 3}
+    - {fileID: 4075792847134869855}
+    - {fileID: -1543189038123150651}
+    - {fileID: 6574120018195193335}
+    _Values: 8d80a05e469ae9604135cf7a30d6a73566fd254a70b4d03a753b68ddde1972621db3e50bebb0395963faa45aaa0a2a32a6e2ed9990e81926b065d28202c73e5a59cda2820e63b54a3d335394a6d51b69eecac703d4272d0534f4a57a2148a92939ff02dc67a724412da35d5c95847f7a7fc46cc800c5797f0557b0e541c4d70c8b295ba7d23e0269ef093078848a9b51
+--- !u!114 &-5798918917298573565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947410660241579015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: -4833847005105964476}
+  - {fileID: 8681442510349490395}
+  - {fileID: 2233897611939874630}
+  - {fileID: 4075792847134869855}

@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1977108628141922522}
   - component: {fileID: 2622489865463474101}
   - component: {fileID: 4730498893371318216}
+  - component: {fileID: 6915294846521539900}
+  - component: {fileID: -8321912091386361428}
   m_Layer: 0
   m_Name: Explosive
   m_TagString: Untagged
@@ -118,3 +120,53 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6915294846521539900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409857125561947499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 1870778637740266744
+  localRefs:
+    _Keys:
+    - {fileID: 3409857125561947499}
+    - {fileID: 5585570708121677396}
+    - {fileID: 1977108628141922522}
+    - {fileID: 21300000, guid: 16a286afde9b4b54997c89543a2d4f18, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 2622489865463474101}
+    - {fileID: 11500000, guid: c75b64c62ba7b4540bfcbc42dca5e4f9, type: 3}
+    - {fileID: 4730498893371318216}
+    - {fileID: 6915294846521539900}
+    _Values: c4960296aafcb854b00ed490eb4e211c0d343ac2bfead81afb636eea18354741099ba683fb0af52c384402f3ee3a04574c3796886e47275291e26ef1955d921ba9ea77af5862df18d6987684171bd33e
+--- !u!114 &-8321912091386361428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409857125561947499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 5585570708121677396}
+  - {fileID: 1977108628141922522}
+  - {fileID: 2622489865463474101}
+  - {fileID: 4730498893371318216}

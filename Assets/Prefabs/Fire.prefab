@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1977108628141922522}
   - component: {fileID: 2622489865463474101}
   - component: {fileID: 4730498893371318216}
+  - component: {fileID: 2692456202062588805}
+  - component: {fileID: 4567125591262930038}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -119,3 +121,52 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2692456202062588805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409857125561947499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 2459549113053635148
+  localRefs:
+    _Keys:
+    - {fileID: 3409857125561947499}
+    - {fileID: 5585570708121677396}
+    - {fileID: 1977108628141922522}
+    - {fileID: 21300000, guid: cbb94b4e7e0d47e4aa12bb376cca0878, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 2622489865463474101}
+    - {fileID: 11500000, guid: c75b64c62ba7b4540bfcbc42dca5e4f9, type: 3}
+    - {fileID: 4730498893371318216}
+    - {fileID: 2692456202062588805}
+    _Values: 2cf47fcf1376d503d98e2ee8c8b19534877bb78fce7f7a2b026b690d29990a5f7aa6bc2981b5bc7561449d7e5eb55764330362a1354d0f536eaacda70dc7d93f7c3092dd0b944c3b392d2e89e2fbcc48
+--- !u!114 &4567125591262930038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409857125561947499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 5585570708121677396}
+  - {fileID: 1977108628141922522}
+  - {fileID: 2622489865463474101}
+  - {fileID: 4730498893371318216}

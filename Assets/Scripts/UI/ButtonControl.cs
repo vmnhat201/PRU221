@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -84,6 +86,7 @@ public class ButtonControl : Singleton<ButtonControl>
     }
     public void Resume()
     {
+
         StartCoroutine(ReadyToResumeGame());
 
 
@@ -91,27 +94,82 @@ public class ButtonControl : Singleton<ButtonControl>
 
     public IEnumerator ReadyToResumeGame()
     {
-        PlayerData playerData = FileManager.ReadPlayerData();
-        List<Enemies> enemies = FileManager.ReadEnemiesData();
-        if (enemies != null)
+        List<GameObject> cloneObjects = GameObject.FindObjectsOfType<GameObject>().ToList();
+        List<GameObject> destroyedMap = new List<GameObject>();
+
+        foreach (GameObject cloneObject in cloneObjects)
         {
-            foreach (var item in enemies)
+            if (cloneObject.name.Contains("(Clone)") && cloneObject.name.Contains("Map1"))
             {
-                GameManager.instance.CurEnemies.Add(item);
+                destroyedMap.Add(cloneObject);
+                Destroy(cloneObject);
             }
-            Debug.Log("Số lượng Enemies trong hiện thực :" + GameManager.instance.CurEnemies.Count);
+        }
+        GameManager.instance.player.SetPlayerWeaponWhenResume();
+        List<GameObject> allObjectsAfterLoad = GameObject.FindObjectsOfType<GameObject>().ToList();
+        List<GameObject> newMapObjects = new List<GameObject>();
+        foreach (GameObject item in allObjectsAfterLoad)
+        {
+            if (item.name.Contains("(Clone)") && item.name.Contains("Map1"))
+            {
+                bool exist = false;
+                foreach (GameObject oldMap in destroyedMap)
+                {
+                    if (item == oldMap)
+                    {
+                        exist = true;
+                        Debug.Log($"type : {item.GetType()}, {item.GetInstanceID()}, {item.activeSelf} ,{item.activeInHierarchy}");
+                    }
+
+                }
+                if (!exist)
+                {
+                    newMapObjects.Add(item);
+                }
+            }
+
 
         }
-        playerData.Player(GameManager.instance.player);
-        Debug.Log("Player Data :" + playerData);    
-        ScoreController.instance.score = FileManager.ReadScoreFile();
-        ScoreController.instance.scoreText.text = ScoreController.ScorePreFix + ScoreController.instance.score.ToString();
+        MapController mapController = GameObject.FindObjectOfType<MapController>();
+
+        Debug.Log("Số lượng Map sau khi load :" + newMapObjects.Count);
+        for (int i = 0; i < newMapObjects.Count; i++)
+        {
+            Debug.Log("Số lượng Map trước khi thay đổi dữ liệu :" + mapController.activeMaps.Count);
+
+            mapController.activeMaps[i] = newMapObjects[i];
+
+        }
+        Debug.Log("Số lượng Map sau khi thay đổi dữ liệu :" + mapController.activeMaps.Count);
+
+        foreach (var item in mapController.activeMaps)
+        {
+            Debug.Log($"Map : {item.name}");
+        }
         startMenu.SetActive(false);
         isGameStart = true;
         pauseButton.SetActive(true);
         isGamePause = false;
         yield return new WaitForSecondsRealtime(5);
         SpawnManager.instance.StartSpawn();
+    }
+    private void saveCodeResume()
+    {
+        //PlayerData playerData = FileManager.ReadPlayerData();
+        //List<Enemies> enemies = FileManager.ReadEnemiesData();
+        //if (enemies != null)
+        //{
+        //    foreach (var item in enemies)
+        //    {
+        //        GameManager.instance.CurEnemies.Add(item);
+        //    }
+        //    Debug.Log("Số lượng Enemies trong hiện thực :" + GameManager.instance.CurEnemies.Count);
+
+        //}
+        //playerData.Player(GameManager.instance.playerNew);
+        //Debug.Log("Player Data :" + playerData);    
+        //ScoreController.instance.score = FileManager.ReadScoreFile();
+        //ScoreController.instance.scoreText.text = ScoreController.ScorePreFix + ScoreController.instance.score.ToString();
     }
 
     public void RePlay()
@@ -148,16 +206,17 @@ public class ButtonControl : Singleton<ButtonControl>
 
     public void QuitGame()
     {
-        Debug.Log("Save Player Date when quit application");
-        Application.Quit();
-        GameObject playerObject = GameObject.Find("Player");
-        if (playerObject != null)
-        {
+        ES3AutoSaveMgr.Current.Save();
+        //Debug.Log("Save Player Date when quit application");
+        //Application.Quit();
+        //GameObject playerObject = GameObject.Find("Player");
+        //if (playerObject != null)
+        //{
 
-            Debug.Log("Enemies :" + GameManager.instance.Enemies.Count);
-            FileManager.SaveEnemiesData();
-            FileManager.SavePlayerData();
+        //    Debug.Log("Enemies :" + GameManager.instance.Enemies.Count);
+        //    FileManager.SaveEnemiesData();
+        //    FileManager.SavePlayerData();
 
-        }
+        //}
     }
 }

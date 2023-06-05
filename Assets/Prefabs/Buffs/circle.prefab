@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6847777696059689554}
   - component: {fileID: 7289970178127001557}
   - component: {fileID: 3696850321327070653}
+  - component: {fileID: -1922032459690085383}
+  - component: {fileID: -6427559623567938692}
   m_Layer: 0
   m_Name: circle
   m_TagString: Untagged
@@ -139,3 +141,54 @@ CircleCollider2D:
   m_Offset: {x: 0.111611195, y: 0.09211181}
   serializedVersion: 2
   m_Radius: 3.1469216
+--- !u!114 &-1922032459690085383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889209927659286650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 8705956092646525781
+  localRefs:
+    _Keys:
+    - {fileID: 3889209927659286650}
+    - {fileID: 2216929588457948175}
+    - {fileID: 8713740633502637495}
+    - {fileID: 21300000, guid: 5fa1a8719e3f4df469db86433b4fa120, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 6847777696059689554}
+    - {fileID: 7289970178127001557}
+    - {fileID: 11500000, guid: 54fb19e522e7ea04395b34f4962f732c, type: 3}
+    - {fileID: 3696850321327070653}
+    - {fileID: -1922032459690085383}
+    _Values: 6dbb70260608835657a2baca0c479f7d4c76dc2d4c51d162f390e74cff46215a25b616f85e4a777521350796f1cb3763552908985e003a408dd33376203657623cea0f3ca268246aee520c164a3b7140c84aa1284eb9b926
+--- !u!114 &-6427559623567938692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3889209927659286650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 3696850321327070653}
+  - {fileID: 7289970178127001557}
+  - {fileID: 6847777696059689554}
+  - {fileID: 8713740633502637495}
+  - {fileID: 2216929588457948175}

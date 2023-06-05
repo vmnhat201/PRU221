@@ -13,7 +13,7 @@ public class MapController : MonoBehaviour
 
     Dictionary<Vector2, GameObject> spawnedMaps = new Dictionary<Vector2, GameObject>();
 
-    private List<GameObject> activeMaps = new List<GameObject>();
+    public List<GameObject> activeMaps = new List<GameObject>();
 
     void Start()
     {

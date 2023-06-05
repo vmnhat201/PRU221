@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7510598777212415382}
   - component: {fileID: 1761694312903971617}
   - component: {fileID: 4497544349142146614}
+  - component: {fileID: -3951699799193921061}
+  - component: {fileID: 2082502355408277488}
   m_Layer: 0
   m_Name: Dash
   m_TagString: Untagged
@@ -127,6 +129,59 @@ MonoBehaviour:
   cdBuff: 12
   buffSkillStyle: 0
   buffReady: 1
+--- !u!114 &-3951699799193921061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888792153254264452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 5892396560901758033
+  localRefs:
+    _Keys:
+    - {fileID: 7888792153254264452}
+    - {fileID: 8781347385089284766}
+    - {fileID: 7510598777212415382}
+    - {fileID: 21300000, guid: c67fbf9375ad5c34399c2849430ca7f7, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 1761694312903971617}
+    - {fileID: 4497544349142146614}
+    - {fileID: 11500000, guid: 29a0c2ec36d05b3458ccf3bad5db8e2f, type: 3}
+    - {fileID: 21300000, guid: 8348e896f8acabc4fb014b32cfe78341, type: 3}
+    - {fileID: 2800000, guid: 8348e896f8acabc4fb014b32cfe78341, type: 3}
+    - {fileID: 21300000, guid: 4a9935eda83e40a448b03817ba3ab941, type: 3}
+    - {fileID: 2800000, guid: 4a9935eda83e40a448b03817ba3ab941, type: 3}
+    - {fileID: -3951699799193921061}
+    _Values: d9685612b1142001e2e5ba062976aa5b3e10f7173d69df56596b813adc4fc028329006e6abce80035f59685c9ca07926b3edb36307ae146f76ff45ba6d19da6e259239b97d90060c6f0488682dc30d07e5a887ee9c5d211fa4756fab89c6964682057ed125cd5c21e8a7d20c367c9d4c
+--- !u!114 &2082502355408277488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7888792153254264452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 8781347385089284766}
+  - {fileID: 7510598777212415382}
+  - {fileID: 1761694312903971617}
+  - {fileID: 4497544349142146614}
   intro: {fileID: 21300000, guid: 26600c09c3b1f2a4683daf9ee634b061, type: 3}
   avatar: {fileID: 21300000, guid: 4a9935eda83e40a448b03817ba3ab941, type: 3}
   timeEffect: 1
