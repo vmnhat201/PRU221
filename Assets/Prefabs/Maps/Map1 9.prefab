@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4451687396839163899}
   - component: {fileID: 4451687396839163898}
+  - component: {fileID: 5668145597328259979}
+  - component: {fileID: 6875488835029353975}
   m_Layer: 0
   m_Name: Map1 9
   m_TagString: Untagged
@@ -85,6 +87,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5668145597328259979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4451687396839163901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 7586678117457320710
+  localRefs:
+    _Keys:
+    - {fileID: 4451687396839163901}
+    - {fileID: 4451687396839163899}
+    - {fileID: 4451687396839163898}
+    - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 5668145597328259979}
+    - {fileID: 8518755214942096191}
+    - {fileID: 7210471468103326383}
+    - {fileID: 4935245432404852881}
+    - {fileID: 8953669320976259530}
+    - {fileID: 4166719610230681099}
+    - {fileID: 3769877517801263337}
+    - {fileID: 6340644966324049794}
+    - {fileID: 3149532253323569604}
+    - {fileID: 2747809534514593567}
+    _Values: cf2dd6404cf86b624e3cecf17aafac42aedc5c6808a29209a3005d9a742a933d8accae73308a3b484574770fcd333755d0fd0995584e8e2d66331db3a9f9282257519852ffc7ed38e85a5382e65e286e37f7958dcbd669285bdb0dfc6c889f4ab4ab99e13476ab09f02e824c5eefec070baeeaa18eb6ee7e198f52242b165b5f
+--- !u!114 &6875488835029353975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4451687396839163901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 1
+  saveTag: 1
+  saveName: 1
+  saveHideFlags: 1
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 4451687396839163899}
+  - {fileID: 4451687396839163898}
 --- !u!1 &8518755214942096191
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4363602071400782956}
+  - component: {fileID: -6511713309891169418}
   m_Layer: 0
   m_Name: hit
   m_TagString: Untagged
@@ -31,6 +32,26 @@ Transform:
   m_Father: {fileID: 2233897611939874630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6511713309891169418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8815184827700675929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 4363602071400782956}
 --- !u!1 &8947410660241579015
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +64,8 @@ GameObject:
   - component: {fileID: 8681442510349490395}
   - component: {fileID: -4833847005105964476}
   - component: {fileID: 4075792847134869855}
+  - component: {fileID: 6022675954768195454}
+  - component: {fileID: 2982529096977540562}
   m_Layer: 0
   m_Name: Strong Gun
   m_TagString: Untagged
@@ -171,3 +194,62 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.460434, y: 4.6724496}
   m_EdgeRadius: 0
+--- !u!114 &6022675954768195454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947410660241579015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 8298130650015935093
+  localRefs:
+    _Keys:
+    - {fileID: 8947410660241579015}
+    - {fileID: 2233897611939874630}
+    - {fileID: 8681442510349490395}
+    - {fileID: -1997242280, guid: 86bd60e5ca4438f4c828df28c0454142, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: -4833847005105964476}
+    - {fileID: 11500000, guid: bbba265e49a19954fa82656e428176f0, type: 3}
+    - {fileID: 3585432991636945113, guid: e95d5a391148647499cf6a8de18b7a9c, type: 3}
+    - {fileID: 11500000, guid: e7072cf6617589d4b88f461a51238a0c, type: 3}
+    - {fileID: 3585432991636945113, guid: b4d7ab5c55f36eb4c9d2ea0d8499982c, type: 3}
+    - {fileID: 21300000, guid: 78224e613e0aab044b16677dc7dd4683, type: 3}
+    - {fileID: 2800000, guid: 78224e613e0aab044b16677dc7dd4683, type: 3}
+    - {fileID: 8300000, guid: 5a1ea113a1d61684cb86393b70c245cd, type: 3}
+    - {fileID: 8300000, guid: 09c1f23cce646564483d4f54f5e28eb8, type: 3}
+    - {fileID: 4363602071400782956}
+    - {fileID: 3409857125561947499, guid: 39d760669e2d4e54d87a3722e17a1510, type: 3}
+    - {fileID: 4075792847134869855}
+    - {fileID: 6022675954768195454}
+    - {fileID: 8815184827700675929}
+    _Values: 7a7c1d41a8f57d0f7b69d26b29d8a8403dfd48f60a0efb7bbc5e5a6bc034e85602e8214f5c4311068c20f2ee5c067a637d446426d6e1826b81a285499b114f5052296a40b658e37ef1b19516e4f2e14ae3f7ee7bd0c2801d94722f0037a45e7a2f5ebf7a8f44e52928e31687779850737c30995bdd2c7f1456782ad6771b496bf0ef1879cd99452724e8ac1354075903de438397c145a80221542ff891435e0c
+--- !u!114 &2982529096977540562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947410660241579015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: -4833847005105964476}
+  - {fileID: 2233897611939874630}
+  - {fileID: 8681442510349490395}
+  - {fileID: 4075792847134869855}

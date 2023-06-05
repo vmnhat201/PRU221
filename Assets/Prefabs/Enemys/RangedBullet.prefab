@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6004237515774917657}
   - component: {fileID: 2573796402296887692}
   - component: {fileID: 3620500638246969039}
+  - component: {fileID: -1495133306954274818}
+  - component: {fileID: -5341043119546783898}
   m_Layer: 0
   m_Name: RangedBullet
   m_TagString: RangedBullet
@@ -139,3 +141,55 @@ MonoBehaviour:
   explosivePrefab: {fileID: 0}
   typeBullet: 0
   damage: 0
+  rb2D: {fileID: 0}
+--- !u!114 &-1495133306954274818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905131862317928470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 1649911541388280294
+  localRefs:
+    _Keys:
+    - {fileID: 8905131862317928470}
+    - {fileID: 5124334355149395138}
+    - {fileID: 7302178634271607259}
+    - {fileID: 21300000, guid: f817ba5aabd773e4f914480bdd62d0c8, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 6004237515774917657}
+    - {fileID: 2573796402296887692}
+    - {fileID: 3620500638246969039}
+    - {fileID: 11500000, guid: b0d038815b479c44f953aec64aa1fdd8, type: 3}
+    - {fileID: -1495133306954274818}
+    _Values: 14d1fb5dcdb18e7e7946b4c89f337e6056b99f736bebba4064f83ec4bfc3f0478a020a2344fd6f21a4ef38b42adf864e7d1c8177b7a67d0173c4062b8c36404ba993c162d6a4e354d73f31834df9e943808d42db4468ff30
+--- !u!114 &-5341043119546783898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905131862317928470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 5124334355149395138}
+  - {fileID: 7302178634271607259}
+  - {fileID: 6004237515774917657}
+  - {fileID: 2573796402296887692}
+  - {fileID: 3620500638246969039}

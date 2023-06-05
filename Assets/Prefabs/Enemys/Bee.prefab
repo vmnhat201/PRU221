@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 7969016790558176023}
   - component: {fileID: 5576389064146284266}
   - component: {fileID: 7356239142648789415}
+  - component: {fileID: -5601514968139700886}
   m_Layer: 8
   m_Name: Bee
   m_TagString: Bee
@@ -673,3 +674,69 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5601514968139700886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499601570268361284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 6841664841383896279
+  localRefs:
+    _Keys:
+    - {fileID: 8499601570268361284}
+    - {fileID: 1294807477929018571}
+    - {fileID: 3344536226437204705}
+    - {fileID: 21300000, guid: f240dfd4814d34d55a9b033f3c9d8a60, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 160467441368733721}
+    - {fileID: 6284339006133837058}
+    - {fileID: 7969016790558176023}
+    - {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
+    - {fileID: 21300000, guid: 1a953e7aeca3b4a4db5c82b2748fff7b, type: 3}
+    - {fileID: 2800000, guid: 1a953e7aeca3b4a4db5c82b2748fff7b, type: 3}
+    - {fileID: 3620500638246969039, guid: c62f9428e19cc7b479a6e258585f5ef4, type: 3}
+    - {fileID: 11500000, guid: b0d038815b479c44f953aec64aa1fdd8, type: 3}
+    - {fileID: 5576389064146284266}
+    - {fileID: 11500000, guid: 4b182f19c9e165c4b8490ae494a18bf3, type: 3}
+    - {fileID: 646281785}
+    - {fileID: 7356239142648789415}
+    - {fileID: -5601514968139700886}
+    - {fileID: 646281783}
+    - {fileID: 646281784}
+    - {fileID: 646281786}
+    - {fileID: 3290950327290530734}
+    - {fileID: 4625586891209920906}
+    - {fileID: 6625443477704899478}
+    - {fileID: 2588192207745894383}
+    - {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+    - {fileID: 7527460920650298496}
+    - {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+    - {fileID: 4626906787261360995}
+    - {fileID: 4065042030567315273}
+    - {fileID: 297322616143162124}
+    - {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+    - {fileID: 2272871174846365727}
+    - {fileID: 6991943486857746937}
+    - {fileID: 11500000, guid: a91a8b207358c5b4e9e5d5494376f4e6, type: 3}
+    - {fileID: 2882926178361764530}
+    - {fileID: 0}
+    - {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 7606531204315032226}
+    - {fileID: 7298357801635756097}
+    - {fileID: 375285996972943518}
+    - {fileID: 1793647610215432850}
+    - {fileID: 10906, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 4341936343371146199}
+    - {fileID: 4406552880032130907}
+    - {fileID: 7780616430800268184}
+    - {fileID: 3267879396977139431}
+    _Values: 01a7ce586456e53a4f9429cf03ce9b4a826463e543838f37dc00397f376ad75da4a74dd08926bc5212a3c2668e1b4b59ff422b87150c1b7bc8facb9a709b8d4793798c54e3942b5b58ef0819ba093a08b46c800ac1afb8688cd2078f5b21e252cef605f8575fc26bea3021faeacac92d34d34edd1c980843cf0b38ee7363ff79d35be8b10f336012d013df6e724282579c355a87d3053636eec2c66297b1df7acf58d7711de7e167cd9ef3f747662e10727075574179b2286de0602e063c551fcc9a60e695efc64a53f35472f92e7d54f1d7ef273c8838555b50fcc2794c9e090becd453fab7846237bf034e25402f3f9ef3c2d1b3d11c54d4b68b44f303d15f915d660c59295a3a528def7c84e93064803b258589cd5622092827b042c9553a9163bcc7d922e538e12f64ce1bef9240190f3a4722b4295e4d76fccefd56087638b5ea212c688b5d215e378ca915605eff1b68cd71f2e723395e134f1fb33608f6ac797683faea4f7c22987f134af736e961301e12c5fa2a9c0de7ce543b3e2c954097fc9ce9db043219514e5a670f7c

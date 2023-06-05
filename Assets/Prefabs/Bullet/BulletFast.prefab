@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8417866045107324929}
   - component: {fileID: -4236174427617264566}
   - component: {fileID: 3585432991636945113}
+  - component: {fileID: 4682617611846987825}
+  - component: {fileID: -6546479741877590418}
   m_Layer: 0
   m_Name: BulletFast
   m_TagString: Pistol
@@ -139,3 +141,54 @@ MonoBehaviour:
   explosivePrefabs: {fileID: 0}
   style: 1
   bulletLifeTime: 3
+--- !u!114 &4682617611846987825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121156366898255071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baff8732cd3074ef88b34f9cc487846d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabId: 3554422995570912109
+  localRefs:
+    _Keys:
+    - {fileID: 5121156366898255071}
+    - {fileID: 5945285554114786751}
+    - {fileID: 1298236442943911961}
+    - {fileID: 439274957, guid: 35d9c68d24e426f40acffc25d6f8352c, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 8417866045107324929}
+    - {fileID: -4236174427617264566}
+    - {fileID: 3585432991636945113}
+    - {fileID: 11500000, guid: e7072cf6617589d4b88f461a51238a0c, type: 3}
+    - {fileID: 4682617611846987825}
+    _Values: c546a6f87185f41ded508af2af9f197009c33a3c3fc9fa5dd633e82bbe73060be28495402918f1376145b30b940ae50c04ecd61e9e17f2714203223d9dc85f794b7fd433345a990ed103daf915eec8201af430aa4924a934
+--- !u!114 &-6546479741877590418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121156366898255071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 5945285554114786751}
+  - {fileID: 1298236442943911961}
+  - {fileID: 8417866045107324929}
+  - {fileID: -4236174427617264566}
+  - {fileID: 3585432991636945113}

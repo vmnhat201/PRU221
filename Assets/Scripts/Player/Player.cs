@@ -305,4 +305,50 @@ public class Player : MonoBehaviour
 
         StartCoroutine(IEUndead(curBuffSkill.timeEffect));
     }
+
+    public void SetPlayerWeaponWhenResume()
+    {
+        GameObject removeComponent = null;
+        GameObject player = GameManager.instance.player.gameObject;
+        // Lấy danh sách các game object con của playerNew
+
+        List<GameObject> childObjects = new List<GameObject>();
+        for (int i = 0; i < player.transform.childCount; i++)
+        {
+            childObjects.Add(player.transform.GetChild(i).gameObject);
+        }
+
+        // Kiểm tra từng game object con nếu chứa script Weapon thì xóa đi
+        foreach (GameObject childObject in childObjects)
+        {
+            Weapon weapon = childObject.GetComponent<Weapon>();
+            if (weapon != null)
+            {
+                removeComponent = childObject;
+                Destroy(childObject);
+                break;
+            }
+        }
+        ES3AutoSaveMgr.Current.Load();
+        GameObject playerNew = GameManager.instance.player.gameObject;
+        // Lấy danh sách các game object con của playerNew
+
+        List<GameObject> childObjectsNew = new List<GameObject>();
+        for (int i = 0; i < playerNew.transform.childCount; i++)
+        {
+            childObjectsNew.Add(playerNew.transform.GetChild(i).gameObject);
+        }
+        Debug.Log("count after: " + childObjectsNew.Count);
+        //Kiểm tra từng game object con nếu chứa script Weapon thì xóa đi
+        foreach (GameObject childObject in childObjectsNew)
+        {
+            Debug.Log("childObject : " + childObject.name);
+            Weapon weapon = childObject.GetComponent<Weapon>();
+            if (weapon != null && removeComponent != childObject)
+            {
+                GameManager.instance.player.curWeapon = weapon;
+                GameManager.instance.player.curWeapon.norReady = true;
+            }
+        }
+    }
 }
