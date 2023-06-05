@@ -126,12 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a0c2ec36d05b3458ccf3bad5db8e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cdBuff: 10
+  cdBuff: 12
   buffSkillStyle: 1
   buffReady: 1
-  intro: {fileID: 21300000, guid: 689c5eb68b159e146aa8a3b79038ed1c, type: 3}
-  avatar: {fileID: 21300000, guid: 030ce43511ba67c488b83a1567947276, type: 3}
-  timeEffect: 5
+
 --- !u!114 &2637845148375443918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,3 +183,7 @@ MonoBehaviour:
   - {fileID: 1869521130762822468}
   - {fileID: 6715274891510088782}
   - {fileID: -7906949417531086320}
+  intro: {fileID: 21300000, guid: 01190e949485f42408c4bc14c012e20a, type: 3}
+  avatar: {fileID: 21300000, guid: 030ce43511ba67c488b83a1567947276, type: 3}
+  timeEffect: 6
+

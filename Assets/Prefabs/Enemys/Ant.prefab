@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intro: {fileID: 21300000, guid: ba042080a4579664db75c04ff027b2fa, type: 3}
+  intro: {fileID: 21300000, guid: d41bc956cb75ac74dacb1e82aaa32a85, type: 3}
   explosivePrefabs: {fileID: 0}
   rangedBulletPrefabs: {fileID: 0}
   enemyType: 0
