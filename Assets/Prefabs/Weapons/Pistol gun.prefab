@@ -158,17 +158,17 @@ MonoBehaviour:
   quantity: 0
   normalBullet: {fileID: 3585432991636945113, guid: 04be8f92b76a6f645b12e79aac164e36, type: 3}
   ultiBullet: {fileID: 3585432991636945113, guid: 9ebf1be1956f4d34e82c44127d253358, type: 3}
-  intro: {fileID: 0}
+  intro: {fileID: 21300000, guid: 6dcb68320bd76d640ae2908789764c94, type: 3}
   ultiSound: {fileID: 0}
   norSound: {fileID: 0}
-  bulletForce: 27.42059
+  bulletForce: 38.7064
   norCd: 0.19999996
-  ultCd: 5
+  ultCd: 4.200001
   norReady: 1
   ultReady: 1
   hittf: {fileID: 3283774325446476773}
   explosivePrefabs: {fileID: 3409857125561947499, guid: 39d760669e2d4e54d87a3722e17a1510, type: 3}
-  damage: 10
+  damage: 14.641001
 --- !u!61 &4075792847134869855
 BoxCollider2D:
   m_ObjectHideFlags: 0

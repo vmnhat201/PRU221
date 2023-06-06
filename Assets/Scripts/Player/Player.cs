@@ -250,7 +250,7 @@ public class Player : MonoBehaviour
         //this.gameObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 1);
         yield return new WaitForSeconds(timeDuration);
         isVisible = false;
-        this.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        this.gameObject.GetComponent<Renderer>().material.color = Color.white;
     }
 
     private void Invisible()
@@ -312,7 +312,7 @@ public class Player : MonoBehaviour
         unDeahHeath = curHealth;
         yield return new WaitForSeconds(timeDuration);
         isUndead = false;
-        this.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        this.gameObject.GetComponent<Renderer>().material.color = Color.white;
     }
     private void Undead()
     {
