@@ -78,6 +78,7 @@ public class Player : MonoBehaviour
 
             // Gọi hàm Shoot() của weapon hiện tại để bắn theo hướng đã tính toán
             curWeapon.Shoot(direction);
+            SetRotationInFindClosestEnemy(direction);
         }
     }
         public void Shoot()
@@ -170,6 +171,19 @@ public class Player : MonoBehaviour
             rb2d.MoveRotation(rotation);
         }
 
+    }
+    private void SetRotationInFindClosestEnemy(Vector2 direction)
+    {
+        if (movementInput == Vector2.zero)
+        {
+            Quaternion targetRotaion =
+               Quaternion.LookRotation(transform.forward, direction);
+
+            Quaternion rotation = Quaternion.RotateTowards
+                (transform.rotation, targetRotaion, rotationSpeed * Time.deltaTime);
+
+            rb2d.MoveRotation(rotation);
+        }
     }
 
     //public void Shoot()
