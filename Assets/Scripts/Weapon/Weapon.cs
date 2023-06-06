@@ -6,7 +6,7 @@ using UnityEditor;
 public enum WeaponStyle
 {
     Pistol,
-    FartGun,
+    FastGun,
     StrongGun,
     Bom,
 }
@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
                 ultCd = 5f;
                 bulletForce = 15;
                 break;
-            case WeaponStyle.FartGun:
+            case WeaponStyle.FastGun:
                 quantity = 10;
                 damage = 15;
                 norCd = 0.2f;
@@ -99,7 +99,7 @@ public class Weapon : MonoBehaviour
                 case WeaponStyle.Pistol:
                     BoomShotUlti(direction);
                     break;
-                case WeaponStyle.FartGun:
+                case WeaponStyle.FastGun:
                     FastGunUlti();
                     break;
                 case WeaponStyle.StrongGun:
@@ -199,7 +199,7 @@ public class Weapon : MonoBehaviour
         {
 
 
-            if (GameManager.instance.isFastGun && style == WeaponStyle.FartGun)
+            if (GameManager.instance.isFastGun && style == WeaponStyle.FastGun)
 
             {
                 GameManager.instance.introControl.SetIntro(intro);
