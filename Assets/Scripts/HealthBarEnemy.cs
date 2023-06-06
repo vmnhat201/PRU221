@@ -26,11 +26,11 @@ public class HealthBarEnemy : MonoBehaviour
         }
         float fillValue = (float)enemies.currentHealth / enemies.maxHealth;
 
-        if (fillValue <= slider.maxValue / 3)
+        if (fillValue <= slider.maxValue / 5)
         {
             fillImage.color = Color.white;
         }
-        else if (fillValue > slider.maxValue / 3)
+        else if (fillValue > slider.maxValue / 5)
         {
             fillImage.color = Color.red;
         }
