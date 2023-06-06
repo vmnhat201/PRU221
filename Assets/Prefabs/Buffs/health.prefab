@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   style: 0
   quantity: 14
-  intro: {fileID: 21300000, guid: 609b8987ef4914742a97cba8ba64178c, type: 3}
+  intro: {fileID: 21300000, guid: 5b79e9d79a3129748af96255f4604f67, type: 3}
 --- !u!61 &-8751567387713715735
 BoxCollider2D:
   m_ObjectHideFlags: 0
