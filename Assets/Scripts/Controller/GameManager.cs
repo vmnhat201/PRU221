@@ -171,7 +171,7 @@ public class GameManager : Singleton<GameManager>
                 }
                 weapon.bulletForce += weapon.bulletForce * 0.09f;
             }
-            else if(weapon.style != WeaponStyle.FartGun)
+            else if(weapon.style != WeaponStyle.FastGun)
             {
                 weapon.damage += weapon.damage * 0.1f;
                 if (weapon.norCd >= 0.2f)
