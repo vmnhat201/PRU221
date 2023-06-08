@@ -90,6 +90,8 @@ public class ButtonControl : Singleton<ButtonControl>
     }
     public void Resume()
     {
+        if (!ES3.FileExists("SaveFile.es3"))
+            return;
 
         StartCoroutine(ReadyToResumeGame());
 
@@ -157,24 +159,6 @@ public class ButtonControl : Singleton<ButtonControl>
         yield return new WaitForSecondsRealtime(5);
         SpawnManager.instance.StartSpawn();
     }
-    private void saveCodeResume()
-    {
-        //PlayerData playerData = FileManager.ReadPlayerData();
-        //List<Enemies> enemies = FileManager.ReadEnemiesData();
-        //if (enemies != null)
-        //{
-        //    foreach (var item in enemies)
-        //    {
-        //        GameManager.instance.CurEnemies.Add(item);
-        //    }
-        //    Debug.Log("Số lượng Enemies trong hiện thực :" + GameManager.instance.CurEnemies.Count);
-
-        //}
-        //playerData.Player(GameManager.instance.playerNew);
-        //Debug.Log("Player Data :" + playerData);    
-        //ScoreController.instance.score = FileManager.ReadScoreFile();
-        //ScoreController.instance.scoreText.text = ScoreController.ScorePreFix + ScoreController.instance.score.ToString();
-    }
 
     public void RePlay()
     {
@@ -226,16 +210,5 @@ public class ButtonControl : Singleton<ButtonControl>
     public void QuitGame()
     {
         ES3AutoSaveMgr.Current.Save();
-        //Debug.Log("Save Player Date when quit application");
-        //Application.Quit();
-        //GameObject playerObject = GameObject.Find("Player");
-        //if (playerObject != null)
-        //{
-
-        //    Debug.Log("Enemies :" + GameManager.instance.Enemies.Count);
-        //    FileManager.SaveEnemiesData();
-        //    FileManager.SavePlayerData();
-
-        //}
     }
 }

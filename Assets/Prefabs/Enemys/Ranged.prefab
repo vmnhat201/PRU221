@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -9128025687542224285}
   - component: {fileID: 8844011686097538338}
   - component: {fileID: 7544576016447687018}
+  - component: {fileID: -1154074241617269000}
   m_Layer: 8
   m_Name: Ranged
   m_TagString: Range
@@ -259,7 +260,33 @@ MonoBehaviour:
     - {fileID: 6190670256202528345}
     - {fileID: 7189917650259461568}
     - {fileID: 5560514670095244801}
-    _Values: cbd050aa9f6ad5046f04393a5820593ca35ee6c819cf902243d6d2b069ced70bffd3ee27768d4657e5d04647d41a4467e9815ebc13a4ca666273ed763c856d3d23bbc5d3f07e4d16188fadea15d8f65d1b39c6e7701af75af777771684436b5f9cf7957020e8a76accb85b7b0820af3996b46e89b3ab5208c36ac968f6649b5bfa0c4d1e42863d32925cb22876736329c83eac39b1f4130f5b73534ae1c08b30ab4989eb9231840f773bf757f8299250f95fcfcbee2af3101f5d79b6d9881453e8e37d2cea7797063d434e131395f87b07a35282f0c0412ac36534cb4732ca10da5b90ea53999970f8d60931790624769c0143822569bc5724a7ef4fab624e70f3a01390d91d306c7e11a6a0d210c66942bd2f46ef47eb70a0380ffb88e91b5926793fd9f3949c7e2e2987bd215d5e3457aa916992945f54b6a3f0a10d35e31f39ce0bc32f283753de4e8be730576e0268bcadcc847a1345266bdcaf5c058f640da78352529b042f8ec174bcf687db0d
+    _Values: cbd050aa9f6ad5046f04393a5820593ca35ee6c819cf902243d6d2b069ced70bffd3ee27768d4657e5d04647d41a4467e9815ebc13a4ca666273ed763c856d3d23bbc5d3f07e4d16188fadea15d8f65d1b39c6e7701af75af777771684436b5f9cf7957020e8a76accb85b7b0820af3996b46e89b3ab5208c36ac968f6649b5bfa0c4d1e42863d32925cb22876736329c83eac39b1f4130f5b73534ae1c08b30ab4989eb9231840f773bf757f8299250f95fcfcbee2af3101f5d79b6d9881453e8e37d2cea7797063d434e131395f87b07a35282f0c0412ac36534cb4732ca10da5b90ea53999970f8d60931790624769c0143822569bc5724a7ef4fab624e70f3a01390d91d306cf5accd382161ba2842bd2f46ef47eb70a0380ffb88e91b5926793fd9f3949c7e2e2987bd215d5e3457aa916992945f54b6a3f0a10d35e31f39ce0bc32f283753de4e8be730576e0268bcadcc847a1345266bdcaf5c058f640da78352529b042f8ec174bcf687db0d
+--- !u!114 &-1154074241617269000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274491903682144446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 3919263889950502868}
+  - {fileID: 7937485504778970633}
+  - {fileID: 321470842799237650}
+  - {fileID: 7794859326587936032}
+  - {fileID: -9128025687542224285}
+  - {fileID: 8844011686097538338}
+  - {fileID: 5233299310083708042}
 --- !u!1 &1824597993346231135
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +298,7 @@ GameObject:
   - component: {fileID: 3048977267131988665}
   - component: {fileID: 2039046059484259667}
   - component: {fileID: 6009529802105891364}
+  - component: {fileID: 6783673798015888526}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -365,6 +393,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillImage: {fileID: 3410268498982737873}
   enemies: {fileID: 7794859326587936032}
+--- !u!114 &6783673798015888526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824597993346231135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 3048977267131988665}
+  - {fileID: 2039046059484259667}
+  - {fileID: 6009529802105891364}
 --- !u!1 &2069618515770572650
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,6 +426,7 @@ GameObject:
   - component: {fileID: 5119249656550247615}
   - component: {fileID: 6182639719711243245}
   - component: {fileID: 8457078764914801780}
+  - component: {fileID: 8774934053535431364}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -441,6 +492,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8774934053535431364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069618515770572650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 5119249656550247615}
+  - {fileID: 6182639719711243245}
+  - {fileID: 8457078764914801780}
 --- !u!1 &4478623436470954991
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +526,7 @@ GameObject:
   - component: {fileID: 4355088389413076450}
   - component: {fileID: 4245277262591851740}
   - component: {fileID: 3897288061840101914}
+  - component: {fileID: 7051716651566277853}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -542,6 +616,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7051716651566277853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4478623436470954991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 6102884059517648779}
+  - {fileID: 4355088389413076450}
+  - {fileID: 4245277262591851740}
+  - {fileID: 3897288061840101914}
 --- !u!1 &7189917650259461568
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +650,7 @@ GameObject:
   - component: {fileID: 5483560537993467749}
   - component: {fileID: 5560514670095244801}
   - component: {fileID: 3410268498982737873}
+  - component: {fileID: 425741313027302101}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -618,6 +716,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &425741313027302101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7189917650259461568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 3410268498982737873}
+  - {fileID: 5560514670095244801}
+  - {fileID: 5483560537993467749}
 --- !u!1 &8682842552737427261
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +747,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6190670256202528345}
+  - component: {fileID: -1701674665274957445}
   m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
@@ -655,3 +776,23 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &-1701674665274957445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682842552737427261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 6190670256202528345}

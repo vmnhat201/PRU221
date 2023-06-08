@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 646281784}
   - component: {fileID: 646281786}
   - component: {fileID: 646281785}
+  - component: {fileID: 5588915606704604234}
   m_Layer: 8
   m_Name: Block (1)
   m_TagString: Untagged
@@ -80,6 +81,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36360794, y: 0.45291507}
   m_EdgeRadius: 0
+--- !u!114 &5588915606704604234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646281783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 646281784}
+  - {fileID: 646281786}
+  - {fileID: 646281785}
 --- !u!1 &3290950327290530734
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +115,7 @@ GameObject:
   - component: {fileID: 6625443477704899478}
   - component: {fileID: 2588192207745894383}
   - component: {fileID: 7527460920650298496}
+  - component: {fileID: -1526346226170930954}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -181,6 +205,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &-1526346226170930954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3290950327290530734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 4625586891209920906}
+  - {fileID: 6625443477704899478}
+  - {fileID: 2588192207745894383}
+  - {fileID: 7527460920650298496}
 --- !u!1 &4341936343371146199
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4406552880032130907}
+  - component: {fileID: 4130304024786919598}
   m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
@@ -218,6 +266,26 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4130304024786919598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341936343371146199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 4406552880032130907}
 --- !u!1 &4626906787261360995
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +297,7 @@ GameObject:
   - component: {fileID: 4065042030567315273}
   - component: {fileID: 297322616143162124}
   - component: {fileID: 6991943486857746937}
+  - component: {fileID: 2227737574634390543}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -323,6 +392,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillImage: {fileID: 2882926178361764530}
   enemies: {fileID: 7969016790558176023}
+--- !u!114 &2227737574634390543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626906787261360995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 297322616143162124}
+  - {fileID: 4065042030567315273}
+  - {fileID: 6991943486857746937}
 --- !u!1 &7606531204315032226
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +425,7 @@ GameObject:
   - component: {fileID: 7298357801635756097}
   - component: {fileID: 375285996972943518}
   - component: {fileID: 1793647610215432850}
+  - component: {fileID: 3975133147038961305}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -399,6 +491,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3975133147038961305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606531204315032226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 1793647610215432850}
+  - {fileID: 375285996972943518}
+  - {fileID: 7298357801635756097}
 --- !u!1 &7780616430800268184
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +524,7 @@ GameObject:
   - component: {fileID: 2272871174846365727}
   - component: {fileID: 3267879396977139431}
   - component: {fileID: 2882926178361764530}
+  - component: {fileID: 6986674480105824620}
   m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
@@ -475,6 +590,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6986674480105824620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7780616430800268184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 2882926178361764530}
+  - {fileID: 3267879396977139431}
+  - {fileID: 2272871174846365727}
 --- !u!1 &8499601570268361284
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +628,7 @@ GameObject:
   - component: {fileID: 5576389064146284266}
   - component: {fileID: 7356239142648789415}
   - component: {fileID: -5601514968139700886}
+  - component: {fileID: 6521017694457688605}
   m_Layer: 8
   m_Name: Bee
   m_TagString: Bee
@@ -739,4 +877,30 @@ MonoBehaviour:
     - {fileID: 4406552880032130907}
     - {fileID: 7780616430800268184}
     - {fileID: 3267879396977139431}
-    _Values: 4daf4c3db9d6111e4d60a3a823831645c32f9dc92818ec0a3984ac43dbc40a2eefbb62f4ca82a940ee20ee551c18810fd6b762c2f6cf6d343dbefacad631bc77567498dfe60b1045d9ddb8480742275006bc6d2362483741d76948f3772196436377aa91b060f535a71ce91916252d7f1ab52f6c601f260cc3a8f7833de232494775ac7eedb900664d5c82baa1e1d54e3dc9d9c2f229e27c9db7ce076872f8765032d2a178ae9260b5c8babda2e0ad1e2d5640f9430ac41d94301ba48708cf24640c0ad3b476c672c986f1d691db267e9c13cb404c0d4645914af1b76c1127530669de50147e2d5c1eb3c2c9fc9aae6ea965f68bc3712871adb0bd967af0fa48a16130d803299619bfd7dc66b483b72c07a0f1f8e4646f6abf93023ac33c282cb979299a69d66a2d29595ec9db6e7c6168e98fdaff01643cf3c61970275c550400f7e1d153ae6a30ca3b0a0acfa4007faf2d2d2653b1d248ea13575c4205f95866d0eb8ba38e234680a05bc5f391f3693967e0ab7683a84eca2abb6606c6723b41b2a4ffb874db210ae7a6b3560d5459
+    _Values: 4daf4c3db9d6111e4d60a3a823831645c32f9dc92818ec0a3984ac43dbc40a2eefbb62f4ca82a940ee20ee551c18810fd6b762c2f6cf6d343dbefacad631bc77567498dfe60b1045d9ddb8480742275006bc6d2362483741d76948f3772196436377aa91b060f535a71ce91916252d7f1ab52f6c601f260cc3a8f7833de232494775ac7eedb900664d5c82baa1e1d54e3dc9d9c2f229e27c9db7ce076872f8765032d2a178ae9260b5c8babda2e0ad1e2d5640f9430ac41d94301ba48708cf24640c0ad3b476c672c986f1d691db267e9c13cb404c0d4645914af1b76c1127530669de50147e2d5c1eb3c2c9fc9aae6ea965f68bc3712871adb0bd967af0fa48a16130d803299619bfd7dc66b483b72c07a0f1f8e4646f6abf93023ac33c282cb979299a69d66a2d07537bb14334141468e98fdaff01643cf3c61970275c550400f7e1d153ae6a30ca3b0a0acfa4007faf2d2d2653b1d248ea13575c4205f95866d0eb8ba38e234680a05bc5f391f3693967e0ab7683a84eca2abb6606c6723b41b2a4ffb874db210ae7a6b3560d5459
+--- !u!114 &6521017694457688605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8499601570268361284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 0
+  saveChildren: 0
+  componentsToSave:
+  - {fileID: 1294807477929018571}
+  - {fileID: 3344536226437204705}
+  - {fileID: 160467441368733721}
+  - {fileID: 6284339006133837058}
+  - {fileID: 7969016790558176023}
+  - {fileID: 7356239142648789415}
+  - {fileID: 5576389064146284266}
