@@ -12,6 +12,7 @@ public class SpawnManager : Singleton<SpawnManager>
     // Start is called before the first frame update
     public void BuffSpawn(Transform tf)
     {
+        print("spawn buff");
         Buff f = null;
         BuffSkill bf = null;
         int r = Random.Range(0, 10);
@@ -81,6 +82,7 @@ public class SpawnManager : Singleton<SpawnManager>
             for (int i = 0; i < amount; i++)
             {
                 Enemies enemies = Instantiate(enemyType, Gennerate(), Quaternion.identity);
+                print($"spawn enemy {enemyType}");
                 GameManager.instance.CurEnemies.Add(enemies);
             }
         }

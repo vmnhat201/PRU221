@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         float distance = Mathf.Infinity;
         Enemies closestEnemy = null;
         Enemies[] allEnemies = GameObject.FindObjectsOfType<Enemies>();
-  
+
         foreach (Enemies currentEnemy in allEnemies)
         {
             // Tính toán khoảng cách từ người chơi đến enemy hiện tại
@@ -81,13 +81,13 @@ public class Player : MonoBehaviour
             SetRotationInFindClosestEnemy(direction);
         }
     }
-        public void Shoot()
-        {
-            curWeapon.Shoot(transform.up);
-        }
+    public void Shoot()
+    {
+        curWeapon.Shoot(transform.up);
+    }
 
     private void Update()
-    {        
+    {
         healthBar.value = curHealth / maxHealth;
 
         if (curWeapon.quantity <= 0)
@@ -300,6 +300,7 @@ public class Player : MonoBehaviour
     {
         if (curHealth <= 0)
         {
+            ES3.DeleteFile("SaveFile.es3");
             SoundController.instance.PlayGameOver();
             ButtonControl.instance.GameOver();
         }

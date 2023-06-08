@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -14,13 +14,18 @@ public class ScoreController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Debug.Log("ScoreController Awake");
+    }
+
+    private void Update()
+    {
+        scoreText.text = ScorePreFix + score.ToString();
+        
     }
 
     public void Addpoint(int points)
     {
         score += points;
         scoreText.text = ScorePreFix + score.ToString();
-        FileManager.WriteToFile("Score.txt", score.ToString());
+        print($"Cộng {points} điểm");
     }
 }
