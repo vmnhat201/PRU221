@@ -17,7 +17,7 @@ public class SpawnManager : Singleton<SpawnManager>
         int r = Random.Range(0, 10);
         if (r < 2)
         {
-            f = Instantiate(GameManager.instance.Buffs[1], tf.position, Quaternion.identity);
+            f = Instantiate(GameManager.instance.Buffs[Random.Range(0, 4)], tf.position, Quaternion.identity);
         }
         else if (r < 3)
         {
@@ -121,7 +121,6 @@ public class SpawnManager : Singleton<SpawnManager>
 
     private IEnumerator Intro()
     {
-
         yield return new WaitForSeconds(1f);
         GameManager.instance.introControl.SetIntro(GameManager.instance.player.firstWeapon.intro);
         yield return new WaitForSeconds(1f);
