@@ -26,7 +26,7 @@ public class ButtonControl : Singleton<ButtonControl>
 
     // Start is called before the first frame update
 
-    private void Awake()
+    private void Start()
     {
         isBuffCircle = false;
         isGameStart = false;
@@ -37,12 +37,16 @@ public class ButtonControl : Singleton<ButtonControl>
         pauseMenuScreen.SetActive(false);
         gameOverScreen.SetActive(false);
         pauseButton.SetActive(false);
-        question.SetActive(true);
+        question.SetActive(GameSave.instance.isQues);
+
     }
 
 
     public void Reset()
     {
+        GameSave.instance.isQues = false;
+
+        isShowIntro = false;
         SceneManager.LoadScene("SampleSence");
     }
     private void Update()
@@ -178,6 +182,20 @@ public class ButtonControl : Singleton<ButtonControl>
     }
     public IEnumerator ReadyToReplayGame()
     {
+
+        //startMenu.SetActive(false);
+        //countBar.SetActive(true);
+        //GameSave.instance.isQues = false;
+        //question.SetActive(GameSave.instance.isQues);
+        //SoundController.instance.PlayGameStart();
+        //isGameStart = true;
+        //yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
+        //countBar.SetActive(false);
+        //pauseButton.SetActive(true);
+        //isGamePause = false;
+
+        
+
         startMenu.SetActive(false);
         countBar.SetActive(true);
         SoundController.instance.PlayGameStart();
@@ -186,6 +204,7 @@ public class ButtonControl : Singleton<ButtonControl>
         countBar.SetActive(false);
         pauseButton.SetActive(true);
         isGamePause = false;
+        SpawnManager.instance.StartSpawn();
     }
     public void PauseGame()
     {

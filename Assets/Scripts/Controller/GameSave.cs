@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameSave : Singleton<GameSave>
 {
     public bool isIntro;
+    public bool isQues;
    
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        isQues = true;
         isIntro = true;
         DontDestroyOnLoad(this);
        
