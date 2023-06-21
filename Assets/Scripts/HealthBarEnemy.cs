@@ -7,7 +7,9 @@ public class HealthBarEnemy : MonoBehaviour
 {
     public Image fillImage;
     private Slider slider;
-    public Enemies enemies;
+
+    //public Enemies enemies;
+    public AntEnemy enemies;
 
     private void Awake()
     {

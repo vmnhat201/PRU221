@@ -1,63 +1,38 @@
-﻿//using System;
 using Assets.Scripts.SaveData;
 using System.Collections;
 using System.Collections.Generic;
-using System.Net;
-using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public enum EnemyType
+public class RangedEnemy : Enemies
 {
-    Ant,
-    Ranged,
-    Bee,
-    Boss
-}
-public class Enemies : MonoBehaviour
-{
-    //New Commit
-    public Sprite intro;
-    //New Commit
-    //Attribute and Property
-    [SerializeField] public GameObject explosivePrefabs;
-    public BulletEnemies rangedBulletPrefabs;
-    public EnemyType enemyType;
-    public float currentHealth;
-    public float maxHealth;
-    public int damage;
-    public float movementSpeed;
-    public float attackSpeed = 0;
-    public bool isAlive;
-    public bool isHunt;
-    public Vector3 endPoint;
-    public float popular;
-
-    //Timer timer;
+    Timer timer;
     //Timer timer1;
 
     void Start()
     {
-        //timer = gameObject.AddComponent<Timer>();
+        timer = gameObject.AddComponent<Timer>();
         //timer1 = gameObject.AddComponent<Timer>();
-        //SetUp();
-        //currentHealth = maxHealth;
-        //isAlive = true;
-        //isHunt = false;
-        //endPoint = Gennerate();
-        //timer.Duarion = 2;
-        //timer.Run();
+        SetUp();
+        currentHealth = maxHealth;
+        isAlive = true;
+        isHunt = false;
+        endPoint = Gennerate();
+        timer.Duarion = 2;
+        timer.Run();
         //timer1.Duarion = 3;
         //timer1.Run();
     }
 
     public void SetUp()
     {
-
+        popular = 0.2f;
+        maxHealth = 40;
+        damage = 10;
+        movementSpeed = 5;
         //switch (enemyType)
         //{
+
         //    case EnemyType.Ant:
         //        popular = 0.7f;
         //        maxHealth = 50;
@@ -86,83 +61,64 @@ public class Enemies : MonoBehaviour
     }
     void Update()
     {
-        //if (GameSave.instance.isIntro)
-        //{
-        //    damage = 1;
-        //}
-        //else
-        //{
-        //    SetUp();
-        //}
-
-        //if (enemyType == EnemyType.Ant)
-        //{
-        //    Hunt(GameManager.instance.player.transform.position, movementSpeed);
-        //}
-
-        //if (enemyType == EnemyType.Ranged)
-        //{
-        //    Patrol();
-        //}
-
-        //if (enemyType == EnemyType.Bee)
-        //{
-        //    Patrol();
-        //}
-
-        //if (enemyType == EnemyType.Boss)
-        //{
-        //    Hunt(GameManager.instance.player.transform.position, movementSpeed);
-        //}
+        Patrol();
+        if (GameSave.instance.isIntro)
+        {
+            damage = 1;
+        }
+        else
+        {
+            SetUp();
+        }
     }
 
     public void TakeDamage(float damage)
     {
-        //currentHealth -= damage;
-        //if (currentHealth <= 0)
-        //{
-        //    isAlive = false;
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            isAlive = false;
 
-        //    if (enemyType == EnemyType.Ant)
-        //    {
-        //        GameManager.instance.isAntAliveIntro = false;
+            //if (enemyType == EnemyType.Ant)
+            //{
+            //    GameManager.instance.isAntAliveIntro = false;
 
-        //        if (GameSave.instance.isIntro != true)
-        //        {
-        //            ScoreController.instance.Addpoint(1);
-        //        }
-        //    }
-        //    if (enemyType == EnemyType.Ranged)
-        //    {
-        //        GameManager.instance.isRangedAliveIntro = false;
+            //    if (GameSave.instance.isIntro != true)
+            //    {
+            //        ScoreController.instance.Addpoint(1);
+            //    }
+            //}
+            //if (enemyType == EnemyType.Ranged)
+            //{
+            GameManager.instance.isRangedAliveIntro = false;
 
-        //        if (GameSave.instance.isIntro != true)
-        //        {
-        //            ScoreController.instance.Addpoint(2);
-        //        }
-        //    }
-        //    if (enemyType == EnemyType.Bee)
-        //    {
-        //        GameManager.instance.isBeeAliveIntro = false;
-        //    }
-        //    if (enemyType == EnemyType.Boss)
-        //    {
-        //        GameManager.instance.isBossAlive = false;
+            if (GameSave.instance.isIntro != true)
+            {
+                ScoreController.instance.Addpoint(2);
+            }
+            //}
+            //if (enemyType == EnemyType.Bee)
+            //{
+            //    GameManager.instance.isBeeAliveIntro = false;
+            //}
+            //if (enemyType == EnemyType.Boss)
+            //{
+            //    GameManager.instance.isBossAlive = false;
 
-        //        Instantiate<GameObject>(explosivePrefabs, transform.position, Quaternion.identity);
-        //        ScoreController.instance.Addpoint(4);
-        //        if (!GameManager.instance.isUpgrade)
-        //        {
-        //            GameManager.instance.UpgradeAttribute();
-        //            GameManager.instance.isUpgrade = true;
-        //        }
-        //        if (GameSave.instance.isIntro != true)
-        //        {
-        //            ScoreController.instance.Addpoint(4);
-        //        }
-        //    }
-        //    DestroyEnemies();
-        //}
+            //    Instantiate<GameObject>(explosivePrefabs, transform.position, Quaternion.identity);
+            //    ScoreController.instance.Addpoint(4);
+            //    if (!GameManager.instance.isUpgrade)
+            //    {
+            //        GameManager.instance.UpgradeAttribute();
+            //        GameManager.instance.isUpgrade = true;
+            //    }
+            //    if (GameSave.instance.isIntro != true)
+            //    {
+            //        ScoreController.instance.Addpoint(4);
+            //    }
+            //}
+            DestroyEnemies();
+        }
     }
 
     public void Hunt(Vector3 player, float MovementSpeed)
@@ -223,6 +179,10 @@ public class Enemies : MonoBehaviour
 
     public void AttackPlayer()
     {
+        BulletEnemies bur = Instantiate(rangedBulletPrefabs, transform.position, Quaternion.identity);
+        Vector3 dir = GameManager.instance.player.transform.position - transform.position;
+        Debug.Log(dir);
+        bur.Project(dir);
         //switch (enemyType)
         //{
         //    case EnemyType.Ant:
@@ -241,7 +201,7 @@ public class Enemies : MonoBehaviour
     }
     public void Patrol()
     {
-        //Vector3 po = transform.position;
+        Vector3 po = transform.position;
         //if (enemyType == EnemyType.Bee)
         //{
         //    Vector3 pl = GameManager.instance.player.transform.position;
@@ -259,10 +219,6 @@ public class Enemies : MonoBehaviour
         //    }
         //    else
         //    {
-        //        //Vector2 dir = endPoint - transform.position;
-        //        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //        //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        //        //transform.rotation = rotation;
 
         //        transform.position = Vector3.MoveTowards(transform.position, endPoint, 10 * Time.deltaTime);
         //        if (Vector3.Distance(transform.position, endPoint) < 0.001f)
@@ -274,34 +230,34 @@ public class Enemies : MonoBehaviour
 
         //if (enemyType == EnemyType.Ranged)
         //{
-        //    if (Vector3.Distance(po, GameManager.instance.player.transform.position) < 10f && GameManager.instance.player.isVisible == false)
-        //    {
-        //        transform.position = po;
-        //        //Vector2 dir = endPoint - transform.position;
-        //        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //        //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        //        //transform.rotation = rotation;
-        //        if (timer.Finished)
-        //        {
-        //            AttackPlayer();
-        //            timer.Duarion = 2;
-        //            timer.Run();
-        //        }
+        if (Vector3.Distance(po, GameManager.instance.player.transform.position) < 10f && GameManager.instance.player.isVisible == false)
+        {
+            transform.position = po;
+            //Vector2 dir = endPoint - transform.position;
+            //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            //transform.rotation = rotation;
+            if (timer.Finished)
+            {
+                AttackPlayer();
+                timer.Duarion = 2;
+                timer.Run();
+            }
 
-        //    }
-        //    else
-        //    {
-        //        //Vector2 dir = endPoint - transform.position;
-        //        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //        //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        //        //transform.rotation = rotation;
+        }
+        else
+        {
+            //Vector2 dir = endPoint - transform.position;
+            //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            //transform.rotation = rotation;
 
-        //        transform.position = Vector3.MoveTowards(transform.position, endPoint, 10 * Time.deltaTime);
-        //        if (Vector3.Distance(transform.position, endPoint) < 0.001f)
-        //        {
-        //            endPoint = Gennerate();
-        //        }
-        //    }
+            transform.position = Vector3.MoveTowards(transform.position, endPoint, 10 * Time.deltaTime);
+            if (Vector3.Distance(transform.position, endPoint) < 0.001f)
+            {
+                endPoint = Gennerate();
+            }
+        }
         //}
 
     }
@@ -323,39 +279,39 @@ public class Enemies : MonoBehaviour
     }
 
     //Check event takeDamage
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Player p = collision.gameObject.GetComponent<Player>();
-        //if (p != null)
-        //{
-        //    if (enemyType == EnemyType.Bee)
-        //    {
-        //        DestroyEnemies();
-        //        if (GameSave.instance.isIntro != true)
-        //        {
-        //            ScoreController.instance.Addpoint(3);
-        //        }
+    //public void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Player p = collision.gameObject.GetComponent<Player>();
+    //    if (p != null)
+    //    {
+    //        if (enemyType == EnemyType.Bee)
+    //        {
+    //            DestroyEnemies();
+    //            if (GameSave.instance.isIntro != true)
+    //            {
+    //                ScoreController.instance.Addpoint(3);
+    //            }
 
-        //        GameManager.instance.isBeeAliveIntro = false;
-        //        AttackPlayer();
+    //            GameManager.instance.isBeeAliveIntro = false;
+    //            AttackPlayer();
 
-        //    }
+    //        }
 
-        //    if (enemyType == EnemyType.Ant)
-        //    {
-        //        AttackPlayer();
-        //    }
-        //}
+    //        if (enemyType == EnemyType.Ant)
+    //        {
+    //            AttackPlayer();
+    //        }
+    //    }
 
-    }
+    //}
 
     public void DestroyEnemies()
     {
-        //SoundController.instance.PlayEnemyDead();
-        //SpawnManager.instance.BuffSpawn(this.transform);
-        //SpawnManager.instance.SpawnWeapon(this.transform);
-        //GameManager.instance.CurEnemies.Remove(this);
-        //Destroy(this.gameObject);
+        SoundController.instance.PlayEnemyDead();
+        SpawnManager.instance.BuffSpawn(this.transform);
+        SpawnManager.instance.SpawnWeapon(this.transform);
+        GameManager.instance.CurEnemies.Remove(this);
+        Destroy(this.gameObject);
     }
 
     public static Enemies ToEnemies(EnemyData enemyData)
@@ -384,6 +340,5 @@ public class Enemies : MonoBehaviour
         enemies.popular = enemyData.popular;
         return enemies;
     }
-
 
 }

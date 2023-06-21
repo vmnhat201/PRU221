@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillImage: {fileID: 3281501989827942605}
-  enemies: {fileID: 8580815902667108611}
+  enemies: {fileID: 1834613188925990256}
 --- !u!114 &-6378153902657783459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: -7256672586380601817}
   - component: {fileID: 8130089890945319373}
   - component: {fileID: 5246133903661823603}
+  - component: {fileID: 1834613188925990256}
   m_Layer: 8
   m_Name: Ant
   m_TagString: Ant
@@ -477,7 +478,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3067736728038901154}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c25f3c9e8a95bc14187b806be19c0131, type: 3}
   m_Name: 
@@ -541,6 +542,8 @@ MonoBehaviour:
     - {fileID: 1922845825}
     - {fileID: -7256672586380601817}
     - {fileID: 5246133903661823603}
+    - {fileID: 1834613188925990256}
+    - {fileID: 11500000, guid: 2fa39b8be27642f48987a9d121acd6ad, type: 3}
     - {fileID: 1922845823}
     - {fileID: 1922845824}
     - {fileID: 1922845826}
@@ -573,7 +576,7 @@ MonoBehaviour:
     - {fileID: 1816658698190128055}
     - {fileID: 183803820688755131}
     - {fileID: 2616883640430576238}
-    _Values: b64d828a7485122a0517750077301a4ae7408d65a57e7304393094a6413a4322d0975a5de53a4b5dd5ef595ea65ff0416b8aefeaeb41c538da7eb60a05327b0bfb0ed10f8a783053f5303a95d7d1aa33a53e8bdaff0752702ede7c997bbea8066b6463988de1b61bba42f4bb072f6008d382ae44be550a0cd840ff3c3443c13dbe289fdfd5e6492c886f9442fb0d785dc17a930193133b3f909022d2fff6e051e6be1d39d0db2b6fc070cb2eea4d0852e9836d772ad9df3afb3f545bdf10c27d51e55c3df03e8d63a6034122470d5543782f447c9ca8840ce0e33e9087cf902e33497ed0a9454256f70a1d2d1a018107d2de6bd176bf20459eafa2f300022376936feffd8e8599428e647a6e75a90e219ec80410141f9d792b2631faa24e56062f94c18af07f961a32273e31bf4f1c0ba1805537fd126274d276d268539fa03f0e739c096b98121d5e1e423b5dce387bbdc3a6de06e1f74108c9a399ae01922f3882c0cd13d989086e37d8dfd0271603c3a8dae9ba81ba106add01a1f5796f5d8c1302db0e6b676a
+    _Values: b64d828a7485122a0517750077301a4ae7408d65a57e7304393094a6413a4322d0975a5de53a4b5dd5ef595ea65ff0416b8aefeaeb41c538da7eb60a05327b0bfb0ed10f8a783053f5303a95d7d1aa33a53e8bdaff0752702ede7c997bbea8066b6463988de1b61bba42f4bb072f6008d382ae44be550a0cd840ff3c3443c13dbe289fdfd5e6492c5d3110e8959bc252e53b1f08ecc0d507886f9442fb0d785dc17a930193133b3f909022d2fff6e051e6be1d39d0db2b6fc070cb2eea4d0852e9836d772ad9df3afb3f545bdf10c27d51e55c3df03e8d63a6034122470d5543782f447c9ca8840ce0e33e9087cf902e33497ed0a9454256f70a1d2d1a0181074e342c1b2e4137679eafa2f300022376936feffd8e8599428e647a6e75a90e219ec80410141f9d792b2631faa24e56062f94c18af07f961a32273e31bf4f1c0ba1805537fd126274d276d268539fa03f0e739c096b98121d5e1e423b5dce387bbdc3a6de06e1f74108c9a399ae01922f3882c0cd13d989086e37d8dfd0271603c3a8dae9ba81ba106add01a1f5796f5d8c1302db0e6b676a
 --- !u!114 &8130089890945319373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,7 +622,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1834613188925990256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3067736728038901154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa39b8be27642f48987a9d121acd6ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 21300000, guid: d41bc956cb75ac74dacb1e82aaa32a85, type: 3}
+  explosivePrefabs: {fileID: 0}
+  rangedBulletPrefabs: {fileID: 0}
+  enemyType: 0
+  currentHealth: 0
+  maxHealth: 0
+  damage: 0
+  movementSpeed: 0
+  attackSpeed: 0
+  isAlive: 0
+  isHunt: 0
+  endPoint: {x: 0, y: 0, z: 0}
+  popular: 0
 --- !u!1 &7301183313518396742
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillImage: {fileID: 3281501989827942605}
-  enemies: {fileID: 8580815902667108611}
+  enemies: {fileID: 0}
 --- !u!114 &-1140914977713161164
 MonoBehaviour:
   m_ObjectHideFlags: 0
