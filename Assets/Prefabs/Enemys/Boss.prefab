@@ -580,6 +580,8 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
     - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 8016155945819625208}
+    - {fileID: 11500000, guid: 496f92e20f5199643ae6966bb828d823, type: 3}
     - {fileID: 955591782615757098}
     - {fileID: 6842685245686355754}
     - {fileID: 622731932184445499}
@@ -590,7 +592,7 @@ MonoBehaviour:
     - {fileID: 1597514393453702530}
     - {fileID: 1927118238246919072}
     - {fileID: 1820832602268336713}
-    _Values: e112dd24dab11d1d279c55cd49894c46ed697cbe130c4f3b8bbea08fddf5f829801486f4e94e610c313d27e3e0f1287f9a5f9fbf8a136c2b3d5d4f67ad520431a42c4c5e0f402f61f890712a1b94a57de720f57d55389e6d7e4eceb96137457dbda677f2c2797059d0c138065ebdef57b7d2808d5d86dc6b7321203e8e89003e4af46c751db3ba6daf9b4d1771a5cc3c3d26018eb7b71f3637f39a1c655118463e06afacd69b8b04e8ed213ec63a0617ef5c7bb48a8ff66d5ce6c151f3fdd96c807df3a4ef437531d435ab104dd6d3004d6c27940adf995d9bfc76a4d95dfd04ee822d09d563bb31fc1cd7a0f07ab741c122f15a13720d0f3de1af78f965b87738a6fed004dcd6174f0a6fd949c5b221bbca9a03b0a7e87b761e46b713332b68636068497be63d6207f656e21e18a777d171cc3b0043d8207286b9dddd72d47d36d875e95d68a55ff802f55902356671c6bde7a167f06858ec7a658ded35575b352c53ba5c41e638e8d4ccfcc6cedd5913d4e8e075ccea26bf314f2a535c4122c27c8e2e8820ce7b285075c4439ae06a569e1133cda0fc01e98604d40e441a45eb11c5b5c0512f0cfb9348dba8da1d59ed452a4bb4f2ab638870bafde405921c
+    _Values: e112dd24dab11d1d279c55cd49894c46ed697cbe130c4f3b8bbea08fddf5f829801486f4e94e610c313d27e3e0f1287f9a5f9fbf8a136c2b3d5d4f67ad520431a42c4c5e0f402f61f890712a1b94a57de720f57d55389e6d7e4eceb96137457dbda677f2c2797059d0c138065ebdef57b7d2808d5d86dc6b7321203e8e89003e4af46c751db3ba6daf9b4d1771a5cc3c3d26018eb7b71f3637f39a1c655118463e06afacd69b8b04e8ed213ec63a0617ef5c7bb48a8ff66d5ce6c151f3fdd96c807df3a4ef437531d435ab104dd6d3004d6c27940adf995d9bfc76a4d95dfd04ee822d09d563bb31fc1cd7a0f07ab741c122f15a13720d0f3de1af78f965b87738a6fed004dcd6174f0a6fd949c5b221bbca9a03b0a7e87b761e46b713332b68636068497be63d6207f656e21e18a777d171cc3b0043d8207286b9dddd72d47d36d875e95d68a55ff802f55902356671c6bde7a167f0685870edd72dea1e6e08352c53ba5c41e638e8d4ccfcc6cedd59cbb70813a5ba627facdda605921ddd4b13d4e8e075ccea26bf314f2a535c4122c27c8e2e8820ce7b285075c4439ae06a569e1133cda0fc01e98604d40e441a45eb11c5b5c0512f0cfb9348dba8da1d59ed452a4bb4f2ab638870bafde405921c
 --- !u!114 &-1365474656094751837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intro: {fileID: 21300000, guid: d8712ed4ae63e454baf7862b5381046f, type: 3}
-  explosivePrefabs: {fileID: 0}
+  explosivePrefabs: {fileID: 3409857125561947499, guid: 70af36985bc3d1b42aa097b1111d7dde, type: 3}
   rangedBulletPrefabs: {fileID: 0}
   enemyType: 3
   currentHealth: 0
@@ -655,6 +657,7 @@ GameObject:
   - component: {fileID: 8676879305407019004}
   - component: {fileID: 5294213497007988432}
   - component: {fileID: 5029784537391691407}
+  - component: {fileID: 8016155945819625208}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -742,7 +745,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4181750772380232145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a91a8b207358c5b4e9e5d5494376f4e6, type: 3}
   m_Name: 
@@ -771,6 +774,20 @@ MonoBehaviour:
   - {fileID: 8630421908772173537}
   - {fileID: 8676879305407019004}
   - {fileID: 5294213497007988432}
+--- !u!114 &8016155945819625208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181750772380232145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496f92e20f5199643ae6966bb828d823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillImage: {fileID: 7417678104491078214}
+  enemies: {fileID: 1361086948050306062}
 --- !u!1 &5166896631692720011
 GameObject:
   m_ObjectHideFlags: 0

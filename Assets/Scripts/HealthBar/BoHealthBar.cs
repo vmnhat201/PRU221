@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RangedHealthBar : MonoBehaviour
+public class BoHealthBar : MonoBehaviour
 {
     public Image fillImage;
     private Slider slider;
 
     //public Enemies enemies;
-    public RangedEnemy enemies;
+    public BossEnemy enemies;
 
     private void Awake()
     {

@@ -59,6 +59,26 @@ public class GunBullet : MonoBehaviour
             e.TakeDamage(GameManager.instance.player.curWeapon.damage);
             DestroyBullet(0f);
         }
+        AntEnemy ant = collision.gameObject.GetComponent<AntEnemy>();
+        BeeEnemy bee = collision.gameObject.GetComponent<BeeEnemy>();
+        RangedEnemy ranged = collision.gameObject.GetComponent<RangedEnemy>();
+        BossEnemy boss = collision.gameObject.GetComponent<BossEnemy>();
+        if (ant != null)
+        {
+            ant.TakeDamage(GameManager.instance.player.curWeapon.damage);
+        }
+        if (bee != null)
+        {
+            bee.TakeDamage(GameManager.instance.player.curWeapon.damage);
+        }
+        if (ranged != null)
+        {
+            ranged.TakeDamage(GameManager.instance.player.curWeapon.damage);
+        }
+        if (boss != null)
+        {
+            boss.TakeDamage(GameManager.instance.player.curWeapon.damage);
+        }
     }
 
     public void StrongUltimateBullet(float time)
@@ -105,10 +125,29 @@ public class GunBullet : MonoBehaviour
         foreach (Collider2D collider in colliders)
         {
             Enemies e = collider.gameObject.GetComponent<Enemies>();
+            AntEnemy ant = collider.gameObject.GetComponent<AntEnemy>();
+            BeeEnemy bee = collider.gameObject.GetComponent<BeeEnemy>();
+            RangedEnemy ranged = collider.gameObject.GetComponent<RangedEnemy>();
+            BossEnemy boss = collider.gameObject.GetComponent<BossEnemy>();
             if (e != null)
             {
                 e.TakeDamage(GameManager.instance.player.curWeapon.damage);
-                //Destroy(e.gameObject);
+            }
+            if (ant != null)
+            {
+                ant.TakeDamage(GameManager.instance.player.curWeapon.damage);
+            }
+            if (bee != null)
+            {
+                bee.TakeDamage(GameManager.instance.player.curWeapon.damage);
+            }
+            if (ranged != null)
+            {
+                ranged.TakeDamage(GameManager.instance.player.curWeapon.damage);
+            }
+            if (boss != null)
+            {
+                boss.TakeDamage(GameManager.instance.player.curWeapon.damage);
             }
         }
         Instantiate<GameObject>(explosivePrefabs, transform.position, Quaternion.identity);

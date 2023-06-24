@@ -152,18 +152,40 @@ public class Weapon : MonoBehaviour
         foreach (Collider2D collider in colliders)
         {
             Debug.Log("1");
-            Enemies e = collider.gameObject.GetComponent<Enemies>();
-            if (e != null)
-            {
-                if (e.enemyType != EnemyType.Boss)
-                {
-                    e.TakeDamage(10000);
-                }
-                else
-                {
-                    e.TakeDamage(20);
-                }
+            //Enemies e = collider.gameObject.GetComponent<Enemies>();
+            //if (e != null)
+            //{
+            //    if (e.enemyType != EnemyType.Boss)
+            //    {
+            //        e.TakeDamage(10000);
+            //    }
+            //    else
+            //    {
+            //        e.TakeDamage(20);
+            //    }
 
+            //}
+
+            //Enemies e = collider.gameObject.GetComponent<Enemies>();
+            AntEnemy ant = collider.gameObject.GetComponent<AntEnemy>();
+            BeeEnemy bee = collider.gameObject.GetComponent<BeeEnemy>();
+            RangedEnemy ranged = collider.gameObject.GetComponent<RangedEnemy>();
+            BossEnemy boss = collider.gameObject.GetComponent<BossEnemy>();
+            if (ant != null)
+            {
+                ant.TakeDamage(20);
+            }
+            if (bee != null)
+            {
+                bee.TakeDamage(20);
+            }
+            if (ranged != null)
+            {
+                ranged.TakeDamage(20);
+            }
+            if (boss != null)
+            {
+                boss.TakeDamage(1000);
             }
         }
         GameManager.instance.player.TakeDamge(20);
