@@ -18,8 +18,10 @@ public class ButtonControl : Singleton<ButtonControl>
 
     public GameObject startMenu;
     public GameObject pauseMenuScreen;
+    public GameObject shoppingMenu;
     public GameObject gameOverScreen;
     public GameObject pauseButton;
+    public GameObject ShopButton;
     public GameObject countBar;
     public GameObject question;
     public GameObject toggle;
@@ -37,6 +39,8 @@ public class ButtonControl : Singleton<ButtonControl>
         pauseMenuScreen.SetActive(false);
         gameOverScreen.SetActive(false);
         pauseButton.SetActive(false);
+        ShopButton.SetActive(false);
+        shoppingMenu.SetActive(false);
         question.SetActive(GameSave.instance.isQues);
 
     }
@@ -84,6 +88,7 @@ public class ButtonControl : Singleton<ButtonControl>
         yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
         countBar.SetActive(false);
         pauseButton.SetActive(true);
+        ShopButton.SetActive(true);
         isGamePause = false;
         SpawnManager.instance.StartSpawn();
 
@@ -155,6 +160,7 @@ public class ButtonControl : Singleton<ButtonControl>
         startMenu.SetActive(false);
         isGameStart = true;
         pauseButton.SetActive(true);
+        ShopButton.SetActive(true);
         isGamePause = false;
         yield return new WaitForSecondsRealtime(5);
         SpawnManager.instance.StartSpawn();
@@ -182,11 +188,14 @@ public class ButtonControl : Singleton<ButtonControl>
 
         startMenu.SetActive(false);
         countBar.SetActive(true);
+        shoppingMenu.SetActive(false);
         SoundController.instance.PlayGameStart();
         isGameStart = true;
         yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
         countBar.SetActive(false);
         pauseButton.SetActive(true);
+        ShopButton.SetActive(true);
+
         isGamePause = false;
         SpawnManager.instance.StartSpawn();
     }
@@ -194,6 +203,16 @@ public class ButtonControl : Singleton<ButtonControl>
     {
         isGamePause = true;
         pauseMenuScreen.SetActive(true);
+    }
+    public void Shopping()
+    {
+        isGamePause = true;
+        shoppingMenu.SetActive(true);
+    }
+    public void ContinueAfterShopping()
+    {
+        isGamePause = false;
+        shoppingMenu.SetActive(false);
     }
     public void ResumeGame()
     {
