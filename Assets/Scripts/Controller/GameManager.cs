@@ -12,12 +12,15 @@ public class GameManager : Singleton<GameManager>
     public List<Weapon> Weapons;
     public List<Enemies> Enemies;
     public List<Enemies> CurEnemies;
+    public List<Coin> CurCoins;
     public List<GunBullet> Bullet;
     public Player player;
+    public Coin coin;
     public SkillButton skillButton;
     public IntroControl introControl;
 
     public int totalEnemies ;
+    public int totalCoins ;
     public bool isBossAlive ;
     public bool isAntAliveIntro ;
     public bool isBeeAliveIntro ;

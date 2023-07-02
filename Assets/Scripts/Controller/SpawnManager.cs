@@ -9,7 +9,8 @@ using UnityEngine.UI;
 public class SpawnManager : Singleton<SpawnManager>
 {
 
-    // Start is called before the first frame update
+    //[SerializeField]
+    //public GameObject preFabCoins;
     public void BuffSpawn(Transform tf)
     {
         print("spawn buff");
@@ -37,6 +38,7 @@ public class SpawnManager : Singleton<SpawnManager>
             IntroGame();
         }
         InvokeRepeating("SpawnEnemies", 0f, 10f);
+        InvokeRepeating("SpawnCoin", 0f, 10f);
         StartCoroutine(SpawnBosses());
 
     }
@@ -45,6 +47,15 @@ public class SpawnManager : Singleton<SpawnManager>
     public float AmountEnemy(Enemies enemyType)
     {
         return enemyType.popular * GameManager.instance.totalEnemies;
+    }
+
+    public void SpawnCoin()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            Coin coin = Instantiate(GameManager.instance.coin, Gennerate(), Quaternion.identity);
+            GameManager.instance.CurCoins.Add(coin);
+        }
     }
 
     public void SpawnEnemies()

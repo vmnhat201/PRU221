@@ -13,6 +13,7 @@ TagManager:
   - pauseMenu
   - endMenu
   - Enemy
+  - Coin
   layers:
   - Default
   - TransparentFX

@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isIntro: 0
+  isQues: 0
 --- !u!1 &667499975
 GameObject:
   m_ObjectHideFlags: 0
