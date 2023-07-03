@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] public float bonusdame = 0;
     [SerializeField] public Slider healthBar;
 
+    public AudioSource CoinSound;
     public Weapon firstWeapon;
     public Buff firstBuff;
     public BuffSkill firstBuffSkill;
@@ -319,6 +320,15 @@ public class Player : MonoBehaviour
     {
 
         StartCoroutine(IEUndead(curBuffSkill.timeEffect));
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        Coin p = collision.gameObject.GetComponent<Coin>();
+        if (p != null)
+        {
+            CoinSound.Play();
+        }
     }
 
     public void SetPlayerWeaponWhenResume()
