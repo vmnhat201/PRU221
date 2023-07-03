@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7544576016447687018}
   - component: {fileID: -1154074241617269000}
   - component: {fileID: 7305392898568253307}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Ranged
   m_TagString: Range
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ MonoBehaviour:
     - {fileID: 6190670256202528345}
     - {fileID: 7189917650259461568}
     - {fileID: 5560514670095244801}
-    _Values: cbd050aa9f6ad5046f04393a5820593ca35ee6c819cf902243d6d2b069ced70bffd3ee27768d4657e5d04647d41a4467e9815ebc13a4ca666273ed763c856d3d23bbc5d3f07e4d16188fadea15d8f65d1b39c6e7701af75af777771684436b5f9cf7957020e8a76accb85b7b0820af3996b46e89b3ab5208c36ac968f6649b5bfa0c4d1e42863d32925cb22876736329b9b98c64e5fbd71749bfde090d833e79c83eac39b1f4130f5b73534ae1c08b30ab4989eb9231840f773bf757f8299250f95fcfcbee2af3101f5d79b6d9881453e8e37d2cea7797063d434e131395f87b07a35282f0c0412ac36534cb4732ca10da5b90ea53999970f8d60931790624769c0143822569bc5724a7ef4fab624e70f3a01390d91d306c2f1c536be4fea56f42bd2f46ef47eb70a0380ffb88e91b59cc236b6fd7495a35f325db52c60a270526793fd9f3949c7e2e2987bd215d5e3457aa916992945f54b6a3f0a10d35e31f39ce0bc32f283753de4e8be730576e0268bcadcc847a1345266bdcaf5c058f640da78352529b042f8ec174bcf687db0d
+    _Values: cbd050aa9f6ad5046f04393a5820593ca35ee6c819cf902243d6d2b069ced70bffd3ee27768d4657e5d04647d41a4467e9815ebc13a4ca666273ed763c856d3d23bbc5d3f07e4d16188fadea15d8f65d1b39c6e7701af75af777771684436b5f9cf7957020e8a76accb85b7b0820af3996b46e89b3ab5208c36ac968f6649b5bfa0c4d1e42863d32925cb22876736329b9b98c64e5fbd71749bfde090d833e79c83eac39b1f4130f5b73534ae1c08b30ab4989eb9231840f773bf757f8299250f95fcfcbee2af3101f5d79b6d9881453e8e37d2cea7797063d434e131395f87b07a35282f0c0412ac36534cb4732ca10da5b90ea53999970f8d60931790624769c0143822569bc5724a7ef4fab624e70f3a01390d91d306c9a33c8f6f5eabb7842bd2f46ef47eb70a0380ffb88e91b59cc236b6fd7495a35f325db52c60a270526793fd9f3949c7e2e2987bd215d5e3457aa916992945f54b6a3f0a10d35e31f39ce0bc32f283753de4e8be730576e0268bcadcc847a1345266bdcaf5c058f640da78352529b042f8ec174bcf687db0d
 --- !u!114 &-1154074241617269000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 6009529802105891364}
   - component: {fileID: 6783673798015888526}
   - component: {fileID: 8635602707006587716}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   - component: {fileID: 6182639719711243245}
   - component: {fileID: 8457078764914801780}
   - component: {fileID: 8774934053535431364}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 4245277262591851740}
   - component: {fileID: 3897288061840101914}
   - component: {fileID: 7051716651566277853}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 5560514670095244801}
   - component: {fileID: 3410268498982737873}
   - component: {fileID: 425741313027302101}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,7 +792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6190670256202528345}
   - component: {fileID: -1701674665274957445}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

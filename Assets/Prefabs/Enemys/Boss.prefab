@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 770127180}
   - component: {fileID: 770127179}
   - component: {fileID: 1901276532194478541}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Block (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 622731932184445499}
   - component: {fileID: 8534990949810466991}
   - component: {fileID: 583865330973645483}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 1820832602268336713}
   - component: {fileID: 7417678104491078214}
   - component: {fileID: -1523756138374549721}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 2496008818528167674}
   - component: {fileID: -1365474656094751837}
   - component: {fileID: 1361086948050306062}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -592,7 +592,7 @@ MonoBehaviour:
     - {fileID: 1597514393453702530}
     - {fileID: 1927118238246919072}
     - {fileID: 1820832602268336713}
-    _Values: e112dd24dab11d1d279c55cd49894c46ed697cbe130c4f3b8bbea08fddf5f829801486f4e94e610c313d27e3e0f1287f9a5f9fbf8a136c2b3d5d4f67ad520431a42c4c5e0f402f61f890712a1b94a57de720f57d55389e6d7e4eceb96137457dbda677f2c2797059d0c138065ebdef57b7d2808d5d86dc6b7321203e8e89003e4af46c751db3ba6daf9b4d1771a5cc3c3d26018eb7b71f3637f39a1c655118463e06afacd69b8b04e8ed213ec63a0617ef5c7bb48a8ff66d5ce6c151f3fdd96c807df3a4ef437531d435ab104dd6d3004d6c27940adf995d9bfc76a4d95dfd04ee822d09d563bb31fc1cd7a0f07ab741c122f15a13720d0f3de1af78f965b87738a6fed004dcd6174f0a6fd949c5b221bbca9a03b0a7e87b761e46b713332b68636068497be63d6207f656e21e18a777d171cc3b0043d8207286b9dddd72d47d36d875e95d68a55ff802f55902356671c6bde7a167f06858e931ecb4c9fe9a71352c53ba5c41e638e8d4ccfcc6cedd59cbb70813a5ba627facdda605921ddd4b13d4e8e075ccea26bf314f2a535c4122c27c8e2e8820ce7b285075c4439ae06a569e1133cda0fc01e98604d40e441a45eb11c5b5c0512f0cfb9348dba8da1d59ed452a4bb4f2ab638870bafde405921c
+    _Values: e112dd24dab11d1d279c55cd49894c46ed697cbe130c4f3b8bbea08fddf5f829801486f4e94e610c313d27e3e0f1287f9a5f9fbf8a136c2b3d5d4f67ad520431a42c4c5e0f402f61f890712a1b94a57de720f57d55389e6d7e4eceb96137457dbda677f2c2797059d0c138065ebdef57b7d2808d5d86dc6b7321203e8e89003e4af46c751db3ba6daf9b4d1771a5cc3c3d26018eb7b71f3637f39a1c655118463e06afacd69b8b04e8ed213ec63a0617ef5c7bb48a8ff66d5ce6c151f3fdd96c807df3a4ef437531d435ab104dd6d3004d6c27940adf995d9bfc76a4d95dfd04ee822d09d563bb31fc1cd7a0f07ab741c122f15a13720d0f3de1af78f965b87738a6fed004dcd6174f0a6fd949c5b221bbca9a03b0a7e87b761e46b713332b68636068497be63d6207f656e21e18a777d171cc3b0043d8207286b9dddd72d47d36d875e95d68a55ff802f55902356671c6bde7a167f0685810fb3899569fad2c352c53ba5c41e638e8d4ccfcc6cedd59cbb70813a5ba627facdda605921ddd4b13d4e8e075ccea26bf314f2a535c4122c27c8e2e8820ce7b285075c4439ae06a569e1133cda0fc01e98604d40e441a45eb11c5b5c0512f0cfb9348dba8da1d59ed452a4bb4f2ab638870bafde405921c
 --- !u!114 &-1365474656094751837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 5294213497007988432}
   - component: {fileID: 5029784537391691407}
   - component: {fileID: 8016155945819625208}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1597514393453702530}
   - component: {fileID: -3633362198120954553}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,7 +859,7 @@ GameObject:
   - component: {fileID: 6200701286044371705}
   - component: {fileID: 1382978629759066851}
   - component: {fileID: -2390973183868350835}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
