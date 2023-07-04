@@ -10,7 +10,7 @@ public class BoHealthBar : MonoBehaviour
 
     //public Enemies enemies;
     public BossEnemy enemies;
-
+    public Boss1Enemy enemies1;
     private void Awake()
     {
         slider = GetComponent<Slider>();
@@ -18,24 +18,52 @@ public class BoHealthBar : MonoBehaviour
 
     public void Update()
     {
-        if (slider.value <= slider.minValue)
+        if (enemies != null)
         {
-            fillImage.enabled = false;
-        }
-        if (slider.value > slider.minValue && !fillImage.enabled)
-        {
-            fillImage.enabled = true;
-        }
-        float fillValue = (float)enemies.currentHealth / enemies.maxHealth;
+            if (slider.value <= slider.minValue)
+            {
+                fillImage.enabled = false;
+            }
+            if (slider.value > slider.minValue && !fillImage.enabled)
+            {
+                fillImage.enabled = true;
+            }
+            float fillValue = (float)enemies.currentHealth / enemies.maxHealth;
 
-        if (fillValue <= slider.maxValue / 3)
-        {
-            fillImage.color = Color.red;
+            if (fillValue <= slider.maxValue / 3)
+            {
+                fillImage.color = Color.red;
+            }
+            else if (fillValue > slider.maxValue / 3)
+            {
+                fillImage.color = Color.green;
+            }
+            slider.value = fillValue;
+
         }
-        else if (fillValue > slider.maxValue / 3)
+        if (enemies1 != null)
         {
-            fillImage.color = Color.green;
+            if (slider.value <= slider.minValue)
+            {
+                fillImage.enabled = false;
+            }
+            if (slider.value > slider.minValue && !fillImage.enabled)
+            {
+                fillImage.enabled = true;
+            }
+            float fillValue = (float)enemies1.currentHealth / enemies1.maxHealth;
+
+            if (fillValue <= slider.maxValue / 3)
+            {
+                fillImage.color = Color.red;
+            }
+            else if (fillValue > slider.maxValue / 3)
+            {
+                fillImage.color = Color.green;
+            }
+            slider.value = fillValue;
+
         }
-        slider.value = fillValue;
+
     }
 }

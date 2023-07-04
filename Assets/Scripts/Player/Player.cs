@@ -14,7 +14,12 @@ public class Player : MonoBehaviour
     [SerializeField] public FixedJoystick joystick;
     [SerializeField] public float bonusdame = 0;
     [SerializeField] public Slider healthBar;
-
+    private bool flashActive;
+    [SerializeField]
+    private float flashLength = 0.5f;
+    private float flashConter = 0f;
+    private SpriteRenderer sprite;
+    public AudioSource HurtSound;
     public AudioSource CoinSound;
     public Weapon firstWeapon;
     public Buff firstBuff;
@@ -50,6 +55,7 @@ public class Player : MonoBehaviour
         curHealth = maxHealth;
         curWeapon = Instantiate(firstWeapon, gunSpawnPos.position, gunSpawnPos.rotation);
         curWeapon.transform.SetParent(this.transform);
+        sprite = GetComponent<SpriteRenderer>();
     }
     public void FindClosestEnemy()
     {
@@ -102,6 +108,43 @@ public class Player : MonoBehaviour
         }
 
         if (curHealth > maxHealth) curHealth = maxHealth;
+        if (flashActive)
+        {
+            if (flashConter > flashLength * .99f)
+            {
+                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0f);
+            }
+            else if (flashConter > flashLength * .82f)
+            {
+                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
+            }
+            else if (flashConter > flashLength * .66f)
+            {
+                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0f);
+            }
+            else if (flashConter > flashLength * .49f)
+            {
+                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
+            }
+            else if (flashConter > flashLength * .33f)
+            {
+                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0f);
+            }
+            else if (flashConter > flashLength * .16f)
+            {
+                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
+            }
+            else if (flashConter > 0)
+            {
+                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0f);
+            }
+            else
+            {
+                sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1f);
+                flashActive = false;
+            }
+            flashConter -= Time.deltaTime;
+        }
     }
 
     private void LateUpdate()
@@ -324,6 +367,16 @@ public class Player : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Enemies e = collision.gameObject.GetComponent<Enemies>();
+        BulletForBoss b = collision.gameObject.GetComponent<BulletForBoss>();
+        BulletEnemies b1 = collision.gameObject.GetComponent<BulletEnemies>();
+        if (e != null || b != null || b1 != null)
+        {
+            Debug.Log("touch");
+            flashActive = true;
+            flashConter = flashLength;
+            HurtSound.Play();
+        }
         Coin p = collision.gameObject.GetComponent<Coin>();
         if (p != null)
         {

@@ -2,61 +2,48 @@ using Assets.Scripts.SaveData;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Timeline;
 using UnityEngine;
 
-public class AntEnemy : Enemies
-{
-    ////New Commit
-    //public Sprite intro;
-    ////New Commit
-    ////Attribute and Property
-    //[SerializeField] public GameObject explosivePrefabs;
-    //public BulletEnemies rangedBulletPrefabs;
-    //public EnemyType enemyType;
-    //public float currentHealth;
-    //public float maxHealth;
-    //public int damage;
-    //public float movementSpeed;
-    //public float attackSpeed = 0;
-    //public bool isAlive;
-    //public bool isHunt;
-    //public Vector3 endPoint;
-    //public float popular;
+public class Boss1Enemy : Enemies
 
-    //Timer timer;
-    //Timer timer1;
-    private bool flashActive;
-    [SerializeField]
-    private float flashLength = 0.5f;
-    private float flashConter = 0f;
-    private SpriteRenderer sprite;
-    
+{
+    [SerializeField] public Animator animator;
+    public GameObject player;
+    private float screenWidth;
+    private float screenHeight;
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] float dashspeed = 13f;
+    [SerializeField] float dashduration = 2f;
+    [SerializeField] float cooldown = 5f;
+    bool isDashing;
+    bool canDash = true;
+    private bool flip;
+
     void Start()
     {
-        //timer = gameObject.AddComponent<Timer>();
-        //timer1 = gameObject.AddComponent<Timer>();
+
+        screenWidth = Screen.width;
+        screenHeight = Screen.height;
         SetUp();
         currentHealth = maxHealth;
         isAlive = true;
         isHunt = false;
         endPoint = Gennerate();
-        //timer.Duarion = 2;
-        //timer.Run();
-        //timer1.Duarion = 3;
-        //timer1.Run();
-        
     }
 
     public void SetUp()
     {
-        popular = 0.7f;
-        maxHealth = 50;
-        damage = 2;
-        movementSpeed = GameManager.instance.player.speed * 0.1f;
+        maxHealth = 1000;
+        damage = 30;
+        movementSpeed = 2;
+        dashspeed = 13f;
+        dashduration = 2f;
+        cooldown = 5f;
     }
     void Update()
     {
-        Hunt(GameManager.instance.player.transform.position, movementSpeed);
+
         if (GameSave.instance.isIntro)
         {
             damage = 1;
@@ -65,37 +52,49 @@ public class AntEnemy : Enemies
         {
             SetUp();
         }
-        
+
+        Hunt(GameManager.instance.player.transform.position, movementSpeed);
+
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        
         if (currentHealth <= 0)
         {
             isAlive = false;
+            GameManager.instance.isBossAlive = false;
 
-            //if (enemyType == EnemyType.Ant)
-            //{
-                GameManager.instance.isAntAliveIntro = false;
-
-                if (GameSave.instance.isIntro != true)
-                {
-                    ScoreController.instance.Addpoint(1);
-                    ScoreController.instance.AddCoin(2);
-                }
-            //}
+            Instantiate<GameObject>(explosivePrefabs, transform.position, Quaternion.identity);
+            ScoreController.instance.Addpoint(4);
+            if (!GameManager.instance.isUpgrade)
+            {
+                GameManager.instance.UpgradeAttribute();
+                GameManager.instance.isUpgrade = true;
+            }
+            if (GameSave.instance.isIntro != true)
+            {
+                ScoreController.instance.Addpoint(4);
+            }
             DestroyEnemies();
         }
     }
 
     public void Hunt(Vector3 player, float MovementSpeed)
     {
+        Vector3 po1 = transform.position;
         if (GameManager.instance.player.isVisible == false)
         {
-            transform.position = Vector3.MoveTowards(transform.position,
-                                    player, MovementSpeed * Time.deltaTime);
+            if (Vector3.Distance(po1, player) < 10f && canDash)
+            {
+                StartCoroutine(Dash(player));
+
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(po1,
+                            player, MovementSpeed * Time.deltaTime);
+            }
         }
         else
         {
@@ -106,14 +105,45 @@ public class AntEnemy : Enemies
             }
         }
 
+        ////}
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        Player p = collision.gameObject.GetComponent<Player>();
+        if (p != null)
+        {
+            AttackPlayer();
 
+        }
 
+    }
     public void AttackPlayer()
     {
         GameManager.instance.player.TakeDamge(damage);
 
     }
+    private IEnumerator Dash(Vector3 player)
+    {
+
+        movementSpeed = 15;
+        Debug.Log("Dashing");
+        canDash = false;
+        isDashing = true;
+        animator.SetBool("RunAnim", isDashing);
+        //transform.position = Vector3.MoveTowards(transform.position,
+        //                            player, movementSpeed * Time.deltaTime);
+
+        yield return new WaitForSeconds(dashduration);
+        isDashing = false;
+        animator.SetBool("RunAnim", isDashing);
+        movementSpeed = 2;
+        Debug.Log("Stop Dashing");
+        yield return new WaitForSeconds(cooldown);
+        canDash = true;
+
+    }
+
+
 
     public Vector3 Gennerate()
     {
@@ -131,16 +161,6 @@ public class AntEnemy : Enemies
         return new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), -1);
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        Player p = collision.gameObject.GetComponent<Player>();
-        if (p != null)
-        {
-            AttackPlayer();
-            
-        }
-
-    }
 
     public void DestroyEnemies()
     {
@@ -177,4 +197,5 @@ public class AntEnemy : Enemies
         enemies.popular = enemyData.popular;
         return enemies;
     }
+
 }
