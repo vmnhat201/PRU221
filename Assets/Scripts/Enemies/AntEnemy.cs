@@ -75,6 +75,7 @@ public class AntEnemy : Enemies
                 if (GameSave.instance.isIntro != true)
                 {
                     ScoreController.instance.Addpoint(1);
+                    ScoreController.instance.AddCoin(2);
                 }
             //}
             DestroyEnemies();

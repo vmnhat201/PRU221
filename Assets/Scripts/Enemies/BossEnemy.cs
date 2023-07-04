@@ -129,6 +129,7 @@ public class BossEnemy : Enemies
                 if (GameSave.instance.isIntro != true)
                 {
                     ScoreController.instance.Addpoint(4);
+                    ScoreController.instance.AddCoin(10);
                 }
             //}
             DestroyEnemies();

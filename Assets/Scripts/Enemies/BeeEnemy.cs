@@ -186,6 +186,7 @@ public class BeeEnemy : Enemies
             if (GameSave.instance.isIntro != true)
             {
                 ScoreController.instance.Addpoint(3);
+                ScoreController.instance.AddCoin(5);
             }
 
             GameManager.instance.isBeeAliveIntro = false;
