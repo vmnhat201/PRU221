@@ -63,6 +63,7 @@ public class GunBullet : MonoBehaviour
         BeeEnemy bee = collision.gameObject.GetComponent<BeeEnemy>();
         RangedEnemy ranged = collision.gameObject.GetComponent<RangedEnemy>();
         BossEnemy boss = collision.gameObject.GetComponent<BossEnemy>();
+        Boss1Enemy boss1 = collision.gameObject.GetComponent<Boss1Enemy>();
         if (ant != null)
         {
             ant.TakeDamage(GameManager.instance.player.curWeapon.damage);
@@ -78,6 +79,10 @@ public class GunBullet : MonoBehaviour
         if (boss != null)
         {
             boss.TakeDamage(GameManager.instance.player.curWeapon.damage);
+        }
+        if (boss1 != null)
+        {
+            boss1.TakeDamage(GameManager.instance.player.curWeapon.damage);
         }
     }
 

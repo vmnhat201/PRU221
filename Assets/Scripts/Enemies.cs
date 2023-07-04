@@ -14,7 +14,8 @@ public enum EnemyType
     Ant,
     Ranged,
     Bee,
-    Boss
+    Boss,
+    Boss1
 }
 public class Enemies : MonoBehaviour
 {
