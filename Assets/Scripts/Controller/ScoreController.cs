@@ -16,18 +16,18 @@ public class ScoreController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-    }
+    }   
 
     private void Update()
-    {
-        scoreText.text = ScorePreFix + score.ToString();
+    {  
+        scoreText.text = "Score: " + score;
         coinText.text = coins.ToString();
     }
 
     public void Addpoint(int points)
     {
         score += points;
-        scoreText.text = ScorePreFix + score.ToString();
+        scoreText.text = ScorePreFix + score;
         //print($"Cộng {points} điểm");
     }
 

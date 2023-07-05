@@ -12,6 +12,14 @@ public enum WeaponStyle
 }
 public class Weapon : MonoBehaviour
 {
+    public int leveSkillFastGun = 1;
+    public int leveSkillStrongGun = 1;
+    public int leverSkillBom = 1;
+
+    public int costUpdateLevelFastGun = 15;
+    public int costUpdateLevelStrongGun = 15;
+    public int costUpdateBom = 15;
+
     public WeaponStyle style;
     public int quantity;
     public GunBullet normalBullet;
@@ -32,12 +40,20 @@ public class Weapon : MonoBehaviour
     public GameObject explosivePrefabs;    
 
     public float damage;
-  
-    private void Awake()
+
+    public void SetWeapon(Weapon weapon)
+    {
+        this.leveSkillFastGun = weapon.leveSkillFastGun;
+    }
+
+        private void Awake()
     {
         SetUp();
     }
-
+    private void Update()
+    {
+        Debug.Log(leveSkillFastGun);
+    }
     public void SetUp()
     {
         switch (style)
@@ -74,7 +90,31 @@ public class Weapon : MonoBehaviour
     }
 
 
+    //public void UpdateLevelFastGun()
+    //{
+    //    if(leveSkillFastGun <= 3)
+    //    {
+    //        leveSkillFastGun += 1;
+    //        costUpdateLevelFastGun += 100;
+    //    }       
+    //}
 
+    //public void UpdateLevelStrongGun()
+    //{
+    //    if (leveSkillStrongGun <= 3)
+    //    {
+    //        leveSkillStrongGun += 1;
+    //        costUpdateLevelStrongGun += 100;
+    //    }
+    //}
+    //public void UpdateLevelBoomGun()
+    //{
+    //    if (leverSkillBom <= 3)
+    //    {
+    //        leverSkillBom += 1;
+    //        costUpdateBom += 100;
+    //    }
+    //}
 
     public void Shoot(Vector2 direction)
     {
@@ -148,44 +188,44 @@ public class Weapon : MonoBehaviour
 
     public void UltimateSkillBom()
     {
+        int takeDameEnemy = 0;
+        int takeDameBoss = 0;
         Collider2D[] colliders = FindObjectsOfType<Collider2D>();
-        foreach (Collider2D collider in colliders)
+        if (leveSkillFastGun == 1)
         {
-            Debug.Log("1");
-            //Enemies e = collider.gameObject.GetComponent<Enemies>();
-            //if (e != null)
-            //{
-            //    if (e.enemyType != EnemyType.Boss)
-            //    {
-            //        e.TakeDamage(10000);
-            //    }
-            //    else
-            //    {
-            //        e.TakeDamage(20);
-            //    }
-
-            //}
-
-            //Enemies e = collider.gameObject.GetComponent<Enemies>();
+            takeDameEnemy = 20;
+            takeDameBoss = 1000;
+        }
+        else if (leveSkillFastGun == 2)
+        {
+            takeDameEnemy = 50;
+            takeDameBoss = 1000;
+        }
+        else if (leveSkillFastGun == 3) {
+            takeDameEnemy = 100;
+            takeDameBoss = 1500;
+        }        
+        foreach (Collider2D collider in colliders)
+        {                  
             AntEnemy ant = collider.gameObject.GetComponent<AntEnemy>();
             BeeEnemy bee = collider.gameObject.GetComponent<BeeEnemy>();
             RangedEnemy ranged = collider.gameObject.GetComponent<RangedEnemy>();
             BossEnemy boss = collider.gameObject.GetComponent<BossEnemy>();
             if (ant != null)
             {
-                ant.TakeDamage(20);
+                ant.TakeDamage(takeDameEnemy);
             }
             if (bee != null)
             {
-                bee.TakeDamage(20);
+                bee.TakeDamage(takeDameEnemy);
             }
             if (ranged != null)
             {
-                ranged.TakeDamage(20);
+                ranged.TakeDamage(takeDameEnemy);
             }
             if (boss != null)
             {
-                boss.TakeDamage(1000);
+                boss.TakeDamage(takeDameBoss);
             }
         }
         GameManager.instance.player.TakeDamge(20);
@@ -196,11 +236,16 @@ public class Weapon : MonoBehaviour
 
     private IEnumerator FireBulletsInCone()
     {
+        Debug.Log(leveSkillFastGun);
+        int numberOfLoop = 0;
+        if (leveSkillFastGun == 1) numberOfLoop = 2;
+        else if(leveSkillFastGun == 2) numberOfLoop = 3;
+        else if(leveSkillFastGun == 3) numberOfLoop = 6;
         float halfConeAngle = (6 - 1) * 6f / 2f;
         Vector2 direction = transform.right;
         for (int i = 0; i < 6; i++)
         {
-            for (int j = 0; j < 6; j++)
+            for (int j = 0; j < numberOfLoop; j++)
             {
                 float angle = j * 6f - halfConeAngle;
                 Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);

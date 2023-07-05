@@ -95,6 +95,18 @@ public class GunBullet : MonoBehaviour
 
     private IEnumerator FireBulletsStrong(float time)
     {
+        int numberOfLoop = 0;
+        Weapon weapon = new Weapon();
+        if(weapon.leveSkillStrongGun == 1)
+        {
+            numberOfLoop = 2;
+        }else if(weapon.leveSkillStrongGun == 2)
+        {
+            numberOfLoop = 3;
+        }else if(weapon.leveSkillStrongGun == 3)
+        {
+            numberOfLoop = 5;
+        }
         yield return new WaitForSeconds(time);
         GunBullet extraBullet = GameManager.instance.player.curWeapon.normalBullet;
         float halfConeAngle = (20 - 1) * 20f / 2f;
@@ -102,7 +114,7 @@ public class GunBullet : MonoBehaviour
 
         GetComponent<Rigidbody2D>().velocity = transform.up * 0;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < numberOfLoop; i++)
         {
             for (int j = 0; j < 20; j++)
             {
