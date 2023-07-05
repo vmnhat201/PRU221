@@ -18,7 +18,7 @@ public class GunBullet : MonoBehaviour
 
     public float bulletLifeTime = 2f;
 
-
+    private UpdateLevelWeapon updateLevelWeapon;
 
 
     public void Fire(Vector3 direction, float bulletForce)
@@ -31,6 +31,7 @@ public class GunBullet : MonoBehaviour
     void Start()
     {
         DestroyBullet(bulletLifeTime);
+        updateLevelWeapon = FindObjectOfType<UpdateLevelWeapon>();
     }
 
     void DestroyBullet(float Time)
@@ -95,15 +96,14 @@ public class GunBullet : MonoBehaviour
 
     private IEnumerator FireBulletsStrong(float time)
     {
-        int numberOfLoop = 0;
-        Weapon weapon = new Weapon();
-        if(weapon.levelSkillStrongGun == 1)
+        int numberOfLoop = 0;      
+        if (updateLevelWeapon.levelSkillStrongGun == 1)
         {
             numberOfLoop = 2;
-        }else if(weapon.levelSkillStrongGun == 2)
+        }else if (updateLevelWeapon.levelSkillStrongGun == 2)
         {
             numberOfLoop = 3;
-        }else if(weapon.levelSkillStrongGun == 3)
+        }else if (updateLevelWeapon.levelSkillStrongGun == 3)
         {
             numberOfLoop = 5;
         }

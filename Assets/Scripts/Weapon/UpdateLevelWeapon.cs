@@ -6,62 +6,70 @@ using UnityEngine.UI;
 
 public class UpdateLevelWeapon : MonoBehaviour
 {
+
+    public int levelSkillFastGun = 1;
+    public int levelSkillStrongGun = 1;
+    public int levelSkillBom = 1;
+
+    public int costUpdateLevelFastGun = 100;
+    public int costUpdateLevelStrongGun = 100;
+    public int costUpdateBom = 100;
+
     public Text levelFastGun;
     public Text levelStrongGun;
     public Text levelBomml;
 
     public TextMeshProUGUI costUpdateFastGun;
     public TextMeshProUGUI costUpdateStrongGun;
-    public TextMeshProUGUI costUpdateBom;
+    public TextMeshProUGUI costUpdateBomGun;
 
 
-    private ScoreController scoreController;
-    private Weapon weapon;
+    private ScoreController scoreController; 
 
     private void Start()
     {
-        scoreController = FindObjectOfType<ScoreController>();
-        weapon = FindObjectOfType<Weapon>();
+        scoreController = FindObjectOfType<ScoreController>();        
 
     }
     void Update()
     {
-        Debug.Log(weapon.costUpdateLevelFastGun);
-        levelFastGun.text = "Level: " + weapon.levelSkillFastGun;
-        levelStrongGun.text = "Level: " + weapon.levelSkillStrongGun;
-        levelBomml.text = "level: " + weapon.levelSkillBom;
+        Debug.Log(levelSkillFastGun);
+        levelFastGun.text = "Level: " + levelSkillFastGun;
+        levelStrongGun.text = "Level: " + levelSkillStrongGun;
+        levelBomml.text = "level: " + levelSkillBom;
 
-        costUpdateFastGun.text = weapon.costUpdateLevelFastGun + " Gold";
-        costUpdateStrongGun.text = weapon.costUpdateLevelStrongGun + " Gold";
-        costUpdateBom.text = weapon.costUpdateBom + " Gold";
+        costUpdateFastGun.text = costUpdateLevelFastGun + " Gold";
+        costUpdateStrongGun.text = costUpdateLevelStrongGun + " Gold";
+        costUpdateBomGun.text = costUpdateBom + " Gold";
     }
 
     public void UpdateLevelSkillFastGun()
     {
-        if (weapon.levelSkillFastGun < 3 || scoreController.coins > weapon.costUpdateLevelFastGun)
+        if (levelSkillFastGun < 3 || scoreController.coins > costUpdateLevelFastGun)
         {
 
-            weapon.levelSkillFastGun += 1;
-            weapon.costUpdateLevelFastGun += 100;
-            scoreController.coins -= weapon.costUpdateLevelFastGun;
+            levelSkillFastGun += 1;
+            scoreController.coins -= costUpdateLevelFastGun;
+            costUpdateLevelFastGun += 100;           
         }
     }
     public void UpdateLevelSkillStrongGun()
     {
-        if ( weapon.levelSkillStrongGun < 3 || scoreController.coins > weapon.costUpdateLevelStrongGun)
+        if ( levelSkillStrongGun < 3 || scoreController.coins > costUpdateLevelStrongGun)
         {
-            weapon.levelSkillStrongGun += 1;
-            weapon.costUpdateLevelStrongGun += 100;
-            scoreController.coins -= weapon.costUpdateLevelStrongGun;
+            levelSkillStrongGun += 1;
+            scoreController.coins -= costUpdateLevelStrongGun;
+            costUpdateLevelStrongGun += 100;           
         }
     }
     public void UpdateLevelSkillBoom()
     {
-        if ( weapon.levelSkillBom < 3 || scoreController.coins > weapon.costUpdateBom)
+        if (levelSkillBom < 3 || scoreController.coins > costUpdateBom)
         {
-            weapon.levelSkillBom += 1;
-            weapon.costUpdateBom += 100;
-            scoreController.coins -= weapon.costUpdateBom;
+            levelSkillBom += 1;
+            scoreController.coins -= costUpdateBom;
+            costUpdateBom += 100;
+            
         }
     }
 }
