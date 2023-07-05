@@ -12,9 +12,9 @@ public enum WeaponStyle
 }
 public class Weapon : MonoBehaviour
 {
-    public int leveSkillFastGun = 1;
-    public int leveSkillStrongGun = 1;
-    public int leverSkillBom = 1;
+    public int levelSkillFastGun = 1;
+    public int levelSkillStrongGun = 1;
+    public int levelSkillBom = 1;
 
     public int costUpdateLevelFastGun = 15;
     public int costUpdateLevelStrongGun = 15;
@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
 
     public void SetWeapon(Weapon weapon)
     {
-        this.leveSkillFastGun = weapon.leveSkillFastGun;
+        this.levelSkillFastGun = weapon.levelSkillFastGun;
     }
 
         private void Awake()
@@ -52,7 +52,7 @@ public class Weapon : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(leveSkillFastGun);
+        Debug.Log(levelSkillFastGun);
     }
     public void SetUp()
     {
@@ -191,17 +191,17 @@ public class Weapon : MonoBehaviour
         int takeDameEnemy = 0;
         int takeDameBoss = 0;
         Collider2D[] colliders = FindObjectsOfType<Collider2D>();
-        if (leveSkillFastGun == 1)
+        if (levelSkillFastGun == 1)
         {
             takeDameEnemy = 20;
             takeDameBoss = 1000;
         }
-        else if (leveSkillFastGun == 2)
+        else if (levelSkillFastGun == 2)
         {
             takeDameEnemy = 50;
             takeDameBoss = 1000;
         }
-        else if (leveSkillFastGun == 3) {
+        else if (levelSkillFastGun == 3) {
             takeDameEnemy = 100;
             takeDameBoss = 1500;
         }        
@@ -235,12 +235,11 @@ public class Weapon : MonoBehaviour
     }
 
     private IEnumerator FireBulletsInCone()
-    {
-        Debug.Log(leveSkillFastGun);
+    {       
         int numberOfLoop = 0;
-        if (leveSkillFastGun == 1) numberOfLoop = 2;
-        else if(leveSkillFastGun == 2) numberOfLoop = 3;
-        else if(leveSkillFastGun == 3) numberOfLoop = 6;
+        if (levelSkillFastGun == 1) numberOfLoop = 2;
+        else if(levelSkillFastGun == 2) numberOfLoop = 3;
+        else if(levelSkillFastGun == 3) numberOfLoop = 6;
         float halfConeAngle = (6 - 1) * 6f / 2f;
         Vector2 direction = transform.right;
         for (int i = 0; i < 6; i++)

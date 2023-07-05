@@ -97,13 +97,13 @@ public class GunBullet : MonoBehaviour
     {
         int numberOfLoop = 0;
         Weapon weapon = new Weapon();
-        if(weapon.leveSkillStrongGun == 1)
+        if(weapon.levelSkillStrongGun == 1)
         {
             numberOfLoop = 2;
-        }else if(weapon.leveSkillStrongGun == 2)
+        }else if(weapon.levelSkillStrongGun == 2)
         {
             numberOfLoop = 3;
-        }else if(weapon.leveSkillStrongGun == 3)
+        }else if(weapon.levelSkillStrongGun == 3)
         {
             numberOfLoop = 5;
         }

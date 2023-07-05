@@ -27,9 +27,9 @@ public class UpdateLevelWeapon : MonoBehaviour
     void Update()
     {
         Debug.Log(weapon.costUpdateLevelFastGun);
-        levelFastGun.text = "Level: " + weapon.leveSkillFastGun;
-        levelStrongGun.text = "Level: " + weapon.leveSkillStrongGun;
-        levelBomml.text = "level: " + weapon.leverSkillBom;
+        levelFastGun.text = "Level: " + weapon.levelSkillFastGun;
+        levelStrongGun.text = "Level: " + weapon.levelSkillStrongGun;
+        levelBomml.text = "level: " + weapon.levelSkillBom;
 
         costUpdateFastGun.text = weapon.costUpdateLevelFastGun + " Gold";
         costUpdateStrongGun.text = weapon.costUpdateLevelStrongGun + " Gold";
@@ -38,28 +38,28 @@ public class UpdateLevelWeapon : MonoBehaviour
 
     public void UpdateLevelSkillFastGun()
     {
-        if (weapon.leveSkillFastGun < 3 || scoreController.coins < weapon.costUpdateLevelFastGun)
+        if (weapon.levelSkillFastGun < 3 || scoreController.coins > weapon.costUpdateLevelFastGun)
         {
 
-            weapon.leveSkillFastGun += 1;
+            weapon.levelSkillFastGun += 1;
             weapon.costUpdateLevelFastGun += 100;
             scoreController.coins -= weapon.costUpdateLevelFastGun;
         }
     }
     public void UpdateLevelSkillStrongGun()
     {
-        if ( weapon.leveSkillStrongGun < 3 || scoreController.coins > weapon.costUpdateLevelStrongGun)
+        if ( weapon.levelSkillStrongGun < 3 || scoreController.coins > weapon.costUpdateLevelStrongGun)
         {
-            weapon.leveSkillStrongGun += 1;
+            weapon.levelSkillStrongGun += 1;
             weapon.costUpdateLevelStrongGun += 100;
             scoreController.coins -= weapon.costUpdateLevelStrongGun;
         }
     }
     public void UpdateLevelSkillBoom()
     {
-        if ( weapon.leverSkillBom < 3 || scoreController.coins > weapon.costUpdateBom)
+        if ( weapon.levelSkillBom < 3 || scoreController.coins > weapon.costUpdateBom)
         {
-            weapon.leverSkillBom += 1;
+            weapon.levelSkillBom += 1;
             weapon.costUpdateBom += 100;
             scoreController.coins -= weapon.costUpdateBom;
         }
