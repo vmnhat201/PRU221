@@ -45,7 +45,7 @@ public class UpdateLevelWeapon : MonoBehaviour
 
     public void UpdateLevelSkillFastGun()
     {
-        if (levelSkillFastGun < 3 && scoreController.coins > costUpdateLevelFastGun)
+        if (levelSkillFastGun < 3 || scoreController.coins > costUpdateLevelFastGun)
         {
 
             levelSkillFastGun += 1;
@@ -55,7 +55,7 @@ public class UpdateLevelWeapon : MonoBehaviour
     }
     public void UpdateLevelSkillStrongGun()
     {
-        if ( levelSkillStrongGun < 3 && scoreController.coins > costUpdateLevelStrongGun)
+        if ( levelSkillStrongGun < 3 || scoreController.coins > costUpdateLevelStrongGun)
         {
             levelSkillStrongGun += 1;
             scoreController.coins -= costUpdateLevelStrongGun;
@@ -64,7 +64,7 @@ public class UpdateLevelWeapon : MonoBehaviour
     }
     public void UpdateLevelSkillBoom()
     {
-        if (levelSkillBom < 3 && scoreController.coins > costUpdateBom)
+        if (levelSkillBom < 3 || scoreController.coins > costUpdateBom)
         {
             levelSkillBom += 1;
             scoreController.coins -= costUpdateBom;

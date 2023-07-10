@@ -2961,9 +2961,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7230842613747717989, guid: ab9d1b9929391a54bb6260b78c0452c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 953146286}
-    - targetCorrespondingSourceObject: {fileID: 7230842613747717989, guid: ab9d1b9929391a54bb6260b78c0452c4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 953146290}
     - targetCorrespondingSourceObject: {fileID: 4304078315603259750, guid: ab9d1b9929391a54bb6260b78c0452c4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 953146287}
@@ -3182,30 +3179,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &953146290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953146274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad92ac8aa3c1d96418ee175ca5bae75c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelSkillFastGun: 1
-  levelSkillStrongGun: 1
-  levelSkillBom: 1
-  costUpdateLevelFastGun: 15
-  costUpdateLevelStrongGun: 15
-  costUpdateBom: 15
-  levelFastGun: {fileID: 303466948}
-  levelStrongGun: {fileID: 2121357939}
-  levelBomml: {fileID: 1686879485}
-  costUpdateFastGun: {fileID: 1577890028}
-  costUpdateStrongGun: {fileID: 1205311099}
-  costUpdateBomGun: {fileID: 209070557}
 --- !u!1 &999500641
 GameObject:
   m_ObjectHideFlags: 0
@@ -4327,7 +4300,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953146290}
+      - m_Target: {fileID: 1193234024}
         m_TargetAssemblyTypeName: UpdateLevelWeapon, Assembly-CSharp
         m_MethodName: UpdateLevelSkillFastGun
         m_Mode: 1
@@ -4409,6 +4382,8 @@ GameObject:
   - component: {fileID: 1193234023}
   - component: {fileID: 1193234022}
   - component: {fileID: 1193234021}
+  - component: {fileID: 1193234024}
+  - component: {fileID: 1193234025}
   m_Layer: 5
   m_Name: ShopMenu
   m_TagString: Untagged
@@ -4489,18 +4464,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad92ac8aa3c1d96418ee175ca5bae75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   levelSkillFastGun: 1
   levelSkillStrongGun: 1
   levelSkillBom: 1
   costUpdateLevelFastGun: 100
   costUpdateLevelStrongGun: 100
   costUpdateBom: 100
+=======
+>>>>>>> parent of ca4e0fa (Update)
   levelFastGun: {fileID: 303466948}
   levelStrongGun: {fileID: 2121357939}
   levelBomml: {fileID: 1686879485}
   costUpdateFastGun: {fileID: 1577890028}
   costUpdateStrongGun: {fileID: 1205311099}
+<<<<<<< HEAD
   costUpdateBomGun: {fileID: 0}
+=======
+  costUpdateBom: {fileID: 209070557}
+>>>>>>> parent of ca4e0fa (Update)
 --- !u!114 &1193234025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6040,9 +6022,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953146290}
+      - m_Target: {fileID: 1193234024}
         m_TargetAssemblyTypeName: UpdateLevelWeapon, Assembly-CSharp
-        m_MethodName: UpdateLevelSkillStrongGun
+        m_MethodName: UpdateLevelSkillBoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7459,7 +7441,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953146290}
+      - m_Target: {fileID: 1193234024}
         m_TargetAssemblyTypeName: UpdateLevelWeapon, Assembly-CSharp
         m_MethodName: UpdateLevelSkillStrongGun
         m_Mode: 1
