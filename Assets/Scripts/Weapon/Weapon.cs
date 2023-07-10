@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(updateLevelWeapon.levelSkillFastGun);
+        //Debug.Log(updateLevelWeapon.levelSkillFastGun);
     }
     public void SetUp()
     {
@@ -280,45 +280,5 @@ public class Weapon : MonoBehaviour
         }
 
     }
-    public static Weapon ToWeapon(WeaponData weaponData)
-    {
-
-        GameObject weaponPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(weaponData.prefabName);
-        GameObject weaponObject = null;
-        if (weaponPrefab != null)
-        {
-            weaponObject = Instantiate(weaponPrefab);
-        }
-
-        Weapon weapon = weaponObject.GetComponent<Weapon>();
-
-        weapon.style = weaponData.style;
-        weapon.quantity = weaponData.quantity;
-        if (weaponData.normalBulletData != null)
-        {
-            weaponData.normalBulletData.GunBullet(weapon.normalBullet);
-        }
-        if (weaponData.ultiBulletData != null)
-        {
-            weaponData.ultiBulletData.GunBullet(weapon.ultiBullet);
-        }
-        weapon.intro = AssetDatabase.LoadAssetAtPath<Sprite>(weaponData.introSpriteName);
-        weapon.ultiSound = AssetDatabase.LoadAssetAtPath<AudioClip>(weaponData.ultiSoundClipName);
-        weapon.norSound = AssetDatabase.LoadAssetAtPath<AudioClip>(weaponData.norSoundClipName);
-        weapon.bulletForce = weaponData.bulletForce;
-        weapon.norCd = weaponData.norCd;
-        weapon.ultCd = weaponData.ultCd;
-        weapon.norReady = weaponData.norReady;
-        weapon.ultReady = weaponData.ultReady;
-        weapon.damage = weaponData.damage;
-        if (weaponData.hittf != null)
-        {
-            weaponData.hittf.Transform(weapon.hittf);
-        }
-        if (weaponData.explosivePrefab != null)
-        {
-            weapon.explosivePrefabs = weaponData.explosivePrefab.ToGameObject();
-        }
-        return weapon;
-    }
+   
 }

@@ -39,20 +39,6 @@ public class FileManager
         return score;
     }
 
-    public static void SavePlayerData()
-    {
-        string fileName = "PlayerData.json";
-        string filePath = Path.Combine(Application.persistentDataPath, fileName);
-        Debug.Log($"Lưu Player Data tại vị trí: {filePath}");
-
-        PlayerData playerData = new PlayerData(GameManager.instance.player);
-        string json = JsonConvert.SerializeObject(playerData, Newtonsoft.Json.Formatting.Indented);
-        File.WriteAllText(filePath, json);
-
-        Debug.Log("Dữ liệu người chơi đã được lưu thành công.");
-
-    }
-
     public static void SaveEnemiesData()
     {
         string fileName = "EnemyData.json";
@@ -89,27 +75,7 @@ public class FileManager
 
     }
 
-    public static PlayerData ReadPlayerData()
-    {
-        string fileName = "PlayerData.json";
-        string filePath = Path.Combine(Application.persistentDataPath, fileName);
-        PlayerData playerData = null;
-        Debug.Log($"Đoc Player Data tại vị trí : {filePath}");
-        // Kiểm tra xem tệp tin có tồn tại không
-        if (File.Exists(filePath))
-        {
-            // Đọc nội dung từ tệp tin
-            string json = File.ReadAllText(filePath);
-            playerData = JsonConvert.DeserializeObject<PlayerData>(json);
-        }
-        else
-        {
-            Debug.Log("Tệp tin không tồn tại");
-        }
-
-
-        return playerData;
-    }
+    
 
  
 }
