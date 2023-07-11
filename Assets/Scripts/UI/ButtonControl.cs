@@ -85,7 +85,8 @@ public class ButtonControl : Singleton<ButtonControl>
         countBar.SetActive(true);
         SoundController.instance.PlayGameStart();
         isGameStart = true;
-        yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
+        //yield return new WaitForSecondsRealtime(SoundController.instance.GameStart.length);
+        yield return new WaitForSecondsRealtime(0.1f);
         countBar.SetActive(false);
         pauseButton.SetActive(true);
         ShopButton.SetActive(true);

@@ -26,9 +26,13 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     public GameObject bomObjectPrefab;
     private GameObject bombObject;
 
-    private void Start()
-    {
-    }
+    private bool isThrowing = false; // Biến kiểm tra trạng thái đang di chuyển của bom
+    private float throwSpeed = 3f; // Tốc độ di chuyển của bom (có thể điều chỉnh)
+    private Quaternion throwRotation; // Hướng quay của bom khi ném
+
+    // phạm vi nổ của bom
+    float bombExploseRange = 3f;
+
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -46,16 +50,9 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     }
     void Update()
     {
-        if (isButtonPressed && isButtonReleased)
+        if (isThrowing)
         {
-
-            isButtonPressed = false;
-            isButtonReleased = false;
-            if (countdownCoroutine == null)
-            {
-                countdownCoroutine = StartCoroutine(CountDownUtil(cooldown));
-            }
-
+            MoveBomb();
         }
         if (!isReady)
         {
@@ -67,6 +64,18 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
                 isReady = true;
             }
         }
+        if (isButtonPressed && isButtonReleased)
+        {
+
+            isButtonPressed = false;
+            isButtonReleased = false;
+            if (countdownCoroutine == null)
+            {
+                countdownCoroutine = StartCoroutine(CountDownUtil(cooldown));
+            }
+
+        }
+
 
     }
 
@@ -94,43 +103,96 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
         isButtonReleased = false;
         buttonPressStartTime = Time.time;
     }
+
     public void OnPointerUp(PointerEventData eventData)
     {
         Debug.Log("OnPointerUp");
         ThrowBomb();
+        float buttonPressEndTime = Time.time;
+        buttonPressDuration = buttonPressEndTime - buttonPressStartTime;
+        Debug.Log("Thời gian nhấn nút: " + buttonPressDuration);
         isButtonReleased = true;
+        // phải ném bomb trước sau đó mới thực hiện is ready bằng false
         isReady = false;
 
-    }
 
+    }
     IEnumerator CountDownUtil(float time)
     {
         yield return new WaitForSeconds(time);
         countdownCoroutine = null;
     }
-
-    private void ThrowBomb()
-    {   
-        if(bombObject != null)
+    private void DestroyBomb()
+    {
+        if (bombObject == null)
         {
             return;
         }
-        Rigidbody2D bombRigidbody = bombObject.GetComponent<Rigidbody2D>();
-
-        // Tính toán lực ném dựa trên thời gian giữ nút. Bạn có thể điều chỉnh các giá trị theo ý muốn.
-        float throwForce = buttonPressDuration * forceMultiplier;
-        Debug.Log("Throw Force: " + throwForce);
-
-        // Tính toán hướng ném (direction). Trong ví dụ này, chúng ta sử dụng Vector2.right làm hướng ném.
-        Vector2 throwDirection = Vector2.right;
-
-        // Áp dụng lực ném lên bomb theo hướng và lực xác định.
-        bombRigidbody.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
-
-    }
-
-    private void DestroyBomb()
-    {
+        Debug.Log("Hủy bomb");
+        ExploseBomb();
         Destroy(bombObject);
     }
+    private void ExploseBomb()
+    {
+        CheckObjectsInRange();
+    }
+    private void ThrowBomb()
+    {
+        if (bombObject == null || !isReady)
+        {
+            return;
+        }
+        // việc in ra những thông tin dưới đây chỉ để minh họa, và có tác dụng là chỉ cần 1 lần, nếu log
+        // trong MoveBomb thì sẽ bị in ra liên tục
+        Vector2 throwDirection = Vector2.up; // Hướng ném (có thể điều chỉnh)
+        float throwDistance = buttonPressDuration * forceMultiplier; // Khoảng cách ném (có thể điều chỉnh)
+        Debug.Log("Hướng ném: " + throwDirection);
+        Debug.Log("Khoảng cách ném: " + throwDistance);
+
+        // Di chuyển bomObject từ từ bằng phương pháp time-based movement
+        isThrowing = true;
+        bombObject.transform.SetParent(null);
+    }
+
+    private void MoveBomb()
+    {
+        if (bombObject == null)
+        {
+            return;
+        }
+        float moveDistance = throwSpeed * Time.deltaTime;
+        bombObject.transform.Translate(Vector2.up * moveDistance);
+
+        // Kiểm tra điều kiện dừng di chuyển
+        float targetDistance = buttonPressDuration * forceMultiplier;
+        if (Vector2.Distance(bombObject.transform.position, GameManager.instance.player.transform.position) >= targetDistance)
+        {
+            isThrowing = false;
+        }
+    }
+
+    private void CheckObjectsInRange()
+    {
+        // Lấy tất cả các Collider2D trong bán kính của bom
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(bombObject.transform.position, bombExploseRange);
+
+        // Duyệt qua từng Collider2D và xử lý logic tương ứng
+        foreach (Collider2D collider in colliders)
+        {
+            // Kiểm tra nếu collider không phải là bom (chính nó)
+            if (collider.gameObject != bombObject)
+            {
+                // Kiểm tra xem collider có chứa script "Enemies" hay không
+                Enemies enemiesScript = collider.gameObject.GetComponent<Enemies>();
+                if (enemiesScript != null)
+                {
+                    // In ra tên của đối tượng Enemies trong bán kính của bom
+                    Debug.Log("Đối tượng Enemies trong bán kính của bom: " + collider.gameObject.name);
+
+                    
+                }
+            }
+        }
+    }
+
 }
