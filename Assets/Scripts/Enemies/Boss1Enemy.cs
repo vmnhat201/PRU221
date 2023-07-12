@@ -36,8 +36,8 @@ public class Boss1Enemy : Enemies
     {
         maxHealth = 1000;
         damage = 30;
-        movementSpeed = 2;
-        dashspeed = 13f;
+        movementSpeed = 6;
+        dashspeed = 17f;
         dashduration = 2f;
         cooldown = 5f;
     }
@@ -125,7 +125,8 @@ public class Boss1Enemy : Enemies
     private IEnumerator Dash(Vector3 player)
     {
 
-        movementSpeed = 15;
+        movementSpeed = dashspeed;
+        Debug.Log(movementSpeed);
         Debug.Log("Dashing");
         canDash = false;
         isDashing = true;
