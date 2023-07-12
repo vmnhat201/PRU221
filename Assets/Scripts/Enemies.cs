@@ -119,6 +119,7 @@ public class Enemies : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        print("Take Damage chung");
         //currentHealth -= damage;
         //if (currentHealth <= 0)
         //{

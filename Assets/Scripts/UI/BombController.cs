@@ -13,25 +13,27 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image imageCount;
-    private float buttonPressDuration = 0f;
-    float forceMultiplier = 5f; // Hệ số nhân lực
-    private bool isReady = true;
+    public float buttonPressDuration = 0f;
+    // lực đẩy của bom
+    public float forceMultiplier = 3f;
+    public bool isReady = true;
     public float destroyTime = 4f;
     public float cooldown = 5f;
 
-    private bool isButtonPressed = false;
-    private bool isButtonReleased = false;
-    private float buttonPressStartTime = 0f;
-    private Coroutine countdownCoroutine;
+    public bool isButtonPressed = false;
+    public bool isButtonReleased = false;
+    public float buttonPressStartTime = 0f;
+    public Coroutine countdownCoroutine;
     public GameObject bomObjectPrefab;
-    private GameObject bombObject;
+    public GameObject bombObject;
 
-    private bool isThrowing = false; // Biến kiểm tra trạng thái đang di chuyển của bom
-    private float throwSpeed = 3f; // Tốc độ di chuyển của bom (có thể điều chỉnh)
-    private Quaternion throwRotation; // Hướng quay của bom khi ném
+    public bool isThrowing = false; // Biến kiểm tra trạng thái đang di chuyển của bom
+    public Quaternion throwRotation; // Hướng quay của bom khi ném
 
     // phạm vi nổ của bom
-    float bombExploseRange = 3f;
+    public float bombExploseRange = 4f;
+    // sức mạnh nổ của bom
+    public float bombExploseForce = 40f;
 
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -50,10 +52,7 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     }
     void Update()
     {
-        if (isThrowing)
-        {
-            MoveBomb();
-        }
+       
         if (!isReady)
         {
             imageCount.fillAmount += Time.deltaTime / cooldown;
@@ -96,8 +95,9 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
 
         Debug.Log("Sinh ra bomb");
         bombObject = Instantiate(bomObjectPrefab, position, rotation);
+        // chỉ khi nào kinematic thì vị trí của bomb mới không bị thay đổi
+        bombObject.GetComponent<Rigidbody2D>().isKinematic = true;
         bombObject.transform.SetParent(GameManager.instance.player.transform);
-
         isButtonPressed = true;
         Invoke("DestroyBomb", destroyTime);
         isButtonReleased = false;
@@ -106,16 +106,60 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("OnPointerUp");
-        ThrowBomb();
+        if (bombObject == null || !isReady)
+        {
+            return;
+        }
+        // In thông báo "Ném bomb"
+        print("Ném bomb");
+
+        // Lưu thời điểm kết thúc nhấn nút
         float buttonPressEndTime = Time.time;
+
+        // Tính thời gian nhấn nút bằng cách lấy hiệu của thời điểm kết thúc và thời điểm bắt đầu
         buttonPressDuration = buttonPressEndTime - buttonPressStartTime;
+
+        // In thông báo về thời gian nhấn nút
         Debug.Log("Thời gian nhấn nút: " + buttonPressDuration);
+
+        // Kích hoạt Rigidbody2D của bombObject để áp dụng vật lý
+        bombObject.GetComponent<Rigidbody2D>().isKinematic = false;
+
+        /* 
+        Việc in ra những thông tin dưới đây chỉ để minh họa,
+        và có tác dụng là chỉ cần in ra một lần.
+        Nếu log trong MoveBomb, thông tin sẽ bị in ra liên tục
+        */
+
+        // Gán giá trị quay của player vào throwRotation
+        throwRotation = GameManager.instance.player.transform.rotation;
+
+        // Tính toán hướng ném dựa trên throwRotation và vector (0, 1)
+        Vector3 throwDirection = throwRotation * Vector3.up;
+
+        // Tính khoảng cách ném dựa trên thời gian nhấn nút và hệ số forceMultiplier
+        float throwDistance = buttonPressDuration * forceMultiplier;
+
+        // Lấy Rigidbody2D của bombObject
+        Rigidbody2D bombRigidbody = bombObject.GetComponent<Rigidbody2D>();
+
+        // Tính toán lực ném dựa trên hướng ném và khoảng cách ném
+        Vector2 throwForce = throwDirection * throwDistance;
+
+        // Áp dụng lực ném vào bombRigidbody bằng cách sử dụng Impulse
+        bombRigidbody.AddForce(throwForce, ForceMode2D.Impulse);
+
+        // Đánh dấu đang thực hiện ném
+        isThrowing = true;
+
+        // Loại bỏ parent của bombObject để nó di chuyển tự do
+        bombObject.transform.SetParent(null);
+
+        // Đánh dấu nút đã được nhả ra
         isButtonReleased = true;
-        // phải ném bomb trước sau đó mới thực hiện is ready bằng false
+
+        // Phải ném bomb trước khi đặt isReady thành false
         isReady = false;
-
-
     }
     IEnumerator CountDownUtil(float time)
     {
@@ -136,23 +180,6 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     {
         CheckObjectsInRange();
     }
-    private void ThrowBomb()
-    {
-        if (bombObject == null || !isReady)
-        {
-            return;
-        }
-        // việc in ra những thông tin dưới đây chỉ để minh họa, và có tác dụng là chỉ cần 1 lần, nếu log
-        // trong MoveBomb thì sẽ bị in ra liên tục
-        Vector2 throwDirection = Vector2.up; // Hướng ném (có thể điều chỉnh)
-        float throwDistance = buttonPressDuration * forceMultiplier; // Khoảng cách ném (có thể điều chỉnh)
-        Debug.Log("Hướng ném: " + throwDirection);
-        Debug.Log("Khoảng cách ném: " + throwDistance);
-
-        // Di chuyển bomObject từ từ bằng phương pháp time-based movement
-        isThrowing = true;
-        bombObject.transform.SetParent(null);
-    }
 
     private void MoveBomb()
     {
@@ -160,9 +187,6 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
         {
             return;
         }
-        float moveDistance = throwSpeed * Time.deltaTime;
-        bombObject.transform.Translate(Vector2.up * moveDistance);
-
         // Kiểm tra điều kiện dừng di chuyển
         float targetDistance = buttonPressDuration * forceMultiplier;
         if (Vector2.Distance(bombObject.transform.position, GameManager.instance.player.transform.position) >= targetDistance)
@@ -186,10 +210,32 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
                 Enemies enemiesScript = collider.gameObject.GetComponent<Enemies>();
                 if (enemiesScript != null)
                 {
-                    // In ra tên của đối tượng Enemies trong bán kính của bom
-                    Debug.Log("Đối tượng Enemies trong bán kính của bom: " + collider.gameObject.name);
+                    AntEnemy ant = collider.gameObject.GetComponent<AntEnemy>();
+                    BeeEnemy bee = collider.gameObject.GetComponent<BeeEnemy>();
+                    RangedEnemy ranged = collider.gameObject.GetComponent<RangedEnemy>();
+                    BossEnemy boss = collider.gameObject.GetComponent<BossEnemy>();
+                    Boss1Enemy boss1 = collider.gameObject.GetComponent<Boss1Enemy>();
+                    if (ant != null)
+                    {
+                        ant.TakeDamage(bombExploseForce);
+                    }
+                    if (bee != null)
+                    {
+                        bee.TakeDamage(bombExploseForce);
+                    }
+                    if (ranged != null)
+                    {
+                        ranged.TakeDamage(bombExploseForce);
+                    }
+                    if (boss != null)
+                    {
+                        boss.TakeDamage(bombExploseForce);
+                    }
+                    if (boss1 != null)
+                    {
+                        boss1.TakeDamage(bombExploseForce);
+                    }
 
-                    
                 }
             }
         }
