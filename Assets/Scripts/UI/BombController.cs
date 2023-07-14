@@ -35,7 +35,12 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     // sức mạnh nổ của bom
     public float bombExploseForce = 40f;
 
+    private UpdateLevelWeapon updateLevelWeapon = new UpdateLevelWeapon();
 
+    public void Start()
+    {
+        updateLevelWeapon = FindObjectOfType<UpdateLevelWeapon>();
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Drag Begin");
@@ -52,6 +57,20 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     }
     void Update()
     {
+        if(updateLevelWeapon.levelBomb == 1)
+        {
+            bombExploseRange = 4f;
+            bombExploseForce = 40f;
+        }else if(updateLevelWeapon.levelBomb == 2)
+        {
+            bombExploseRange = 5f;
+            bombExploseForce = 50f;
+        }else if(updateLevelWeapon.levelBomb == 3)
+        {
+            bombExploseRange = 6f;
+            bombExploseForce = 60f;
+        }
+
        
         if (!isReady)
         {
