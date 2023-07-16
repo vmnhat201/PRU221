@@ -66,7 +66,7 @@ public class Boss1Enemy : Enemies
             GameManager.instance.isBossAlive = false;
 
             Instantiate<GameObject>(explosivePrefabs, transform.position, Quaternion.identity);
-            ScoreController.instance.Addpoint(4);
+            //ScoreController.instance.Addpoint(4);
             if (!GameManager.instance.isUpgrade)
             {
                 GameManager.instance.UpgradeAttribute();
@@ -74,7 +74,9 @@ public class Boss1Enemy : Enemies
             }
             if (GameSave.instance.isIntro != true)
             {
-                ScoreController.instance.Addpoint(4);
+                //ScoreController.instance.Addpoint(4);
+                GameManager.instance.AddCoin(10);
+                GameManager.instance.Addpoint(4);
             }
             DestroyEnemies();
         }

@@ -128,9 +128,11 @@ public class BossEnemy : Enemies
                 }
                 if (GameSave.instance.isIntro != true)
                 {
-                    ScoreController.instance.Addpoint(4);
-                    ScoreController.instance.AddCoin(10);
-                }
+                //ScoreController.instance.Addpoint(4);
+                //ScoreController.instance.AddCoin(10);
+                GameManager.instance.AddCoin(10);
+                GameManager.instance.Addpoint(4);
+            }
             //}
             DestroyEnemies();
         }

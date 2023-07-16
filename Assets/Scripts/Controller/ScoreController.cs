@@ -26,15 +26,14 @@ public class ScoreController : MonoBehaviour
 
     public void Addpoint(int points)
     {
-        score += points;
-        scoreText.text = ScorePreFix + score;
-        //print($"Cộng {points} điểm");
+        this.score += points;
+        scoreText.text = ScorePreFix + this.score;
     }
 
     public void AddCoin(int coin)
     {
-        coins += coin;
-        GameManager.instance.totalCoins = coins;
+        this.coins += coin;
+        GameManager.instance.totalCoins = this.coins;
         coinText.text = coins.ToString();
     }
 }

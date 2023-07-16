@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -68,6 +69,31 @@ public class GameManager : Singleton<GameManager>
         isPistoGun=true;
         isUpgrade = false;
 
+    }
+
+    public int score = 0;
+    public const string ScorePreFix = "Score: ";
+    public TextMeshProUGUI scoreText;
+    public int coins = 0;
+    public TextMeshProUGUI coinText;
+
+    private void Update()
+    {
+        scoreText.text = "Score: " + score;
+        coinText.text = coins.ToString();
+    }
+
+    public void Addpoint(int points)
+    {
+        this.score += points;
+        scoreText.text = ScorePreFix + this.score;
+    }
+
+    public void AddCoin(int coin)
+    {
+        coins += coin;
+        totalCoins = coins;
+        coinText.text = coins.ToString();
     }
 
     public void UpgradeAttribute()

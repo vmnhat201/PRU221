@@ -185,8 +185,10 @@ public class BeeEnemy : Enemies
             DestroyEnemies();
             if (GameSave.instance.isIntro != true)
             {
-                ScoreController.instance.Addpoint(3);
-                ScoreController.instance.AddCoin(5);
+                //ScoreController.instance.Addpoint(3);
+                //ScoreController.instance.AddCoin(5);
+                GameManager.instance.AddCoin(5);
+                GameManager.instance.Addpoint(3);
             }
 
             GameManager.instance.isBeeAliveIntro = false;

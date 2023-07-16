@@ -30,7 +30,7 @@ public class AntEnemy : Enemies
     private float flashLength = 0.5f;
     private float flashConter = 0f;
     private SpriteRenderer sprite;
-    
+
     void Start()
     {
         //timer = gameObject.AddComponent<Timer>();
@@ -44,7 +44,7 @@ public class AntEnemy : Enemies
         //timer.Run();
         //timer1.Duarion = 3;
         //timer1.Run();
-        
+
     }
 
     public void SetUp()
@@ -65,28 +65,28 @@ public class AntEnemy : Enemies
         {
             SetUp();
         }
-        
+
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        
+
         if (currentHealth <= 0)
         {
             isAlive = false;
 
-            //if (enemyType == EnemyType.Ant)
-            //{
-                GameManager.instance.isAntAliveIntro = false;
-
-                if (GameSave.instance.isIntro != true)
-                {
-                    ScoreController.instance.Addpoint(1);
-                    ScoreController.instance.AddCoin(2);
-                }
-            //}
+            GameManager.instance.isAntAliveIntro = false;
             DestroyEnemies();
+            if (GameSave.instance.isIntro != true)
+            {
+                //Debug.Log("Ant Take Damge");
+                //ScoreController.instance.Addpoint(1);
+                //ScoreController.instance.AddCoin(2);
+                GameManager.instance.AddCoin(2);
+                GameManager.instance.Addpoint(1); 
+            }
+            
         }
     }
 
@@ -112,7 +112,6 @@ public class AntEnemy : Enemies
     public void AttackPlayer()
     {
         GameManager.instance.player.TakeDamge(damage);
-
     }
 
     public Vector3 Gennerate()
@@ -137,7 +136,7 @@ public class AntEnemy : Enemies
         if (p != null)
         {
             AttackPlayer();
-            
+
         }
 
     }

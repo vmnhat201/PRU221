@@ -94,8 +94,10 @@ public class RangedEnemy : Enemies
 
             if (GameSave.instance.isIntro != true)
             {
-                ScoreController.instance.Addpoint(2);
-                ScoreController.instance.AddCoin(8);
+                //ScoreController.instance.Addpoint(2);
+                //ScoreController.instance.AddCoin(8);
+                GameManager.instance.AddCoin(8);
+                GameManager.instance.Addpoint(2);
             }
             //}
             //if (enemyType == EnemyType.Bee)
