@@ -104,12 +104,27 @@ public class SpawnManager : Singleton<SpawnManager>
     {
         foreach (var item in GameManager.instance.Enemies)
         {
-            if (item.enemyType == EnemyType.Boss && GameManager.instance.isBossAlive == false && GameSave.instance.isIntro == false)
+     
+            int random = Random.Range(0, 2);
+            if (random == 0)
             {
-                GameManager.instance.isBossAlive = true;
-                GameManager.instance.isUpgrade = false;
-                Instantiate(item.gameObject, Gennerate(), Quaternion.identity);
+                if (item.enemyType == EnemyType.Boss && GameManager.instance.isBossAlive == false && GameSave.instance.isIntro == false)
+                {
+                    GameManager.instance.isBossAlive = true;
+                    GameManager.instance.isUpgrade = false;
+                    Instantiate(item.gameObject, Gennerate(), Quaternion.identity);
+                }
             }
+            
+            if (random == 1)
+            {
+                if (item.enemyType == EnemyType.Boss1 && GameManager.instance.isBossAlive == false && GameSave.instance.isIntro == false)
+                {
+                    GameManager.instance.isBossAlive = true;
+                    GameManager.instance.isUpgrade = false;
+                    Instantiate(item.gameObject, Gennerate(), Quaternion.identity);
+                }
+            }        
         }
     }
 

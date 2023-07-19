@@ -7084,6 +7084,7 @@ MonoBehaviour:
   - {fileID: 7969016790558176023, guid: a2f56e0142cbf6b4ea1465fa61172bcd, type: 3}
   - {fileID: 1087987541891769190, guid: 24bf5a2858631824498f486a0a3a1182, type: 3}
   - {fileID: 7794859326587936032, guid: ff1348f693639ce4ca9d7a861d6b16d2, type: 3}
+  - {fileID: 4061026008096901555, guid: e0a7468c5565216419a5f018030df2bf, type: 3}
   CurEnemies: []
   CurCoins: []
   Bullet:

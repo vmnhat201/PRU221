@@ -610,7 +610,7 @@ MonoBehaviour:
   intro: {fileID: 0}
   explosivePrefabs: {fileID: 0}
   rangedBulletPrefabs: {fileID: 0}
-  enemyType: 3
+  enemyType: 4
   currentHealth: 0
   maxHealth: 0
   damage: 0
