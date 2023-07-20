@@ -17,6 +17,7 @@ public class ButtonControl : Singleton<ButtonControl>
     public bool isBuffCircle;
 
     public GameObject startMenu;
+    public GameObject AboutUs;
     public GameObject pauseMenuScreen;
     public GameObject shoppingMenu;
     public GameObject gameOverScreen;
@@ -34,6 +35,7 @@ public class ButtonControl : Singleton<ButtonControl>
         isGameStart = false;
         isGamePause = true;
         isShowIntro = false;
+        AboutUs.SetActive(false);
         countBar.SetActive(false);
         startMenu.SetActive(true);
         pauseMenuScreen.SetActive(false);
@@ -45,7 +47,14 @@ public class ButtonControl : Singleton<ButtonControl>
 
     }
 
-
+    public void AboutOn()
+    {
+        AboutUs.SetActive(true);
+    }
+    public void AboutOff()
+    {
+        AboutUs.SetActive(false);
+    }
     public void Reset()
     {
         GameSave.instance.isQues = false;
