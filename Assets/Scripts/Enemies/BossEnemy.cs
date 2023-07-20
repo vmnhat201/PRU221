@@ -128,8 +128,6 @@ public class BossEnemy : Enemies
                 }
                 if (GameSave.instance.isIntro != true)
                 {
-                //ScoreController.instance.Addpoint(4);
-                //ScoreController.instance.AddCoin(10);
                 GameManager.instance.AddCoin(10);
                 GameManager.instance.Addpoint(4);
             }
@@ -140,30 +138,7 @@ public class BossEnemy : Enemies
 
     public void Hunt(Vector3 player, float MovementSpeed)
     {
-        //if (enemyType == EnemyType.Ant)
-        //{
-        //    if (GameManager.instance.player.isVisible == false)
-        //    {
-        //        transform.position = Vector3.MoveTowards(transform.position,
-        //                                player, MovementSpeed * Time.deltaTime);
-        //    }
-        //    else
-        //    {
-        //        transform.position = Vector3.MoveTowards(transform.position, endPoint, MovementSpeed * Time.deltaTime);
-        //        if (Vector3.Distance(transform.position, endPoint) < 0.001f)
-        //        {
-        //            endPoint = Gennerate();
-        //        }
-        //    }
-
-        //}
-
-        //Vector3 po = player;
-        //if (enemyType == EnemyType.Bee)
-        //{
-        //    transform.position = Vector3.MoveTowards(transform.position,
-        //               po, MovementSpeed * Time.deltaTime);
-        //}
+       
 
         Vector3 po1 = transform.position;
 
