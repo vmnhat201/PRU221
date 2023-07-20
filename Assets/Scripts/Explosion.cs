@@ -24,7 +24,6 @@ public class Explosion : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
         {
             Destroy(gameObject);
-            //sound.Play();
         }
     }
 }

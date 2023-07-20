@@ -1085,6 +1085,7 @@ MonoBehaviour:
   throwRotation: {x: 0, y: 0, z: 0, w: 0}
   bombExploseRange: 4
   bombExploseForce: 40
+  bombExplorePrefab: {fileID: 3409857125561947499, guid: 70af36985bc3d1b42aa097b1111d7dde, type: 3}
 --- !u!114 &279580758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,77 +2452,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610945076}
   m_CullTransparentMesh: 1
---- !u!1 &666185796
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 666185798}
-  - component: {fileID: 666185797}
-  - component: {fileID: 666185799}
-  m_Layer: 0
-  m_Name: ScoreController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &666185797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666185796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b306aef872f4cf947bc5dedac394ba20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 6259626952764891229, guid: 1831289b8f9db6849ad73680b216dd55, type: 3}
-  score: 0
-  scoreText: {fileID: 1732670384}
-  coins: 0
-  coinText: {fileID: 1138140487}
---- !u!4 &666185798
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666185796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &666185799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666185796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  saveLayer: 0
-  saveTag: 0
-  saveName: 0
-  saveHideFlags: 0
-  saveActive: 0
-  saveChildren: 0
-  componentsToSave:
-  - {fileID: 666185798}
-  - {fileID: 666185797}
 --- !u!1 &677952364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5224,7 +5154,6 @@ GameObject:
   - component: {fileID: 1193234022}
   - component: {fileID: 1193234021}
   - component: {fileID: 1193234024}
-  - component: {fileID: 1193234025}
   m_Layer: 5
   m_Name: ShopMenu
   m_TagString: Untagged
@@ -5305,10 +5234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad92ac8aa3c1d96418ee175ca5bae75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSkillFastGun: 1
-  levelSkillStrongGun: 1
-  levelSkillBom: 1
-  levelBomb: 1
   costUpdateLevelFastGun: 5
   costUpdateLevelStrongGun: 10
   costUpdateBom: 10
@@ -5316,30 +5241,13 @@ MonoBehaviour:
   message: 
   levelFastGun: {fileID: 303466948}
   levelStrongGun: {fileID: 2121357939}
-  levelBommlGun: {fileID: 1686879485}
-  levelBombb: {fileID: 508654170}
+  levelBommlGun: {fileID: 508654170}
+  levelBombb: {fileID: 1686879485}
   Message: {fileID: 783569770}
   costUpdateFastGun: {fileID: 1577890028}
   costUpdateStrongGun: {fileID: 1205311099}
-  costUpdateBomGun: {fileID: 209070557}
-  costUpdatebomb: {fileID: 34486340}
---- !u!114 &1193234025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193234020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b306aef872f4cf947bc5dedac394ba20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  score: 0
-  scoreText: {fileID: 0}
-  coins: 0
-  coinText: {fileID: 0}
+  costUpdateBomGun: {fileID: 34486340}
+  costUpdatebomb: {fileID: 209070557}
 --- !u!1 &1202449838
 GameObject:
   m_ObjectHideFlags: 0
@@ -7113,6 +7021,10 @@ MonoBehaviour:
   isStrongGun: 0
   isBoomGun: 0
   isUpgrade: 0
+  levelSkillFastGun: 1
+  levelSkillStrongGun: 1
+  levelSkillBom: 1
+  levelBomb: 1
   score: 0
   scoreText: {fileID: 1732670384}
   coins: 0
@@ -9205,7 +9117,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1958161201
 GameObject:
@@ -10089,7 +10001,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1294807477929018571, guid: a2f56e0142cbf6b4ea1465fa61172bcd, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1294807477929018571, guid: a2f56e0142cbf6b4ea1465fa61172bcd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10162,7 +10074,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2992156768367450899, guid: d9bed6ba2e3a7f0449abc06acc230522, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2992156768367450899, guid: d9bed6ba2e3a7f0449abc06acc230522, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10251,7 +10163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4061026008096901567, guid: e0a7468c5565216419a5f018030df2bf, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4061026008096901567, guid: e0a7468c5565216419a5f018030df2bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10316,7 +10228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5233299310083708042, guid: ff1348f693639ce4ca9d7a861d6b16d2, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5233299310083708042, guid: ff1348f693639ce4ca9d7a861d6b16d2, type: 3}
       propertyPath: m_LocalPosition.x

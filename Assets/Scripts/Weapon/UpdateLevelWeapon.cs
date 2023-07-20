@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class UpdateLevelWeapon : MonoBehaviour
 {
 
-    public int levelSkillFastGun = 1;
-    public int levelSkillStrongGun = 1;
-    public int levelSkillBom = 1;
-    public int levelBomb = 1;
+    //public int levelSkillFastGun = 1;
+    //public int levelSkillStrongGun = 1;
+    //public int levelSkillBom = 1;
+    //public int levelBomb = 1;
 
     public int costUpdateLevelFastGun = 5;
     public int costUpdateLevelStrongGun = 10;
@@ -30,7 +30,7 @@ public class UpdateLevelWeapon : MonoBehaviour
     public TextMeshProUGUI costUpdatebomb;
 
 
-    private ScoreController scoreController;
+    //private ScoreController scoreController;
 
     private void Start()
     {
@@ -40,11 +40,10 @@ public class UpdateLevelWeapon : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(levelSkillFastGun);
-        levelFastGun.text = "Level: " + levelSkillFastGun;
-        levelStrongGun.text = "Level: " + levelSkillStrongGun;
-        levelBommlGun.text = "level: " + levelSkillBom;
-        levelBombb.text = "level: " + levelBomb;
+        levelFastGun.text = "Level: " + GameManager.instance.levelSkillFastGun;
+        levelStrongGun.text = "Level: " + GameManager.instance.levelSkillStrongGun;
+        levelBommlGun.text = "level: " + GameManager.instance.levelSkillBom;
+        levelBombb.text = "level: " + GameManager.instance.levelBomb;
 
         costUpdateFastGun.text = costUpdateLevelFastGun + " Gold";
         costUpdateStrongGun.text = costUpdateLevelStrongGun + " Gold";
@@ -56,13 +55,15 @@ public class UpdateLevelWeapon : MonoBehaviour
 
     public void UpdateLevelSkillFastGun()
     {
-        if (levelSkillFastGun < 3)
+        Debug.Log("CointCurrent: " + GameManager.instance.totalCoins);
+        Debug.Log("Coin: " + costUpdateLevelFastGun);
+        if (GameManager.instance.levelSkillFastGun < 3)
         {
-            //if (scoreController.coins > costUpdateLevelFastGun)
             if (GameManager.instance.totalCoins > costUpdateLevelFastGun)
             {
+                
                 message = "Update successfully";
-                levelSkillFastGun += 1;
+                GameManager.instance.levelSkillFastGun += 1;
                 GameManager.instance.totalCoins -= costUpdateLevelFastGun;
                 costUpdateLevelFastGun += 100;
             }
@@ -79,14 +80,15 @@ public class UpdateLevelWeapon : MonoBehaviour
     }
     public void UpdateLevelSkillStrongGun()
     {
-        if (levelSkillStrongGun < 3)
+        Debug.Log("CointCurrent: " + GameManager.instance.totalCoins);
+        //Debug.Log("CoinSt: " + costUpdateLevelFastGun);
+        if (GameManager.instance.levelSkillStrongGun < 3)
         {
             //if (scoreController.coins > costUpdateLevelStrongGun)
-            if (GameManager.instance.totalCoins > costUpdateLevelFastGun)
+            if (GameManager.instance.totalCoins > costUpdateLevelStrongGun)
             {
                 message = "Update successfully";
-                levelSkillStrongGun += 1;
-                //scoreController.coins -= costUpdateLevelStrongGun;
+                GameManager.instance.levelSkillStrongGun += 1;
                 GameManager.instance.totalCoins -= costUpdateLevelStrongGun;
                 costUpdateLevelStrongGun += 100;
             }
@@ -102,15 +104,15 @@ public class UpdateLevelWeapon : MonoBehaviour
     }
     public void UpdateLevelSkillBoom()
     {
-        if (levelSkillBom < 3)
+        Debug.Log("CointCurrent: " + GameManager.instance.totalCoins);
+        if (GameManager.instance.levelSkillBom < 3)
         {
             //if (scoreController.coins > costUpdateBom)
-            if (GameManager.instance.totalCoins > costUpdateLevelFastGun)
+            if (GameManager.instance.totalCoins > costUpdateBom)
             {
                 message = "Update successfully";
-                levelSkillBom += 1;
+                GameManager.instance.levelSkillBom += 1;
                 GameManager.instance.totalCoins -= costUpdateBom;
-                //scoreController.coins -= costUpdateBom;
                 costUpdateBom += 100;
             }
             else
@@ -126,14 +128,13 @@ public class UpdateLevelWeapon : MonoBehaviour
     }
     public void UpdateLevelBomb()
     {
-        if(levelBomb < 3)
+        Debug.Log("CointCurrent: " + GameManager.instance.totalCoins);
+        if (GameManager.instance.levelBomb < 3)
         {
-            //if(scoreController.coins > costUpdateBomb)
-            if (GameManager.instance.totalCoins > costUpdateLevelFastGun)
+            if (GameManager.instance.totalCoins > costUpdateBomb)
             {
                 message = "Update successfully";
-                levelBomb += 1;
-                //scoreController.coins -= costUpdateBomb;
+                GameManager.instance.levelBomb += 1;
                 GameManager.instance.totalCoins -= costUpdateBomb;
                 costUpdateBomb += 100;
             }

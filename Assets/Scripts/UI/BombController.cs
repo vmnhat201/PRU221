@@ -35,11 +35,14 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     // sức mạnh nổ của bom
     public float bombExploseForce = 40f;
 
-    private UpdateLevelWeapon updateLevelWeapon = new UpdateLevelWeapon();
+    [SerializeField]
+    public GameObject bombExplorePrefab;
+
+    //private UpdateLevelWeapon updateLevelWeapon = new UpdateLevelWeapon();
 
     public void Start()
     {
-        updateLevelWeapon = FindObjectOfType<UpdateLevelWeapon>();
+        //updateLevelWeapon = FindObjectOfType<UpdateLevelWeapon>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -57,15 +60,15 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
     }
     void Update()
     {
-        if(updateLevelWeapon.levelBomb == 1)
+        if(GameManager.instance.levelBomb == 1)
         {
             bombExploseRange = 4f;
             bombExploseForce = 40f;
-        }else if(updateLevelWeapon.levelBomb == 2)
+        }else if(GameManager.instance.levelBomb == 2)
         {
             bombExploseRange = 5f;
             bombExploseForce = 50f;
-        }else if(updateLevelWeapon.levelBomb == 3)
+        }else if(GameManager.instance.levelBomb == 3)
         {
             bombExploseRange = 6f;
             bombExploseForce = 60f;
@@ -193,6 +196,8 @@ public class BombController : MonoBehaviour, IPointerDownHandler,
         }
         Debug.Log("Hủy bomb");
         ExploseBomb();
+        //Vector3 bombExplosive = gameObject.transform.position;
+        Instantiate(bombExplorePrefab, gameObject.transform.position, Quaternion.identity);
         Destroy(bombObject);
     }
     private void ExploseBomb()

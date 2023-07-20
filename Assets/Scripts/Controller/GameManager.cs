@@ -38,13 +38,18 @@ public class GameManager : Singleton<GameManager>
     public bool isBoomGun;
     public bool isUpgrade;
 
+    public int levelSkillFastGun = 1;
+    public int levelSkillStrongGun = 1;
+    public int levelSkillBom = 1;
+    public int levelBomb = 1;
 
 
 
 
 
 
- 
+
+
     private void Awake()
     {
         CurEnemies = new List<Enemies>();

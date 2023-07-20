@@ -33,11 +33,11 @@ public class Weapon : MonoBehaviour
 
     public float damage;
 
-    private UpdateLevelWeapon updateLevelWeapon = new UpdateLevelWeapon();
+    //private UpdateLevelWeapon updateLevelWeapon = new UpdateLevelWeapon();
 
     private void Start()
     {
-        updateLevelWeapon = FindObjectOfType<UpdateLevelWeapon>();
+     //   updateLevelWeapon = FindObjectOfType<UpdateLevelWeapon>();
     }
     private void Awake()
     {
@@ -184,17 +184,17 @@ public class Weapon : MonoBehaviour
         int takeDameEnemy = 0;
         int takeDameBoss = 0;
         Collider2D[] colliders = FindObjectsOfType<Collider2D>();
-        if (updateLevelWeapon.levelSkillFastGun == 1)
+        if (GameManager.instance.levelSkillFastGun == 1)
         {
             takeDameEnemy = 20;
             takeDameBoss = 1000;
         }
-        else if (updateLevelWeapon.levelSkillFastGun == 2)
+        else if (GameManager.instance.levelSkillFastGun == 2)
         {
             takeDameEnemy = 50;
             takeDameBoss = 1000;
         }
-        else if (updateLevelWeapon.levelSkillFastGun == 3)
+        else if (GameManager.instance.levelSkillFastGun == 3)
         {
             takeDameEnemy = 100;
             takeDameBoss = 1500;
@@ -231,9 +231,9 @@ public class Weapon : MonoBehaviour
     private IEnumerator FireBulletsInCone()
     {
         int numberOfLoop = 0;
-        if (updateLevelWeapon.levelSkillFastGun == 1) numberOfLoop = 2;
-        else if (updateLevelWeapon.levelSkillFastGun == 2) numberOfLoop = 3;
-        else if (updateLevelWeapon.levelSkillFastGun == 3) numberOfLoop = 6;
+        if (GameManager.instance.levelSkillFastGun == 1) numberOfLoop = 2;
+        else if (GameManager.instance.levelSkillFastGun == 2) numberOfLoop = 3;
+        else if (GameManager.instance.levelSkillFastGun == 3) numberOfLoop = 6;
         float halfConeAngle = (6 - 1) * 6f / 2f;
         Vector2 direction = transform.right;
         for (int i = 0; i < 6; i++)

@@ -119,8 +119,8 @@ public class BossEnemy : Enemies
             //{
                 GameManager.instance.isBossAlive = false;
 
-                Instantiate<GameObject>(explosivePrefabs, transform.position, Quaternion.identity);
-                ScoreController.instance.Addpoint(4);
+                //Instantiate<GameObject>(explosivePrefabs, transform.position, Quaternion.identity);
+                //ScoreController.instance.Addpoint(4);
                 if (!GameManager.instance.isUpgrade)
                 {
                     GameManager.instance.UpgradeAttribute();
