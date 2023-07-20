@@ -5309,20 +5309,20 @@ MonoBehaviour:
   levelSkillStrongGun: 1
   levelSkillBom: 1
   levelBomb: 1
-  costUpdateLevelFastGun: 100
-  costUpdateLevelStrongGun: 100
-  costUpdateBom: 100
-  costUpdateBomb: 100
+  costUpdateLevelFastGun: 5
+  costUpdateLevelStrongGun: 10
+  costUpdateBom: 10
+  costUpdateBomb: 10
   message: 
-  levelFastGun: {fileID: 0}
-  levelStrongGun: {fileID: 0}
-  levelBommlGun: {fileID: 0}
-  levelBombb: {fileID: 0}
-  Message: {fileID: 0}
-  costUpdateFastGun: {fileID: 0}
-  costUpdateStrongGun: {fileID: 0}
-  costUpdateBomGun: {fileID: 0}
-  costUpdatebomb: {fileID: 0}
+  levelFastGun: {fileID: 303466948}
+  levelStrongGun: {fileID: 2121357939}
+  levelBommlGun: {fileID: 1686879485}
+  levelBombb: {fileID: 508654170}
+  Message: {fileID: 783569770}
+  costUpdateFastGun: {fileID: 1577890028}
+  costUpdateStrongGun: {fileID: 1205311099}
+  costUpdateBomGun: {fileID: 209070557}
+  costUpdatebomb: {fileID: 34486340}
 --- !u!114 &1193234025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7082,9 +7082,9 @@ MonoBehaviour:
   Enemies:
   - {fileID: 8580815902667108611, guid: d9bed6ba2e3a7f0449abc06acc230522, type: 3}
   - {fileID: 7969016790558176023, guid: a2f56e0142cbf6b4ea1465fa61172bcd, type: 3}
-  - {fileID: 1087987541891769190, guid: 24bf5a2858631824498f486a0a3a1182, type: 3}
   - {fileID: 7794859326587936032, guid: ff1348f693639ce4ca9d7a861d6b16d2, type: 3}
   - {fileID: 4061026008096901555, guid: e0a7468c5565216419a5f018030df2bf, type: 3}
+  - {fileID: 1087987541891769190, guid: 24bf5a2858631824498f486a0a3a1182, type: 3}
   CurEnemies: []
   CurCoins: []
   Bullet:

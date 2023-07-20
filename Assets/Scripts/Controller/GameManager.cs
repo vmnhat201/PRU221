@@ -20,8 +20,8 @@ public class GameManager : Singleton<GameManager>
     public SkillButton skillButton;
     public IntroControl introControl;
 
-    public int totalEnemies ;
-    public int totalCoins ;
+    public int totalEnemies;
+    public int totalCoins;
     public bool isBossAlive ;
     public bool isAntAliveIntro ;
     public bool isBeeAliveIntro ;
@@ -74,13 +74,13 @@ public class GameManager : Singleton<GameManager>
     public int score = 0;
     public const string ScorePreFix = "Score: ";
     public TextMeshProUGUI scoreText;
-    public int coins = 0;
+    public int coins;
     public TextMeshProUGUI coinText;
 
     private void Update()
     {
         scoreText.text = "Score: " + score;
-        coinText.text = coins.ToString();
+        coinText.text = totalCoins.ToString();
     }
 
     public void Addpoint(int points)
@@ -91,9 +91,9 @@ public class GameManager : Singleton<GameManager>
 
     public void AddCoin(int coin)
     {
-        coins += coin;
-        totalCoins = coins;
-        coinText.text = coins.ToString();
+        //coins += coin;
+        totalCoins += coin;
+        coinText.text = totalCoins.ToString();
     }
 
     public void UpgradeAttribute()

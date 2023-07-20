@@ -60,13 +60,38 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public void SpawnEnemies()
     {
+        //foreach (var item in GameManager.instance.Enemies)
+        //{
+        //    if (item.enemyType != EnemyType.Boss && GameSave.instance.isIntro == false)
+        //    {
+        //        if (GameManager.instance.totalEnemies < 7)
+        //        {
+        //            if (item.enemyType != EnemyType.Ranged && item.enemyType != EnemyType.Bee)
+        //            {
+        //                SpawnEachEnemy(item, 5);
+        //            }
+        //        }
+        //        else if (GameManager.instance.totalEnemies < 9)
+        //        {
+        //            if (item.enemyType != EnemyType.Bee)
+        //            {
+        //                SpawnEachEnemy(item, AmountEnemy(item));
+        //            }
+        //        }
+        //        else if (GameManager.instance.totalEnemies >= 10)
+        //        {
+        //            SpawnEachEnemy(item, AmountEnemy(item));
+        //        }
+        //    }
+        //}
+
         foreach (var item in GameManager.instance.Enemies)
         {
             if (item.enemyType != EnemyType.Boss && GameSave.instance.isIntro == false)
             {
                 if (GameManager.instance.totalEnemies < 7)
                 {
-                    if (item.enemyType != EnemyType.Ranged && item.enemyType != EnemyType.Bee)
+                    if (item.enemyType != EnemyType.Ranged && item.enemyType != EnemyType.Bee && item.enemyType != EnemyType.Boss1)
                     {
                         SpawnEachEnemy(item, 5);
                     }
@@ -84,6 +109,7 @@ public class SpawnManager : Singleton<SpawnManager>
                 }
             }
         }
+
     }
 
     public void SpawnEachEnemy(Enemies enemyType, float amount)
@@ -102,9 +128,34 @@ public class SpawnManager : Singleton<SpawnManager>
 
     public void SpawnBoss()
     {
+        //foreach (var item in GameManager.instance.Enemies)
+        //{
+
+        //    int random = Random.Range(0, 2);
+        //    if (random == 0)
+        //    {
+        //        if (item.enemyType == EnemyType.Boss && GameManager.instance.isBossAlive == false && GameSave.instance.isIntro == false)
+        //        {
+        //            GameManager.instance.isBossAlive = true;
+        //            GameManager.instance.isUpgrade = false;
+        //            Instantiate(item.gameObject, Gennerate(), Quaternion.identity);
+        //        }
+        //    }
+
+        //    if (random == 1)
+        //    {
+        //        if (item.enemyType == EnemyType.Boss1 && GameManager.instance.isBossAlive == false && GameSave.instance.isIntro == false)
+        //        {
+        //            GameManager.instance.isBossAlive = true;
+        //            GameManager.instance.isUpgrade = false;
+        //            Instantiate(item.gameObject, Gennerate(), Quaternion.identity);
+        //        }
+        //    }
+        //}
+
         foreach (var item in GameManager.instance.Enemies)
         {
-     
+
             int random = Random.Range(0, 2);
             if (random == 0)
             {
@@ -112,23 +163,23 @@ public class SpawnManager : Singleton<SpawnManager>
                 {
                     GameManager.instance.isBossAlive = true;
                     GameManager.instance.isUpgrade = false;
-                    Instantiate(item.gameObject, Gennerate(), Quaternion.identity);
+                    Instantiate(GameManager.instance.Enemies[2], Gennerate(), Quaternion.identity);
                 }
             }
-            
+
             if (random == 1)
             {
                 if (item.enemyType == EnemyType.Boss1 && GameManager.instance.isBossAlive == false && GameSave.instance.isIntro == false)
                 {
                     GameManager.instance.isBossAlive = true;
                     GameManager.instance.isUpgrade = false;
-                    Instantiate(item.gameObject, Gennerate(), Quaternion.identity);
+                    Instantiate(GameManager.instance.Enemies[4], Gennerate(), Quaternion.identity);
                 }
-            }        
+            }
         }
     }
 
-    private IEnumerator SpawnBosses()
+private IEnumerator SpawnBosses()
     {
         while (true)
         {

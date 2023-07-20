@@ -74,7 +74,6 @@ public class Boss1Enemy : Enemies
             }
             if (GameSave.instance.isIntro != true)
             {
-                //ScoreController.instance.Addpoint(4);
                 GameManager.instance.AddCoin(10);
                 GameManager.instance.Addpoint(4);
             }
